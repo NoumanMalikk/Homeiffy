@@ -140,15 +140,15 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
   }
 
   return (
-    <div className="space-y-6 rounded-lg border border-border-sand bg-soft-white p-6 shadow-soft">
+    <div className="space-y-6  border border-wd-line bg-wd-elevated p-6 ">
       <div>
-        <p className="text-xs font-medium uppercase tracking-wide text-haven-blue">
+        <p className="text-xs font-medium uppercase tracking-wide text-wd-accent">
           {product.category}
         </p>
-        <h1 className="mt-2 font-display text-3xl font-medium text-night-ink">
+        <h1 className="mt-2 font-display text-3xl font-medium text-wd-text">
           {product.title}
         </h1>
-        <p className="mt-2 font-mono-data text-sm text-graphite">{product.sku}</p>
+        <p className="mt-2 font-mono-data text-sm text-wd-muted">{product.sku}</p>
       </div>
 
       <div className="flex flex-wrap gap-2">
@@ -159,19 +159,19 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
         ))}
       </div>
 
-      <div className="text-sm text-graphite">
+      <div className="text-sm text-wd-muted">
         <p>
-          <span className="font-medium text-night-ink">Rooms:</span>{' '}
+          <span className="font-medium text-wd-text">Rooms:</span>{' '}
           {product.rooms
             .map((roomId) => roomById[roomId]?.title ?? roomId)
             .join(', ')}
         </p>
         {category ? (
           <p className="mt-1">
-            <span className="font-medium text-night-ink">Collection:</span>{' '}
+            <span className="font-medium text-wd-text">Collection:</span>{' '}
             <Link
               href={category.collectionPath}
-              className="text-haven-blue hover:underline"
+              className="text-wd-accent hover:underline"
             >
               {category.title}
             </Link>
@@ -179,11 +179,11 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
         ) : null}
       </div>
 
-      <p className="font-display text-2xl font-medium text-night-ink">
+      <p className="font-display text-2xl font-medium text-wd-text">
         {formatPrice(product.price, product.currency)}
       </p>
 
-      <dl className="grid gap-3 border-y border-border-sand py-4 text-sm">
+      <dl className="grid gap-3 border-y border-wd-line py-4 text-sm">
         <CustomerSpecRow
           label="Overall dimensions"
           value={formatDimensions(product.width, product.height, product.depth)}
@@ -226,14 +226,14 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 
       {finishOptions.length > 0 ? (
         <fieldset>
-          <legend className="text-sm font-medium text-night-ink">Finish</legend>
+          <legend className="text-sm font-medium text-wd-text">Finish</legend>
           <div className="mt-2 flex flex-wrap gap-2">
             {finishOptions.map((finish) => (
               <button
                 key={finish.id}
                 type="button"
                 aria-pressed={selectedFinishId === finish.id}
-                className="rounded-md border border-border-sand p-2"
+                className="rounded-md border border-wd-line p-2"
                 onClick={() => setSelectedFinishId(finish.id)}
               >
                 <Swatch label={finish.label} hex={finish.hex} />
@@ -245,7 +245,7 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 
       {upholsteryOptions.length > 0 ? (
         <fieldset>
-          <legend className="text-sm font-medium text-night-ink">
+          <legend className="text-sm font-medium text-wd-text">
             Upholstery
           </legend>
           <div className="mt-2 flex flex-wrap gap-2">
@@ -254,7 +254,7 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
                 key={upholstery.id}
                 type="button"
                 aria-pressed={selectedUpholsteryId === upholstery.id}
-                className="rounded-md border border-border-sand p-2"
+                className="rounded-md border border-wd-line p-2"
                 onClick={() => setSelectedUpholsteryId(upholstery.id)}
               >
                 <Swatch label={upholstery.label} hex={upholstery.hex} />
@@ -266,7 +266,7 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 
       {configurationOptions.length > 0 ? (
         <fieldset>
-          <legend className="text-sm font-medium text-night-ink">
+          <legend className="text-sm font-medium text-wd-text">
             Configuration
           </legend>
           <div className="mt-2 space-y-2">
@@ -298,7 +298,7 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
         </Button>
 
         {!product.productionReady && storeConfig.siteEnv === 'production' ? (
-          <p className="text-xs text-graphite">
+          <p className="text-xs text-wd-muted">
             Live purchase is blocked until production verification is complete.
           </p>
         ) : null}
@@ -346,14 +346,14 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
 
           <Link
             href={`/contact?product=${product.slug}`}
-            className="inline-flex h-10 min-h-[2.75rem] items-center justify-center rounded-md border border-border-sand px-3 text-sm font-medium text-night-ink transition-colors hover:bg-cloud-cream"
+            className="inline-flex h-10 min-h-[2.75rem] items-center justify-center rounded-md border border-wd-line px-3 text-sm font-medium text-wd-text transition-colors hover:bg-cloud-cream"
           >
             Request quote
           </Link>
         </div>
 
         {roomBuilderNotice ? (
-          <p className="text-xs text-graphite">{roomBuilderNotice}</p>
+          <p className="text-xs text-wd-muted">{roomBuilderNotice}</p>
         ) : null}
       </div>
     </div>
@@ -377,8 +377,8 @@ function CustomerSpecRow({
 function SpecRow({ label, value }: { label: string; value: string }) {
   return (
     <div className="grid grid-cols-[9rem_1fr] gap-2">
-      <dt className="text-graphite">{label}</dt>
-      <dd className="font-mono-data text-night-ink">{value}</dd>
+      <dt className="text-wd-muted">{label}</dt>
+      <dd className="font-mono-data text-wd-text">{value}</dd>
     </div>
   );
 }

@@ -135,13 +135,13 @@ export function ProductCard({
   return (
     <article
       className={cn(
-        'group flex h-full w-full flex-col overflow-hidden rounded-lg border border-border-sand bg-soft-white shadow-soft transition-shadow duration-250 hover:shadow-md',
+        'group flex h-full w-full flex-col overflow-hidden border border-wd-line bg-wd-elevated transition-[border-color,transform] duration-250 hover:border-wd-accent',
         className,
       )}
     >
       <Link
         href={`/products/${product.slug}`}
-        className="group relative block shrink-0 overflow-hidden border-b border-border-sand/70 bg-white"
+        className="group relative block shrink-0 overflow-hidden border-b border-wd-line bg-wd-surface"
       >
         <ProductCardImage
           src={mainImage?.src ?? ''}
@@ -150,22 +150,20 @@ export function ProductCard({
         />
         <Badge
           variant="outline"
-          className="absolute left-3 top-3 border-border-sand/80 bg-soft-white/95 text-[10px] uppercase tracking-wide"
+          className="absolute left-3 top-3 border-wd-line bg-wd-black/80 text-[10px] uppercase tracking-wide text-wd-muted"
         >
-          {(product.dailyMoments[0] ?? 'shop').replace(/^\w/, (c) =>
-            c.toUpperCase(),
-          )}
+          {product.category}
         </Badge>
       </Link>
 
       <div className="flex min-h-0 flex-1 flex-col gap-3 p-4">
         <div className="min-h-[3.25rem]">
-          <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.14em] text-graphite">
-            {product.category}
+          <p className="mb-1 text-[11px] font-medium uppercase tracking-[0.14em] text-wd-muted">
+            Homeiffy
           </p>
           <Link href={`/products/${product.slug}`}>
             <h3
-              className="line-clamp-2 min-h-[2.5rem] font-display text-base font-medium leading-snug text-night-ink group-hover:text-haven-blue"
+              className="line-clamp-2 min-h-[2.5rem] font-display text-base font-medium leading-snug text-wd-text group-hover:text-wd-accent"
               title={product.title}
             >
               {product.title}
@@ -176,13 +174,13 @@ export function ProductCard({
         <div className="min-h-[2.75rem]">
           {dimensions ? (
             <>
-              <p className="text-[11px] font-medium uppercase tracking-wide text-graphite">
+              <p className="text-[11px] font-medium uppercase tracking-wide text-wd-muted">
                 Dimensions
               </p>
-              <p className="font-mono-data text-sm text-night-ink">{dimensions}</p>
+              <p className="font-mono-data text-sm text-wd-text">{dimensions}</p>
             </>
           ) : (
-            <p className="text-sm text-graphite">See product details for sizing</p>
+            <p className="text-sm text-wd-muted">See product details for sizing</p>
           )}
         </div>
 
@@ -200,17 +198,17 @@ export function ProductCard({
             />
           ) : null}
           {!displayFinish && !displayUpholstery ? (
-            <p className="text-xs text-graphite">Finishes pending verification</p>
+            <p className="text-xs text-wd-muted">Finishes pending verification</p>
           ) : null}
         </div>
 
         <div className="mt-auto min-h-[2rem]">
-          <p className="font-display text-lg font-medium text-night-ink">
+          <p className="font-display text-lg font-medium text-wd-accent">
             {formatPrice(product.price, product.currency)}
           </p>
         </div>
 
-        <div className="flex items-center gap-2 border-t border-border-sand/60 pt-3">
+        <div className="flex items-center gap-2 border-t border-wd-line pt-3">
           <Button
             variant="ghost"
             size="icon"
@@ -229,7 +227,7 @@ export function ProductCard({
             }
           >
             <Heart
-              className={cn(isInWishlist && 'fill-clay-rose text-clay-rose')}
+              className={cn(isInWishlist && 'fill-wd-accent text-wd-accent')}
             />
           </Button>
 
@@ -247,7 +245,7 @@ export function ProductCard({
             }
           >
             <GitCompare
-              className={cn(isComparing && 'text-haven-blue')}
+              className={cn(isComparing && 'text-wd-accent')}
             />
           </Button>
 

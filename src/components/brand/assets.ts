@@ -22,21 +22,22 @@ export const LOGO_DEFAULTS: Record<
   seal: { width: 160, height: 40 },
 };
 
+/** On the dark storefront, default to light-on-dark logo artwork. */
 export function resolveLogoSrc(
   variant: LogoVariant,
-  theme: LogoTheme = 'dark',
+  theme: LogoTheme = 'light',
 ): string {
   if (variant === 'monogram' || variant === 'seal') {
-    return theme === 'light'
-      ? '/brand/logo-horizontal-on-dark.png'
-      : OFFICIAL_MONOGRAM_SRC;
+    return theme === 'dark'
+      ? OFFICIAL_MONOGRAM_SRC
+      : '/brand/logo-horizontal-on-dark.png';
   }
 
-  if (theme === 'light') {
-    return '/brand/logo-horizontal-on-dark.png';
+  if (theme === 'dark') {
+    return OFFICIAL_LOGO_SRC;
   }
 
-  return OFFICIAL_LOGO_SRC;
+  return '/brand/logo-horizontal-on-dark.png';
 }
 
 export function resolveLogoAlt(variant: LogoVariant): string {
@@ -44,7 +45,7 @@ export function resolveLogoAlt(variant: LogoVariant): string {
     case 'monogram':
       return 'Homeiffy';
     case 'seal':
-      return 'Homeiffy • Furniture for Real Rooms';
+      return 'Homeiffy Furniture for Real Rooms';
     default:
       return 'Homeiffy';
   }

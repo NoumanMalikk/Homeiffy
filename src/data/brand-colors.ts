@@ -1,15 +1,15 @@
 export const brandColors = {
-  roomInk: '#12161C',
-  homeiffyTeal: '#0F6B63',
-  deepOlive: '#3D5548',
+  roomInk: '#F4F4F4',
+  homeiffyTeal: '#E8A24B',
+  deepOlive: '#9A8B6D',
   clayEmber: '#E85D4C',
-  warmMustard: '#B8793A',
-  softPlum: '#554E5C',
-  naturalOak: '#C4B7A0',
-  canvasCream: '#ECEAE4',
-  galleryWhite: '#FFFFFF',
-  softGraphite: '#5C6369',
-  borderSand: '#CFCBC3',
+  warmMustard: '#E8A24B',
+  softPlum: '#C4B8C8',
+  naturalOak: '#A89070',
+  canvasCream: '#0B0B0B',
+  galleryWhite: '#161616',
+  softGraphite: '#9A9A9A',
+  borderSand: '#2A2A2A',
 } as const;
 
 export type BrandColorName = keyof typeof brandColors;

@@ -55,7 +55,7 @@ export function MegaMenu({ section, open, onClose }: MegaMenuProps) {
       id={`mega-menu-${section.id}`}
       role="region"
       aria-label={`${section.label} menu`}
-      className="absolute left-0 right-0 top-full z-40 border-b border-border-sand bg-soft-white shadow-elevated"
+      className="absolute left-0 right-0 top-full z-40 border-b border-wd-line bg-wd-elevated shadow-elevated"
     >
       <div className="mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
         {isMoments ? (
@@ -65,17 +65,17 @@ export function MegaMenu({ section, open, onClose }: MegaMenuProps) {
                 key={moment.slug}
                 href={`/moments/${moment.slug}`}
                 onClick={onClose}
-                className="group rounded-lg border border-border-sand/60 p-4 transition-colors hover:border-haven-blue/30 hover:bg-cloud-cream/50"
+                className="group rounded-lg border border-wd-line p-4 transition-colors hover:border-wd-accent/50 hover:bg-wd-hover"
               >
                 <span
                   className="mb-2 inline-block size-2 rounded-full"
                   style={{ backgroundColor: moment.accentColor }}
                   aria-hidden="true"
                 />
-                <h3 className="font-display text-lg font-medium text-night-ink group-hover:text-haven-blue">
+                <h3 className="font-display text-lg font-medium text-wd-text group-hover:text-wd-accent">
                   {moment.title}
                 </h3>
-                <p className="mt-1 text-sm text-graphite">{moment.shortCopy}</p>
+                <p className="mt-1 text-sm text-wd-muted">{moment.shortCopy}</p>
               </Link>
             ))}
           </div>
@@ -86,13 +86,13 @@ export function MegaMenu({ section, open, onClose }: MegaMenuProps) {
                 key={child.href}
                 href={child.href}
                 onClick={onClose}
-                className="group rounded-md p-3 transition-colors hover:bg-cloud-cream/60"
+                className="group rounded-md p-3 transition-colors hover:bg-wd-hover/60"
               >
-                <span className="font-medium text-night-ink group-hover:text-haven-blue">
+                <span className="font-medium text-wd-text group-hover:text-wd-accent">
                   {child.label}
                 </span>
                 {child.description ? (
-                  <p className="mt-0.5 text-sm text-graphite">
+                  <p className="mt-0.5 text-sm text-wd-muted">
                     {child.description}
                   </p>
                 ) : null}
@@ -102,11 +102,11 @@ export function MegaMenu({ section, open, onClose }: MegaMenuProps) {
         )}
 
         {section.href ? (
-          <div className="mt-6 border-t border-border-sand pt-4">
+          <div className="mt-6 border-t border-wd-line pt-4">
             <Link
               href={section.href}
               onClick={onClose}
-              className="text-sm font-medium text-haven-blue hover:underline"
+              className="text-sm font-medium text-wd-accent hover:underline"
             >
               View all {section.label}
             </Link>
@@ -134,7 +134,7 @@ export function MegaMenuTrigger({
     return (
       <Link
         href={section.href}
-        className="rounded-md px-3 py-2 text-sm font-medium text-night-ink transition-colors hover:text-haven-blue"
+        className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-wd-text transition-colors hover:text-wd-accent"
       >
         {section.label}
       </Link>
@@ -145,10 +145,10 @@ export function MegaMenuTrigger({
     <button
       type="button"
       className={cn(
-        'rounded-md px-3 py-2 text-sm font-medium transition-colors',
+        'px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] transition-colors',
         isOpen
-          ? 'bg-cloud-cream text-haven-blue'
-          : 'text-night-ink hover:text-haven-blue',
+          ? 'text-wd-accent'
+          : 'text-wd-text hover:text-wd-accent',
       )}
       aria-expanded={isOpen}
       aria-controls={`mega-menu-${section.id}`}

@@ -62,7 +62,7 @@ export function Drawer({
       {open ? (
         <div className="fixed inset-0 z-50">
           <motion.div
-            className="absolute inset-0 bg-night-ink/40 backdrop-blur-[2px]"
+            className="absolute inset-0 bg-black/70 backdrop-blur-[2px]"
             aria-hidden="true"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -77,7 +77,7 @@ export function Drawer({
             aria-labelledby={titleId}
             aria-describedby={description ? descId : undefined}
             className={cn(
-              'absolute top-0 flex h-full w-full max-w-md flex-col border-border-sand bg-soft-white shadow-elevated',
+              'absolute top-0 flex h-full w-full max-w-md flex-col border-wd-line bg-wd-surface shadow-elevated',
               side === 'right'
                 ? 'right-0 border-l'
                 : 'left-0 border-r',
@@ -91,16 +91,16 @@ export function Drawer({
               ease: [0.22, 1, 0.36, 1],
             }}
           >
-            <div className="flex items-start justify-between gap-4 border-b border-border-sand px-4 py-4 sm:px-6">
+            <div className="flex items-start justify-between gap-4 border-b border-wd-line px-4 py-4 sm:px-6">
               <div>
                 <h2
                   id={titleId}
-                  className="font-display text-lg font-medium text-night-ink"
+                  className="font-display text-lg font-medium text-wd-text"
                 >
                   {title}
                 </h2>
                 {description ? (
-                  <p id={descId} className="mt-0.5 text-sm text-graphite">
+                  <p id={descId} className="mt-0.5 text-sm text-wd-muted">
                     {description}
                   </p>
                 ) : null}

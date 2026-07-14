@@ -51,8 +51,8 @@ export function Header() {
         className={cn(
           'sticky top-0 z-30 w-full border-b transition-[background-color,box-shadow,border-color] duration-250',
           scrolled
-            ? 'border-border-sand bg-soft-white/95 shadow-soft backdrop-blur-md'
-            : 'border-transparent bg-transparent',
+            ? 'border-wd-line bg-wd-black/95 shadow-elevated backdrop-blur-md'
+            : 'border-wd-line/60 bg-wd-black',
         )}
       >
         <Container className="relative">
@@ -70,10 +70,11 @@ export function Header() {
 
               <Logo
                 variant="horizontal"
+                theme="light"
                 linkToHome
                 width={168}
                 priority
-                className="max-h-12"
+                className="max-h-12 brightness-0 invert"
               />
             </div>
 
@@ -95,8 +96,14 @@ export function Header() {
                 />
               ))}
               <Link
+                href="/shop"
+                className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-wd-text transition-colors hover:text-wd-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wd-accent"
+              >
+                Shop
+              </Link>
+              <Link
                 href="/room-builder"
-                className="rounded-md px-3 py-2 text-sm font-medium text-night-ink transition-colors hover:bg-border-sand/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue"
+                className="px-3 py-2 text-xs font-semibold uppercase tracking-[0.14em] text-wd-text transition-colors hover:text-wd-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wd-accent"
               >
                 Room Builder
               </Link>
@@ -114,12 +121,12 @@ export function Header() {
 
               <Link
                 href="/wishlist"
-                className="relative inline-flex size-11 min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-md text-night-ink transition-colors hover:bg-border-sand/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue focus-visible:ring-offset-2"
+                className="relative inline-flex size-11 min-h-[2.75rem] min-w-[2.75rem] items-center justify-center text-wd-text transition-colors hover:text-wd-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wd-accent"
                 aria-label={`Wishlist${wishlistCount ? `, ${wishlistCount} items` : ''}`}
               >
                 <Heart className="size-4" />
                 {wishlistCount > 0 ? (
-                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-clay-rose text-[10px] font-medium text-soft-white">
+                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-wd-accent text-[10px] font-bold text-wd-black">
                     {wishlistCount}
                   </span>
                 ) : null}
@@ -127,12 +134,12 @@ export function Header() {
 
               <Link
                 href="/compare"
-                className="relative inline-flex size-11 min-h-[2.75rem] min-w-[2.75rem] items-center justify-center rounded-md text-night-ink transition-colors hover:bg-border-sand/60 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-haven-blue focus-visible:ring-offset-2"
+                className="relative inline-flex size-11 min-h-[2.75rem] min-w-[2.75rem] items-center justify-center text-wd-text transition-colors hover:text-wd-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wd-accent"
                 aria-label={`Compare${compareCount ? `, ${compareCount} items` : ''}`}
               >
                 <GitCompare className="size-4" />
                 {compareCount > 0 ? (
-                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-haven-blue text-[10px] font-medium text-soft-white">
+                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-wd-accent text-[10px] font-bold text-wd-black">
                     {compareCount}
                   </span>
                 ) : null}
@@ -147,7 +154,7 @@ export function Header() {
               >
                 <ShoppingBag />
                 {cartCount > 0 ? (
-                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-night-ink text-[10px] font-medium text-cloud-cream">
+                  <span className="absolute -right-0.5 -top-0.5 flex size-4 items-center justify-center rounded-full bg-wd-accent text-[10px] font-bold text-wd-black">
                     {cartCount}
                   </span>
                 ) : null}

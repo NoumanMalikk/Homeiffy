@@ -58,7 +58,7 @@ export function FilterSidebar({
   return (
     <aside
       className={cn(
-        'space-y-8 rounded-lg border border-border-sand bg-soft-white p-5 shadow-soft',
+        'space-y-8  border border-wd-line bg-wd-elevated p-5 ',
         isPending && 'opacity-70',
         className,
       )}
@@ -109,7 +109,7 @@ export function FilterSidebar({
               min={options.widthRange.min}
               max={options.widthRange.max}
               defaultValue={filters.minWidth ?? ''}
-              className="mt-1 h-10 w-full rounded-md border border-border-sand px-2 text-sm"
+              className="mt-1 h-10 w-full  border border-wd-line px-2 text-sm"
               onBlur={(event) =>
                 updateFilters({
                   minWidth: event.target.value || null,
@@ -127,7 +127,7 @@ export function FilterSidebar({
               min={options.widthRange.min}
               max={options.widthRange.max}
               defaultValue={filters.maxWidth ?? ''}
-              className="mt-1 h-10 w-full rounded-md border border-border-sand px-2 text-sm"
+              className="mt-1 h-10 w-full  border border-wd-line px-2 text-sm"
               onBlur={(event) =>
                 updateFilters({
                   maxWidth: event.target.value || null,
@@ -241,7 +241,7 @@ export function FilterSidebar({
               min={options.priceRange.min}
               max={options.priceRange.max}
               defaultValue={filters.minPrice ?? ''}
-              className="mt-1 h-10 w-full rounded-md border border-border-sand px-2 text-sm"
+              className="mt-1 h-10 w-full  border border-wd-line px-2 text-sm"
               onBlur={(event) =>
                 updateFilters({
                   minPrice: event.target.value || null,
@@ -259,7 +259,7 @@ export function FilterSidebar({
               min={options.priceRange.min}
               max={options.priceRange.max}
               defaultValue={filters.maxPrice ?? ''}
-              className="mt-1 h-10 w-full rounded-md border border-border-sand px-2 text-sm"
+              className="mt-1 h-10 w-full  border border-wd-line px-2 text-sm"
               onBlur={(event) =>
                 updateFilters({
                   maxPrice: event.target.value || null,
@@ -291,7 +291,7 @@ export function FilterSidebar({
 
       <button
         type="button"
-        className="text-sm text-haven-blue underline-offset-4 hover:underline"
+        className="text-sm text-wd-accent underline-offset-4 hover:underline"
         onClick={() => router.push(pathname)}
       >
         Clear all filters
@@ -309,7 +309,7 @@ function FilterGroup({
 }) {
   return (
     <div>
-      <h3 className="font-display text-sm font-medium text-night-ink">
+      <h3 className="font-display text-sm font-medium text-wd-text">
         {title}
       </h3>
       <div className="mt-3 space-y-2">{children}</div>
@@ -337,7 +337,7 @@ function CheckboxList({
               <input
                 type="checkbox"
                 checked={checked}
-                className="mt-0.5 size-4 rounded border-border-sand"
+                className="mt-0.5 size-4 rounded border-wd-line"
                 onChange={() => {
                   const next = toggleArrayValue(selected, item.id);
                   onChange(next.length > 0 ? next : null);

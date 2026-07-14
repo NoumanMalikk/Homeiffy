@@ -52,11 +52,11 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
   }
 
   return (
-    <li className="rounded-lg border border-border-sand bg-soft-white p-4 shadow-soft sm:p-6">
+    <li className=" border border-wd-line bg-wd-elevated p-4 shadow-soft sm:p-6">
       <div className="grid gap-6 lg:grid-cols-[8rem_1fr_auto]">
         <Link
           href={`/products/${item.slug}`}
-          className="block overflow-hidden rounded-lg border border-border-sand/60"
+          className="block overflow-hidden  border border-wd-line/60"
         >
           <ProductCardImage
             src={imageSrc}
@@ -69,27 +69,27 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
           <div>
             <Link
               href={`/products/${item.slug}`}
-              className="font-display text-lg font-medium text-night-ink hover:text-haven-blue"
+              className="font-display text-lg font-medium text-wd-text hover:text-wd-accent"
             >
               {item.title}
             </Link>
-            <p className="mt-1 font-mono-data text-sm text-graphite">
+            <p className="mt-1 font-mono-data text-sm text-wd-muted">
               {item.sku}
             </p>
           </div>
 
           <dl className="grid gap-2 text-sm sm:grid-cols-2">
             <div>
-              <dt className="text-graphite">Finish</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Finish</dt>
+              <dd className="font-mono-data text-wd-text">
                 {product
                   ? getColorwayLabel(product, item.selectedFinishId, 'finish')
                   : '-'}
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Upholstery</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Upholstery</dt>
+              <dd className="font-mono-data text-wd-text">
                 {product
                   ? getColorwayLabel(
                       product,
@@ -100,14 +100,14 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Configuration</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Configuration</dt>
+              <dd className="font-mono-data text-wd-text">
                 {item.selectedConfiguration ?? '-'}
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Dimensions</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Dimensions</dt>
+              <dd className="font-mono-data text-wd-text">
                 {formatDimensions(
                   item.dimensionsSnapshot.width,
                   item.dimensionsSnapshot.height,
@@ -116,20 +116,20 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Box count</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Box count</dt>
+              <dd className="font-mono-data text-wd-text">
                 {formatBoxCount(item.boxCount)}
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Shipping class</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Shipping class</dt>
+              <dd className="font-mono-data text-wd-text">
                 {shippingClass?.name ?? item.shippingClass}
               </dd>
             </div>
             <div>
-              <dt className="text-graphite">Assembly</dt>
-              <dd className="font-mono-data text-night-ink">
+              <dt className="text-wd-muted">Assembly</dt>
+              <dd className="font-mono-data text-wd-text">
                 {formatAssemblyStatus(item.assemblyRequired)}
               </dd>
             </div>
@@ -143,7 +143,7 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
         </div>
 
         <div className="flex flex-col items-end gap-4">
-          <p className="font-mono-data text-sm text-night-ink">
+          <p className="font-mono-data text-sm text-wd-text">
             {formatPrice(item.unitPrice, storeConfig.currency)}{' '}
             each
           </p>
@@ -175,7 +175,7 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
             </Button>
           </div>
 
-          <p className="font-display text-lg font-medium text-night-ink">
+          <p className="font-display text-lg font-medium text-wd-text">
             {formatPrice(lineTotal, storeConfig.currency)}
           </p>
 
@@ -207,21 +207,21 @@ export function CartPageContent() {
 
   if (items.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-border-sand bg-cloud-cream/40 px-6 py-16 text-center">
+      <div className=" border border-dashed border-wd-line bg-wd-surface px-6 py-16 text-center">
         <ShoppingBag
           className="mx-auto size-10 text-haven-blue/70"
           aria-hidden="true"
         />
-        <h2 className="mt-4 font-display text-2xl font-medium text-night-ink">
+        <h2 className="mt-4 font-display text-2xl font-medium text-wd-text">
           Your cart is empty
         </h2>
-        <p className="mx-auto mt-2 max-w-md text-sm text-graphite">
+        <p className="mx-auto mt-2 max-w-md text-sm text-wd-muted">
           Add products from the catalog to review dimensions, finishes and
           pricing before checkout.
         </p>
         <Link
           href="/shop"
-          className="mt-6 inline-flex h-11 min-h-[2.75rem] items-center justify-center rounded-md bg-night-ink px-4 text-sm font-medium text-cloud-cream hover:bg-night-ink/90"
+          className="mt-6 inline-flex h-11 min-h-[2.75rem] items-center justify-center  bg-wd-accent px-4 text-xs font-semibold uppercase tracking-[0.08em] text-wd-black hover:bg-wd-accent/90"
         >
           Shop the catalog
         </Link>
@@ -242,26 +242,26 @@ export function CartPageContent() {
         ))}
       </motion.ul>
 
-      <aside className="h-fit rounded-lg border border-border-sand bg-cloud-cream/40 p-6">
-        <h2 className="font-display text-xl font-medium text-night-ink">
+      <aside className="h-fit  border border-wd-line bg-wd-surface p-6">
+        <h2 className="font-display text-xl font-medium text-wd-text">
           Order summary
         </h2>
 
         <dl className="mt-4 space-y-3 text-sm">
           <div className="flex items-center justify-between">
-            <dt className="text-graphite">Subtotal</dt>
-            <dd className="font-display text-lg font-medium text-night-ink">
+            <dt className="text-wd-muted">Subtotal</dt>
+            <dd className="font-display text-lg font-medium text-wd-text">
               {formatPrice(subtotal, storeConfig.currency)}
             </dd>
           </div>
         </dl>
 
-        <p className="mt-4 text-xs leading-relaxed text-graphite">
+        <p className="mt-4 text-xs leading-relaxed text-wd-muted">
           Shipping is calculated at checkout based on package data, destination
           and product shipping class.
         </p>
 
-        <p className="mt-3 text-xs leading-relaxed text-graphite">
+        <p className="mt-3 text-xs leading-relaxed text-wd-muted">
           Confirm room, doorway and delivery-route dimensions before ordering.{' '}
           <Link href="/measuring-guide" className="text-haven-blue hover:underline">
             Measuring guide
@@ -270,7 +270,7 @@ export function CartPageContent() {
 
         <Link
           href="/checkout"
-          className="mt-6 inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center rounded-md bg-night-ink px-4 text-sm font-medium text-cloud-cream hover:bg-night-ink/90"
+          className="mt-6 inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center  bg-wd-accent px-4 text-xs font-semibold uppercase tracking-[0.08em] text-wd-black hover:bg-wd-accent/90"
         >
           Continue to checkout
         </Link>

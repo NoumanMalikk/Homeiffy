@@ -65,10 +65,10 @@ export function SearchOverlay() {
         aria-label="Search products"
         className="relative z-10 mx-auto mt-16 w-full max-w-2xl px-4"
       >
-        <div className="rounded-lg border border-border-sand bg-soft-white p-4 shadow-elevated">
+        <div className=" border border-wd-line bg-wd-elevated p-4 shadow-elevated">
           <div className="relative">
             <Search
-              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-graphite"
+              className="pointer-events-none absolute left-3 top-1/2 size-4 -translate-y-1/2 text-wd-muted"
               aria-hidden="true"
             />
             <Input
@@ -84,7 +84,7 @@ export function SearchOverlay() {
             <button
               type="button"
               onClick={handleClose}
-              className="absolute right-2 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center rounded-md text-graphite hover:bg-border-sand/50"
+              className="absolute right-2 top-1/2 inline-flex size-11 -translate-y-1/2 items-center justify-center  text-wd-muted hover:bg-wd-hover"
               aria-label="Close search"
             >
               <X className="size-4" />
@@ -95,10 +95,10 @@ export function SearchOverlay() {
             <ul
               id="search-results"
               role="listbox"
-              className="mt-4 max-h-80 overflow-y-auto border-t border-border-sand pt-2"
+              className="mt-4 max-h-80 overflow-y-auto border-t border-wd-line pt-2"
             >
               {results.length === 0 ? (
-                <li className="px-2 py-3 text-sm text-graphite">
+                <li className="px-2 py-3 text-sm text-wd-muted">
                   No products match your search.
                 </li>
               ) : (
@@ -111,13 +111,13 @@ export function SearchOverlay() {
                     <Link
                       href={`/products/${product.slug}`}
                       onClick={handleClose}
-                      className="flex items-start justify-between gap-4 rounded-md px-2 py-3 transition-colors hover:bg-cloud-cream/60"
+                      className="flex items-start justify-between gap-4  px-2 py-3 transition-colors hover:bg-wd-surface/60"
                     >
                       <div className="min-w-0">
-                        <p className="truncate font-medium text-night-ink">
+                        <p className="truncate font-medium text-wd-text">
                           {product.title}
                         </p>
-                        <p className="font-mono-data text-xs text-graphite">
+                        <p className="font-mono-data text-xs text-wd-muted">
                           {product.sku} ·{' '}
                           {formatDimensions(
                             product.width,
@@ -126,7 +126,7 @@ export function SearchOverlay() {
                           )}
                         </p>
                       </div>
-                      <span className="shrink-0 text-sm font-medium text-night-ink">
+                      <span className="shrink-0 text-sm font-medium text-wd-text">
                         {formatPrice(product.price, product.currency)}
                       </span>
                     </Link>
@@ -135,7 +135,7 @@ export function SearchOverlay() {
               )}
             </ul>
           ) : (
-            <p className="mt-3 text-sm text-graphite">
+            <p className="mt-3 text-sm text-wd-muted">
               Type at least two characters to search the catalog.
             </p>
           )}

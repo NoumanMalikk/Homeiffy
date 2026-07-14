@@ -40,19 +40,19 @@ export function Footer() {
   const { registeredAddress } = storeConfig;
 
   return (
-    <footer className="mt-auto border-t border-border-sand bg-soft-white/80">
+    <footer className="mt-auto border-t border-wd-line bg-wd-surface">
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Logo variant="horizontal" width={180} linkToHome className="max-h-14" />
-            <p className="mt-4 max-w-xs text-sm leading-relaxed text-graphite">
+            <Logo variant="horizontal" theme="light" width={180} linkToHome className="max-h-14 brightness-0 invert" />
+            <p className="mt-4 max-w-xs text-sm leading-relaxed text-wd-muted">
               {storeConfig.tagline}
             </p>
-            <div className="mt-4 space-y-1 text-sm text-graphite">
+            <div className="mt-4 space-y-1 text-sm text-wd-muted">
               <p>
                 <a
                   href={`tel:${formatPhoneLink(storeConfig.phoneE164)}`}
-                  className="font-medium text-night-ink hover:text-haven-blue"
+                  className="font-medium text-wd-text hover:text-wd-accent"
                 >
                   {storeConfig.phoneDisplay}
                 </a>
@@ -70,7 +70,7 @@ export function Footer() {
                 <p>
                   <a
                     href={`mailto:${storeConfig.contactEmail}`}
-                    className="hover:text-haven-blue"
+                    className="hover:text-wd-accent"
                   >
                     {storeConfig.contactEmail}
                   </a>
@@ -80,7 +80,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-night-ink">
+            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-wd-text">
               Daily Moments
             </h2>
             <ul className="mt-3 space-y-2">
@@ -88,7 +88,7 @@ export function Footer() {
                 <li key={moment.slug}>
                   <Link
                     href={`/moments/${moment.slug}`}
-                    className="text-sm text-graphite hover:text-haven-blue"
+                    className="text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {moment.title}
                   </Link>
@@ -98,7 +98,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-night-ink">
+            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-wd-text">
               Rooms
             </h2>
             <ul className="mt-3 space-y-2">
@@ -106,7 +106,7 @@ export function Footer() {
                 <li key={room.id}>
                   <Link
                     href={room.collectionPath}
-                    className="text-sm text-graphite hover:text-haven-blue"
+                    className="text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {room.title}
                   </Link>
@@ -116,7 +116,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-night-ink">
+            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-wd-text">
               Furniture
             </h2>
             <ul className="mt-3 space-y-2">
@@ -124,7 +124,7 @@ export function Footer() {
                 <li key={cat.id}>
                   <Link
                     href={cat.collectionPath}
-                    className="text-sm text-graphite hover:text-haven-blue"
+                    className="text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {cat.title}
                   </Link>
@@ -134,7 +134,7 @@ export function Footer() {
           </div>
 
           <div>
-            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-night-ink">
+            <h2 className="font-display text-sm font-medium uppercase tracking-wide text-wd-text">
               Customer Information
             </h2>
             <ul className="mt-3 space-y-2">
@@ -142,7 +142,7 @@ export function Footer() {
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-graphite hover:text-haven-blue"
+                    className="text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {link.label}
                   </Link>
@@ -150,7 +150,7 @@ export function Footer() {
               ))}
             </ul>
 
-            <h2 className="mt-6 font-display text-sm font-medium uppercase tracking-wide text-night-ink">
+            <h2 className="mt-6 font-display text-sm font-medium uppercase tracking-wide text-wd-text">
               Legal
             </h2>
             <ul className="mt-3 space-y-2">
@@ -158,7 +158,7 @@ export function Footer() {
                 <li key={policy.slug}>
                   <Link
                     href={`/${policy.slug}`}
-                    className="text-sm text-graphite hover:text-haven-blue"
+                    className="text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {policy.title}
                   </Link>
@@ -168,7 +168,7 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 border-t border-border-sand pt-6 text-center text-xs text-graphite sm:text-left">
+        <div className="mt-12 border-t border-wd-line pt-6 text-center text-xs text-wd-muted sm:text-left">
           <p>
             © {year} {storeConfig.legalName}. All rights reserved.
           </p>

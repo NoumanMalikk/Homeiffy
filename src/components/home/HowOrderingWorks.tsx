@@ -5,7 +5,7 @@ import { Section } from '@/components/ui/section';
 
 export function HowOrderingWorks() {
   return (
-    <Section spacing="lg" background="white">
+    <Section spacing="lg" className="border-b border-wd-line bg-wd-black">
       <Container>
         <SectionHeading
           title="How ordering works"
@@ -18,15 +18,15 @@ export function HowOrderingWorks() {
           {orderingSteps.map((step, index) => (
             <li
               key={step}
-              className="relative rounded-xl border border-border-sand bg-soft-white p-5 shadow-soft sm:p-6"
+              className="relative rounded-xl border border-wd-line bg-wd-elevated p-5 shadow-soft sm:p-6"
             >
               <span
                 aria-hidden
-                className="font-display text-3xl font-medium text-haven-blue/25 sm:text-4xl"
+                className="font-display text-3xl font-medium text-wd-accent/40 sm:text-4xl"
               >
                 {String(index + 1).padStart(2, '0')}
               </span>
-              <p className="mt-2 text-sm leading-relaxed text-night-ink sm:mt-3">
+              <p className="mt-2 text-sm leading-relaxed text-wd-text sm:mt-3">
                 {step}
               </p>
             </li>

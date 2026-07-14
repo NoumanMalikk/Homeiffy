@@ -13,10 +13,9 @@ const sectionVariants = cva('', {
     },
     background: {
       none: '',
-      cream: 'bg-cloud-cream',
-      white: 'bg-soft-white',
-      subtle:
-        'bg-gradient-to-b from-soft-white/60 to-cloud-cream/40',
+      cream: 'bg-wd-black',
+      white: 'bg-wd-surface',
+      subtle: 'bg-gradient-to-b from-wd-black to-wd-surface',
     },
   },
   defaultVariants: {

@@ -22,7 +22,7 @@ export function CatalogViewToggle({ className }: { className?: string }) {
 
   return (
     <div
-      className={cn('inline-flex rounded-md border border-border-sand', className)}
+      className={cn('inline-flex  border border-wd-line', className)}
       role="group"
       aria-label="Catalog view"
     >

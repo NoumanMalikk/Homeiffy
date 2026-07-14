@@ -34,7 +34,7 @@ function CatalogToolbar({
 }) {
   return (
     <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-      <p className="text-sm text-graphite">
+      <p className="text-sm text-wd-muted">
         {resultCount} {resultCount === 1 ? 'product' : 'products'}
       </p>
       <div className="flex flex-wrap items-center gap-3">
@@ -64,10 +64,10 @@ export function CatalogLayout({
         <Breadcrumbs items={breadcrumbs} className="mb-6" />
 
         <header className="max-w-3xl">
-          <h1 className="font-display text-3xl font-medium text-night-ink sm:text-4xl">
+          <h1 className="font-display text-3xl font-medium text-wd-text sm:text-4xl">
             {title}
           </h1>
-          <p className="mt-3 text-base leading-relaxed text-graphite">
+          <p className="mt-3 text-base leading-relaxed text-wd-muted">
             {description}
           </p>
         </header>
@@ -76,7 +76,7 @@ export function CatalogLayout({
           {showFilters ? (
             <Suspense
               fallback={
-                <div className="h-96 animate-pulse rounded-lg bg-cloud-cream" />
+                <div className="h-96 animate-pulse  bg-wd-elevated" />
               }
             >
               <FilterSidebar filters={filters} options={filterOptions} />

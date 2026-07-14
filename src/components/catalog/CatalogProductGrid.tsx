@@ -21,11 +21,11 @@ export function CatalogProductGrid({ products }: { products: Product[] }) {
 
   if (products.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-border-sand bg-cloud-cream/50 p-10 text-center">
-        <p className="font-display text-lg text-night-ink">
+      <div className=" border border-dashed border-wd-line bg-wd-surface p-10 text-center">
+        <p className="font-display text-lg text-wd-text">
           No products match these filters
         </p>
-        <p className="mt-2 text-sm text-graphite">
+        <p className="mt-2 text-sm text-wd-muted">
           Adjust filters or clear them to see more of the catalog.
         </p>
       </div>

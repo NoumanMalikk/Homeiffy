@@ -19,7 +19,7 @@ export function Breadcrumbs({
     <>
       <JsonLdScript data={buildBreadcrumbJsonLd(items)} />
       <nav aria-label="Breadcrumb" className={cn('text-sm', className)}>
-        <ol className="flex flex-wrap items-center gap-1.5 text-graphite">
+        <ol className="flex flex-wrap items-center gap-1.5 text-wd-muted">
           {items.map((item, index) => {
             const isLast = index === items.length - 1;
 
@@ -33,14 +33,14 @@ export function Breadcrumbs({
                 {isLast ? (
                   <span
                     aria-current="page"
-                    className="font-medium text-night-ink"
+                    className="font-medium text-wd-text"
                   >
                     {item.label}
                   </span>
                 ) : (
                   <Link
                     href={item.href}
-                    className="transition-colors hover:text-haven-blue"
+                    className="transition-colors hover:text-wd-accent"
                   >
                     {item.label}
                   </Link>

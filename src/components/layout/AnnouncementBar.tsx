@@ -9,7 +9,7 @@ import { useReducedMotion } from '@/lib/hooks/use-reduced-motion';
 import { cn } from '@/lib/utils';
 
 const MESSAGES = announcementMessages;
-const ROTATION_MS = 6000;
+const ROTATION_MS = 5000;
 
 export function AnnouncementBar() {
   const [index, setIndex] = useState(0);
@@ -21,17 +21,14 @@ export function AnnouncementBar() {
   }, []);
 
   useEffect(() => {
-    if (paused || reducedMotion) {
-      return;
-    }
-
+    if (paused || reducedMotion) return;
     const timer = window.setInterval(advance, ROTATION_MS);
     return () => window.clearInterval(timer);
   }, [paused, reducedMotion, advance]);
 
   return (
     <div
-      className="relative z-40 flex h-10 items-center justify-center border-b border-border-sand/60 bg-[rgb(15_107_99/0.09)] px-4 text-sm text-room-ink"
+      className="relative z-40 flex h-9 items-center justify-center border-b border-wd-line bg-wd-black px-4 text-xs text-wd-muted sm:text-sm"
       role="region"
       aria-label="Site announcements"
     >
@@ -43,28 +40,27 @@ export function AnnouncementBar() {
           <AnimatePresence mode="wait">
             <motion.p
               key={index}
-              className="truncate px-8"
+              className="truncate px-8 uppercase tracking-[0.12em]"
               initial={reducedMotion ? false : { opacity: 0, y: 6 }}
               animate={{ opacity: 1, y: 0 }}
               exit={reducedMotion ? undefined : { opacity: 0, y: -6 }}
-              transition={{ duration: reducedMotion ? 0 : 0.35 }}
+              transition={{ duration: reducedMotion ? 0 : 0.3 }}
             >
               {MESSAGES[index]}
             </motion.p>
           </AnimatePresence>
         </div>
-
         <button
           type="button"
           onClick={() => setPaused((p) => !p)}
           className={cn(
-            'inline-flex size-11 shrink-0 items-center justify-center rounded-md text-soft-graphite transition-colors hover:bg-border-sand/50 hover:text-room-ink',
-            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-homeiffy-teal focus-visible:ring-offset-2',
+            'inline-flex size-9 shrink-0 items-center justify-center text-wd-muted transition-colors hover:text-wd-accent',
+            'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-wd-accent',
           )}
           aria-label={paused ? 'Resume announcement rotation' : 'Pause announcement rotation'}
           aria-pressed={paused}
         >
-          {paused ? <Play className="size-4" /> : <Pause className="size-4" />}
+          {paused ? <Play className="size-3.5" /> : <Pause className="size-3.5" />}
         </button>
       </div>
     </div>

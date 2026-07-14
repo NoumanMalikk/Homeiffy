@@ -36,11 +36,11 @@ export function CartDrawer() {
     >
       {items.length === 0 ? (
         <div className="flex flex-col items-center justify-center py-12 text-center">
-          <p className="text-graphite">Your cart is empty.</p>
+          <p className="text-wd-muted">Your cart is empty.</p>
           <Link
             href="/shop"
             onClick={closeCart}
-            className="mt-4 inline-flex h-11 min-h-[2.75rem] items-center justify-center rounded-md border border-border-sand bg-transparent px-4 text-sm font-medium text-night-ink transition-colors hover:bg-cloud-cream"
+            className="mt-4 inline-flex h-11 min-h-[2.75rem] items-center justify-center  border border-wd-line bg-transparent px-4 text-sm font-medium text-wd-text transition-colors hover:bg-wd-elevated"
           >
             Browse furniture
           </Link>
@@ -65,12 +65,12 @@ export function CartDrawer() {
               return (
                 <li
                   key={lineKey}
-                  className="flex gap-3 border-b border-border-sand pb-4"
+                  className="flex gap-3 border-b border-wd-line pb-4"
                 >
                   <Link
                     href={`/products/${item.slug}`}
                     onClick={closeCart}
-                    className="relative size-20 shrink-0 overflow-hidden rounded-lg border border-border-sand bg-white"
+                    className="relative size-20 shrink-0 overflow-hidden  border border-wd-line bg-wd-elevated"
                   >
                     {imageSrc ? (
                       <Image
@@ -87,17 +87,17 @@ export function CartDrawer() {
                     <Link
                       href={`/products/${item.slug}`}
                       onClick={closeCart}
-                      className="line-clamp-2 font-display text-sm font-medium leading-snug text-night-ink hover:text-haven-blue"
+                      className="line-clamp-2 font-display text-sm font-medium leading-snug text-wd-text hover:text-wd-accent"
                     >
                       {item.title}
                     </Link>
-                    <p className="mt-0.5 font-mono-data text-xs text-graphite">
+                    <p className="mt-0.5 font-mono-data text-xs text-wd-muted">
                       {item.sku}
                     </p>
                     {finish && finish !== '-' ? (
-                      <p className="mt-1 text-xs text-graphite">{finish}</p>
+                      <p className="mt-1 text-xs text-wd-muted">{finish}</p>
                     ) : null}
-                    <p className="mt-2 font-display text-sm font-medium text-night-ink">
+                    <p className="mt-2 font-display text-sm font-medium text-wd-text">
                       {formatPrice(lineTotal, storeConfig.currency)}
                     </p>
 
@@ -133,7 +133,7 @@ export function CartDrawer() {
                       <Button
                         variant="ghost"
                         size="icon"
-                        className="ml-auto size-8 min-h-8 min-w-8 text-graphite"
+                        className="ml-auto size-8 min-h-8 min-w-8 text-wd-muted"
                         onClick={() => removeItem(lineKey)}
                         aria-label={`Remove ${item.title}`}
                       >
@@ -146,14 +146,14 @@ export function CartDrawer() {
             })}
           </ul>
 
-          <div className="mt-4 border-t border-border-sand pt-4">
+          <div className="mt-4 border-t border-wd-line pt-4">
             <div className="flex items-center justify-between">
-              <span className="text-sm text-graphite">Subtotal</span>
-              <span className="font-display text-lg font-medium text-night-ink">
+              <span className="text-sm text-wd-muted">Subtotal</span>
+              <span className="font-display text-lg font-medium text-wd-text">
                 {formatPrice(subtotal, storeConfig.currency)}
               </span>
             </div>
-            <p className="mt-2 text-xs text-graphite">
+            <p className="mt-2 text-xs text-wd-muted">
               Shipping calculated at checkout based on product size and
               destination.
             </p>
@@ -161,14 +161,14 @@ export function CartDrawer() {
               <Link
                 href="/cart"
                 onClick={closeCart}
-                className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center rounded-md border border-border-sand bg-transparent px-4 text-sm font-medium text-night-ink transition-colors hover:bg-cloud-cream"
+                className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center  border border-wd-line bg-transparent px-4 text-sm font-medium text-wd-text transition-colors hover:bg-wd-elevated"
               >
                 View full cart
               </Link>
               <Link
                 href="/checkout"
                 onClick={closeCart}
-                className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center rounded-md bg-night-ink px-4 text-sm font-medium text-cloud-cream transition-colors hover:bg-night-ink/90"
+                className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center  bg-wd-accent px-4 text-xs font-semibold uppercase tracking-[0.08em] text-wd-black transition-colors hover:bg-wd-accent/90"
               >
                 Checkout
               </Link>

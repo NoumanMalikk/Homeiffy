@@ -26,12 +26,12 @@ export function MobileNav() {
       side="left"
       className="max-w-sm"
     >
-      <div className="mb-6 border-b border-border-sand pb-4">
+      <div className="mb-6 border-b border-wd-line pb-4">
         <Logo
           variant="horizontal"
           width={160}
           linkToHome
-          className="max-h-12"
+          className="max-h-12 brightness-0 invert"
         />
       </div>
       <nav aria-label="Mobile navigation" className="space-y-6">
@@ -41,12 +41,12 @@ export function MobileNav() {
               <Link
                 href={section.href}
                 onClick={closeMobileNav}
-                className="font-display text-lg font-medium text-night-ink hover:text-haven-blue"
+                className="font-display text-lg font-medium text-wd-text hover:text-wd-accent"
               >
                 {section.label}
               </Link>
             ) : (
-              <p className="font-display text-lg font-medium text-night-ink">
+              <p className="font-display text-lg font-medium text-wd-text">
                 {section.label}
               </p>
             )}
@@ -57,7 +57,7 @@ export function MobileNav() {
                     <Link
                       href={child.href}
                       onClick={closeMobileNav}
-                      className="block py-2 text-sm text-graphite hover:text-haven-blue"
+                      className="block py-2 text-sm text-wd-muted hover:text-wd-accent"
                     >
                       {child.label}
                     </Link>
@@ -70,7 +70,7 @@ export function MobileNav() {
 
         {customerSection?.children ? (
           <div>
-            <p className="font-display text-lg font-medium text-night-ink">
+            <p className="font-display text-lg font-medium text-wd-text">
               Customer Information
             </p>
             <ul className="mt-2 space-y-1 pl-2">
@@ -79,7 +79,7 @@ export function MobileNav() {
                   <Link
                     href={child.href}
                     onClick={closeMobileNav}
-                    className="block py-2 text-sm text-graphite hover:text-haven-blue"
+                    className="block py-2 text-sm text-wd-muted hover:text-wd-accent"
                   >
                     {child.label}
                   </Link>
@@ -89,10 +89,10 @@ export function MobileNav() {
           </div>
         ) : null}
 
-        <div className="border-t border-border-sand pt-6">
+        <div className="border-t border-wd-line pt-6">
           <a
             href={`tel:${formatPhoneLink(storeConfig.phoneE164)}`}
-            className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center gap-2 rounded-md border border-border-sand bg-transparent px-4 text-sm font-medium text-night-ink transition-colors hover:bg-cloud-cream"
+            className="inline-flex h-11 min-h-[2.75rem] w-full items-center justify-center gap-2 rounded-md border border-wd-line bg-transparent px-4 text-sm font-medium text-wd-text transition-colors hover:bg-wd-surface"
           >
             <Phone className="size-4" />
             {storeConfig.phoneDisplay}
