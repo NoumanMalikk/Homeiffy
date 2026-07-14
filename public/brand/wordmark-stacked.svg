@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 120" fill="none" role="img" aria-label="Homeiffy stacked wordmark">
+  <title>Homeiffy</title>
+  <g fill="#252A34">
+    <!-- DREAM -->
+    <path d="M0 44V8h16c10 0 16 5.8 16 16.8S26 41.6 16 41.6H6.5V44H0V44zm6.5-6h9.2c5.5 0 9-3.2 9-9.2s-3.5-9.3-9-9.3H6.5v18.5z"/>
+    <path d="M38 44V8h14.5c7.8 0 12.4 4.2 12.4 10.5 0 4.6-2.6 8-6.8 9.7L66 44h-7.6L52.5 33H46v11H38zm6.5-17.5h7.8c3.6 0 5.6-2 5.6-5s-2-5-5.6-5H44.5V26.5z"/>
+    <path d="M72 44V8h22v6.5H78.5v8.5h13.5v6H78.5v8.5H94V44H72z"/>
+    <path d="M100 44l-3.6-10.5H84.5L81 44h-6.8l14-36h7.6l14 36h-6.8zm-9.2-16h10.4l-3.6-9.5-3.6 9.5z"/>
+    <path fill="#4A6170" d="M84 29.5h20v2H84z" opacity="0.55"/>
+    <path d="M112 44V8h6.5l11.2 22.5L140.8 8h6.5v36h-6.5V22l-10.8 22h-2.4L117 22v22h-5z"/>
+    <!-- HAVEN -->
+    <path d="M156 88V52h6.5v13h19.5V52h6.5v36h-6.5V71.5H162.5V88h-6.5z"/>
+    <path d="M192 88l-3.6-10.5h-12L173 88h-6.8l14-36h7.6l14 36h-6.8zm-9.2-16h10.4l-3.6-9.5-3.6 9.5z"/>
+    <path fill="#4A6170" d="M176 73.5h20v2H176z" opacity="0.55"/>
+    <path d="M208 88l10-36h6.8l10 36h-6.5l-2.2-7.5H216l-2.2 7.5H208zm8.5-13.5h7.5l-3.8-12-3.7 12z"/>
+    <path d="M238 88V52h22v6.5H244.5v29.5H238z"/>
+    <path d="M266 88V52h6.5v22l18-22h6.5v36h-6.5V66l-18 22h-6.5z"/>
+  </g>
+  <!-- Room-opening horizon between lines -->
+  <path stroke="#B97867" stroke-width="1.5" stroke-linecap="round" d="M0 48.5c30 3.5 60 3.5 90 0s60-3.5 90 0"/>
+  <path stroke="#8E9C86" stroke-width="1.25" stroke-linecap="round" opacity="0.7" d="M156 92.5c35 3 70 3 105 0"/>
+  <!-- Tagline -->
+  <text x="0" y="112" fill="#62666D" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="400" letter-spacing="0.14em">MAKE ROOM FOR HOW YOU LIVE.</text>
+</svg>

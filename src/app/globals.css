@@ -1,0 +1,237 @@
+@import "tailwindcss";
+
+/* ─── Homeiffy brand palette ─── */
+:root {
+  --room-ink: #252d32;
+  --homeiffy-teal: #456c6a;
+  --deep-olive: #65705b;
+  --clay-ember: #b76d55;
+  --warm-mustard: #c69e51;
+  --soft-plum: #766275;
+  --natural-oak: #bca98c;
+  --canvas-cream: #f6f1e8;
+  --gallery-white: #ffffff;
+  --soft-graphite: #656a6c;
+  --border-sand: #d9d1c5;
+
+  --background: var(--canvas-cream);
+  --foreground: var(--room-ink);
+  --muted: var(--soft-graphite);
+  --muted-foreground: var(--soft-graphite);
+  --border: var(--border-sand);
+  --ring: var(--homeiffy-teal);
+  --accent: var(--homeiffy-teal);
+  --accent-foreground: var(--gallery-white);
+  --destructive: #9b4d4d;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+
+  --shadow-soft: 0 1px 3px rgb(37 45 50 / 0.06), 0 4px 12px rgb(37 45 50 / 0.04);
+  --shadow-elevated: 0 4px 16px rgb(37 45 50 / 0.08), 0 12px 32px rgb(37 45 50 / 0.06);
+
+  --duration-fast: 150ms;
+  --duration-normal: 250ms;
+  --duration-slow: 400ms;
+  --duration-editorial: 800ms;
+
+  --ease-out: cubic-bezier(0.22, 1, 0.36, 1);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+
+  --header-height: 4.5rem;
+  --announcement-height: 2.5rem;
+}
+
+@theme inline {
+  --color-room-ink: var(--room-ink);
+  --color-homeiffy-teal: var(--homeiffy-teal);
+  --color-deep-olive: var(--deep-olive);
+  --color-clay-ember: var(--clay-ember);
+  --color-warm-mustard: var(--warm-mustard);
+  --color-soft-plum: var(--soft-plum);
+  --color-natural-oak: var(--natural-oak);
+  --color-canvas-cream: var(--canvas-cream);
+  --color-gallery-white: var(--gallery-white);
+  --color-soft-graphite: var(--soft-graphite);
+  --color-border-sand: var(--border-sand);
+
+  /* Compatibility aliases used by adapted components */
+  --color-night-ink: var(--room-ink);
+  --color-haven-blue: var(--homeiffy-teal);
+  --color-quiet-plum: var(--soft-plum);
+  --color-clay-rose: var(--clay-ember);
+  --color-moss-linen: var(--deep-olive);
+  --color-amber-light: var(--warm-mustard);
+  --color-pale-oak: var(--natural-oak);
+  --color-cloud-cream: var(--canvas-cream);
+  --color-soft-white: var(--gallery-white);
+  --color-graphite: var(--soft-graphite);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+
+  --font-sans: var(--font-body);
+  --font-display: var(--font-display);
+  --font-mono: var(--font-mono);
+
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-elevated: var(--shadow-elevated);
+}
+
+*,
+*::before,
+*::after {
+  border-color: var(--border);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  min-height: 100dvh;
+  background-color: var(--canvas-cream);
+  background-image:
+    radial-gradient(ellipse 120% 80% at 0% 0%, rgb(69 108 106 / 0.07) 0%, transparent 55%),
+    radial-gradient(ellipse 90% 60% at 100% 10%, rgb(183 109 85 / 0.05) 0%, transparent 50%),
+    radial-gradient(ellipse 80% 50% at 50% 100%, rgb(101 112 91 / 0.05) 0%, transparent 45%),
+    linear-gradient(180deg, var(--canvas-cream) 0%, var(--gallery-white) 40%, var(--canvas-cream) 100%);
+  color: var(--foreground);
+  font-family: var(--font-body), system-ui, sans-serif;
+  font-feature-settings: "kern" 1, "liga" 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+::selection {
+  background: rgb(69 108 106 / 0.18);
+  color: var(--room-ink);
+}
+
+:focus-visible {
+  outline: 2px solid var(--homeiffy-teal);
+  outline-offset: 2px;
+}
+
+.skip-link {
+  position: absolute;
+  left: 1rem;
+  top: -100%;
+  z-index: 100;
+  border-radius: var(--radius-md);
+  background: var(--room-ink);
+  color: var(--gallery-white);
+  padding: 0.75rem 1rem;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+.font-display {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+}
+
+.font-mono-dims,
+.font-mono-data {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.01em;
+}
+
+.product-card {
+  display: grid;
+  grid-template-rows:
+    auto
+    minmax(3rem, 3rem)
+    minmax(1.5rem, 1.5rem)
+    minmax(1.5rem, 1.5rem)
+    minmax(2rem, 2rem)
+    auto;
+  height: 100%;
+}
+
+.product-image-box {
+  aspect-ratio: 1 / 1;
+  width: 100%;
+  overflow: hidden;
+  background: var(--gallery-white);
+}
+
+.product-image-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.line-clamp-2-safe {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  min-height: 3rem;
+}
+
+.editorial-grid {
+  background-image:
+    linear-gradient(to right, rgb(217 209 197 / 0.35) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(217 209 197 / 0.35) 1px, transparent 1px);
+  background-size: 48px 48px;
+}
+
+.floorplan-line {
+  stroke: var(--warm-mustard);
+  stroke-width: 1.5;
+  fill: none;
+  opacity: 0.85;
+}
+
+.prose-homeiffy h2 {
+  font-family: var(--font-display), ui-serif, Georgia, serif;
+  color: var(--room-ink);
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+.prose-homeiffy p,
+.prose-homeiffy li {
+  color: var(--soft-graphite);
+  line-height: 1.7;
+}
+
+.prose-homeiffy a {
+  color: var(--homeiffy-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}

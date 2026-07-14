@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 72" fill="none" role="img" aria-label="Homeiffy wordmark for light backgrounds">
+  <title>Homeiffy  light theme</title>
+  <g fill="#252A34">
+    <path d="M0 52V10h20c12.4 0 20 7.2 20 21s-7.6 21-20 21H8v11H0V52zm8-11h11.5c6.8 0 11-4 11-10s-4.2-10-11-10H8v20z"/>
+    <path d="M46 52V10h18c9.8 0 15.5 5.2 15.5 13.2 0 5.8-3.2 10-8.5 12.2L82 52h-9.5l-9.2-14.5H54v14.5H46zm8-22.5h9.8c4.5 0 7-2.5 7-6.2s-2.5-6.3-7-6.3H54v12.5z"/>
+    <path d="M88 52V10h28v8H96v10h17v7H96v9h20v8H88z"/>
+    <path d="M124 52l-4.5-13h-19L96 52h-8.5l17.5-42h9.5L132 52H124zm-11.5-20h13L116.5 22 112.5 32z"/>
+    <path fill="#4A6170" d="M104 36.5h24v2.5H104z" opacity="0.55"/>
+    <path d="M140 52V10h8l14 28 14-28h8v42h-8V28l-13.5 24h-3L146 28v24h-6z"/>
+    <path d="M196 52V10h8v16h24V10h8v42h-8V34h-24v18h-8z"/>
+    <path d="M244 52l-4.5-13h-19l-4.5 13h-8.5l17.5-42h9.5L252.5 52H244zm-11.5-20h13l-4-10-4 10z"/>
+    <path fill="#4A6170" d="M224 36.5h24v2.5H224z" opacity="0.55"/>
+    <path d="M260 52l16-42h7.5l16 42h-8.5l-3.5-11h-16l-3.5 11H260zm12.5-18h11l-5.5-17-5.5 17z"/>
+    <path d="M308 52V10h28v8h-20v10h17v7h-17v9h20v8H308z"/>
+    <path d="M348 52V10h8v26.5l22-26.5h8v42h-8V25.5L356 52h-8z"/>
+  </g>
+  <path stroke="#B97867" stroke-width="1.75" stroke-linecap="round" d="M4 58.5c42 4 86 4 128 0s86-4 128 0s86 4 128 0"/>
+  <circle cx="260" cy="58.5" r="1.75" fill="#70566D"/>
+</svg>

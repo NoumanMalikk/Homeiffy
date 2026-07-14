@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="none" role="img" aria-label="Homeiffy DH monogram">
+  <title>Homeiffy monogram</title>
+  <!-- D: arched doorway boundary -->
+  <path fill="#252A34" d="M8 56V8h14c11.5 0 18.5 6.8 18.5 18.5S33.5 45 22 45H16v11H8zm8-19h6.5c5.2 0 8.5-3.1 8.5-8.5S27.7 20 22.5 20H16v17z"/>
+  <!-- H: furniture plane crossbar extends into interior -->
+  <path fill="#252A34" d="M36 56V8h8v18h14v-8h8v38h-8V34H44v22h-8z"/>
+  <!-- Interior negative space accent -->
+  <path fill="#4A6170" d="M16 38h18v3H16z" opacity="0.35"/>
+  <!-- Soft horizon -->
+  <path stroke="#B97867" stroke-width="1.5" stroke-linecap="round" d="M6 60.5c8.5 2.5 17 2.5 26 0s17-2.5 26 0"/>
+</svg>

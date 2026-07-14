@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 96" role="img" aria-label="Homeiffy">
+  <rect width="480" height="96" fill="none"/>
+  <!-- doorway / plane monogram -->
+  <g transform="translate(8,16)">
+    <rect x="0" y="8" width="10" height="48" fill="#F6F1E8"/>
+    <rect x="38" y="8" width="10" height="48" fill="#F6F1E8"/>
+    <rect x="0" y="28" width="48" height="8" fill="#F6F1E8"/>
+    <rect x="14" y="40" width="20" height="16" fill="none" stroke="#C69E51" stroke-width="2"/>
+  </g>
+  <text x="78" y="62" font-family="Georgia, 'Times New Roman', serif" font-size="42" font-weight="600" letter-spacing="6" fill="#F6F1E8">HOMEIFFY</text>
+</svg>

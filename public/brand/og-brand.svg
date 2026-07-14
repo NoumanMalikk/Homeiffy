@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" fill="none" role="img" aria-label="Homeiffy  Furniture for every rhythm of home">
+  <title>Homeiffy Open Graph</title>
+  <rect width="1200" height="630" fill="#252A34"/>
+  <!-- Soft horizon gradient band -->
+  <path fill="#4A6170" opacity="0.25" d="M0 420 Q600 480 1200 420 V630 H0 Z"/>
+  <path stroke="#70566D" stroke-width="2" opacity="0.4" d="M0 440 Q600 500 1200 440"/>
+  <!-- Wordmark centered -->
+  <g transform="translate(340 210) scale(1.05)">
+    <g fill="#F6F1E9">
+      <path d="M0 52V10h20c12.4 0 20 7.2 20 21s-7.6 21-20 21H8v11H0V52zm8-11h11.5c6.8 0 11-4 11-10s-4.2-10-11-10H8v20z"/>
+      <path d="M46 52V10h18c9.8 0 15.5 5.2 15.5 13.2 0 5.8-3.2 10-8.5 12.2L82 52h-9.5l-9.2-14.5H54v14.5H46zm8-22.5h9.8c4.5 0 7-2.5 7-6.2s-2.5-6.3-7-6.3H54v12.5z"/>
+      <path d="M88 52V10h28v8H96v10h17v7H96v9h20v8H88z"/>
+      <path d="M124 52l-4.5-13h-19L96 52h-8.5l17.5-42h9.5L132 52H124zm-11.5-20h13L116.5 22 112.5 32z"/>
+      <path fill="#C9B79C" d="M104 36.5h24v2.5H104z" opacity="0.6"/>
+      <path d="M140 52V10h8l14 28 14-28h8v42h-8V28l-13.5 24h-3L146 28v24h-6z"/>
+      <path d="M196 52V10h8v16h24V10h8v42h-8V34h-24v18h-8z"/>
+      <path d="M244 52l-4.5-13h-19l-4.5 13h-8.5l17.5-42h9.5L252.5 52H244zm-11.5-20h13l-4-10-4 10z"/>
+      <path fill="#C9B79C" d="M224 36.5h24v2.5H224z" opacity="0.6"/>
+      <path d="M260 52l16-42h7.5l16 42h-8.5l-3.5-11h-16l-3.5 11H260zm12.5-18h11l-5.5-17-5.5 17z"/>
+      <path d="M308 52V10h28v8h-20v10h17v7h-17v9h20v8H308z"/>
+      <path d="M348 52V10h8v26.5l22-26.5h8v42h-8V25.5L356 52h-8z"/>
+    </g>
+    <path stroke="#D5A752" stroke-width="1.75" stroke-linecap="round" d="M4 58.5c42 4 86 4 128 0s86-4 128 0s86 4 128 0"/>
+  </g>
+  <!-- Taglines -->
+  <text x="600" y="340" fill="#C9B79C" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="28" font-weight="400" letter-spacing="0.12em" text-anchor="middle">Furniture for every rhythm of home</text>
+  <text x="600" y="390" fill="#8E9C86" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="400" letter-spacing="0.18em" text-anchor="middle">Furniture that earns its space.</text>
+  <!-- Monogram watermark -->
+  <g transform="translate(1040 480) scale(0.9)" opacity="0.15">
+    <path fill="#F6F1E9" d="M8 56V8h14c11.5 0 18.5 6.8 18.5 18.5S33.5 45 22 45H16v11H8zm8-19h6.5c5.2 0 8.5-3.1 8.5-8.5S27.7 20 22.5 20H16v17z"/>
+    <path fill="#F6F1E9" d="M36 56V8h8v18h14v-8h8v38h-8V34H44v22h-8z"/>
+  </g>
+</svg>

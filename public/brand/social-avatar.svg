@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" fill="none" role="img" aria-label="Homeiffy">
+  <title>Homeiffy social avatar</title>
+  <rect width="400" height="400" fill="#F6F1E9"/>
+  <!-- Subtle architectural frame -->
+  <rect x="24" y="24" width="352" height="352" rx="4" stroke="#D8D0C4" stroke-width="2" fill="none"/>
+  <path stroke="#B97867" stroke-width="1.5" stroke-linecap="round" opacity="0.6" d="M48 320 Q200 340 352 320"/>
+  <!-- Monogram -->
+  <g transform="translate(120 108) scale(2.5)">
+    <path fill="#252A34" d="M8 56V8h14c11.5 0 18.5 6.8 18.5 18.5S33.5 45 22 45H16v11H8zm8-19h6.5c5.2 0 8.5-3.1 8.5-8.5S27.7 20 22.5 20H16v17z"/>
+    <path fill="#252A34" d="M36 56V8h8v18h14v-8h8v38h-8V34H44v22h-8z"/>
+    <path fill="#4A6170" d="M16 38h18v3H16z" opacity="0.35"/>
+    <path stroke="#B97867" stroke-width="1.5" stroke-linecap="round" d="M6 60.5c8.5 2.5 17 2.5 26 0s17-2.5 26 0"/>
+  </g>
+  <!-- Wordmark below -->
+  <text x="200" y="310" fill="#252A34" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="22" font-weight="600" letter-spacing="0.28em" text-anchor="middle">DREAMHAVEN</text>
+  <text x="200" y="345" fill="#62666D" font-family="system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="11" font-weight="400" letter-spacing="0.14em" text-anchor="middle">FURNITURE FOR EVERYDAY LIVING</text>
+</svg>
