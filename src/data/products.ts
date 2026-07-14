@@ -89,14 +89,14 @@ function catalogGallery(slug: string, title: string): ProductImage[] {
   return [
     {
       src: `/products/${slug}/main.webp`,
-      alt: `${title} - front catalog view on white background`,
+      alt: `${title} - studio catalog front view`,
       type: 'main',
       note:
-        'Catalog front image on white background for development display. Physical product photography must still be verified against supplier SKU, dimensions, finish and upholstery before production launch.',
+        'Catalog studio image for development and staging display. Physical product photography must still be verified against supplier SKU, dimensions, finish and upholstery before production launch.',
     },
     {
       src: `/products/${slug}/front.webp`,
-      alt: `${title} - alternate front catalog view`,
+      alt: `${title} - alternate studio catalog view`,
       type: 'front',
       note:
         'Catalog photography pending physical product inspection and supplier media verification.',

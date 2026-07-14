@@ -35,7 +35,7 @@ const SHARED = {
   productionStatus: 'pending' as const,
   productionApproval: false as const,
   notes:
-    'Catalog image present for storefront display. Exact manufacturer/supplier photography verification required before production purchase enablement.',
+    'Dark-studio catalog imagery for staging display. Exact manufacturer/supplier photography verification required before production purchase enablement.',
 };
 
 export const imageCredits: ImageCreditRecord[] = [
