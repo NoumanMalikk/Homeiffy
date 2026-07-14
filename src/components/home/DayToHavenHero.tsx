@@ -23,7 +23,7 @@ export function SignatureHero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgb(183_109_85_/_0.12),_transparent_55%),radial-gradient(ellipse_at_bottom_left,_rgb(69_108_106_/_0.12),_transparent_50%)]"
+        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgb(183_109_85_/_0.12),_transparent_55%),radial-gradient(ellipse_at_bottom_left,_rgb(15_107_99_/_0.12),_transparent_50%)]"
       />
       <div
         aria-hidden

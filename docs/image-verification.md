@@ -27,8 +27,8 @@ Do not hotlink images permanently. Store approved files locally under `public/pr
 
 ## Status values
 
-- `pending` — catalog display only; production purchase blocked
-- `verified` — exact match confirmed and permission documented
-- `missing` / `blocked` — remove from purchase paths
+- `pending`: catalog display only; production purchase blocked
+- `verified`: exact match confirmed and permission documented
+- `missing` / `blocked`: remove from purchase paths
 
 Set `imageVerificationStatus: 'verified'` only after human review against the physical product or approved supplier media.

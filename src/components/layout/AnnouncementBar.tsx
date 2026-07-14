@@ -31,7 +31,7 @@ export function AnnouncementBar() {
 
   return (
     <div
-      className="relative z-40 flex h-10 items-center justify-center border-b border-border-sand/60 bg-[rgb(69_108_106/0.09)] px-4 text-sm text-room-ink"
+      className="relative z-40 flex h-10 items-center justify-center border-b border-border-sand/60 bg-[rgb(15_107_99/0.09)] px-4 text-sm text-room-ink"
       role="region"
       aria-label="Site announcements"
     >

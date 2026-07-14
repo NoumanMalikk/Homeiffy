@@ -35,7 +35,7 @@ export default function RoomBuilderPage() {
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-soft-graphite">
             Select an anchor product, secondary seating, a table, storage and a
             flexible accent. Combined price and approximate footprint are shown
-            for planning only — each product is added to the cart as an
+            for planning only. Each product is added to the cart as an
             individual SKU with no bundle discount.
           </p>
         </header>

@@ -11,37 +11,37 @@ const roomTiles = [
     title: 'Living Room',
     href: '/collections/living-room',
     sku: 'HMF-LIV-001',
-    tone: 'bg-[#456C6A]/10',
+    tone: 'bg-[#0F6B63]/10',
   },
   {
     title: 'Bedroom',
     href: '/collections/bedroom',
     sku: 'HMF-BED-001',
-    tone: 'bg-[#766275]/10',
+    tone: 'bg-[#554E5C]/10',
   },
   {
     title: 'Dining Room',
     href: '/collections/dining',
     sku: 'HMF-DIN-001',
-    tone: 'bg-[#B76D55]/10',
+    tone: 'bg-[#E85D4C]/10',
   },
   {
     title: 'Entryway',
     href: '/collections/entryway',
     sku: 'HMF-ENT-001',
-    tone: 'bg-[#65705B]/12',
+    tone: 'bg-[#3D5548]/12',
   },
   {
     title: 'Home Office',
     href: '/collections/home-office',
     sku: 'HMF-OFF-001',
-    tone: 'bg-[#C69E51]/12',
+    tone: 'bg-[#B8793A]/12',
   },
   {
     title: 'Flexible Space',
     href: '/collections/storage',
     sku: 'HMF-STO-001',
-    tone: 'bg-[#BCA98C]/18',
+    tone: 'bg-[#C4B7A0]/18',
   },
 ] as const;
 

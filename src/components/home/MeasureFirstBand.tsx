@@ -16,7 +16,7 @@ export function MeasureFirstBand() {
             </h2>
             <p className="mt-2 text-sm leading-relaxed text-graphite sm:mt-3 sm:text-base">
               Compare package dimensions with doorway, hallway, stair and elevator
-              clearance. This tool provides an estimate only — confirm measurements
+              clearance. This tool provides an estimate only. Confirm measurements
               before ordering.
             </p>
           </div>

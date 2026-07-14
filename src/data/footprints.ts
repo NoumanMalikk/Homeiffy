@@ -5,7 +5,7 @@ export interface FootprintCategory {
   shortLabel: string;
   description: string;
   href: string;
-  /** Non-guaranteed guidance for filtering — confirm measurements before ordering. */
+  /** Non-guaranteed guidance for filtering. Confirm measurements before ordering. */
   guidance: string;
   diagram: 'compact' | 'narrow' | 'standard' | 'wide' | 'tall' | 'expandable' | 'modular' | 'wall-adjacent';
 }

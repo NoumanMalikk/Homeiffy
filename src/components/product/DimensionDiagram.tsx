@@ -92,7 +92,7 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
           y="40"
           width={width * scale}
           height={height * scale}
-          fill="#F6F1E9"
+          fill="#ECEAE4"
           stroke="#4A6170"
           strokeWidth="2"
         />
@@ -173,7 +173,7 @@ function DimensionLine({
 
   return (
     <g aria-hidden="true">
-      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#252A34" strokeWidth="1.5" />
+      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#12161C" strokeWidth="1.5" />
       <text
         x={vertical ? midX - 10 : midX}
         y={vertical ? midY : midY - 6}

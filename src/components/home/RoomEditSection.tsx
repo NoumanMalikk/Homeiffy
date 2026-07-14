@@ -32,7 +32,7 @@ export function RoomEditSection({
     <section
       aria-labelledby={`${eyebrow.replace(/\s+/g, '-').toLowerCase()}-edit-heading`}
       className={`border-b border-border-sand/50 py-16 sm:py-20 ${
-        accent === 'olive' ? 'bg-[#65705B]/[0.04]' : ''
+        accent === 'olive' ? 'bg-[#3D5548]/[0.04]' : ''
       }`}
     >
       <Container>
@@ -147,7 +147,7 @@ export function TransformingFurniture() {
           id="transforming-furniture-heading"
           eyebrow="Transforming furniture"
           title="Pieces that change how a room works"
-          description="Drop-leaf tables, lift-top storage, nesting sets, foldaway desks and modular seats — only where the mechanism is listed in the product record."
+          description="Drop-leaf tables, lift-top storage, nesting sets, foldaway desks and modular seats, only where the mechanism is listed in the product record."
         />
         <div className="mt-10">
           <ProductGrid>
@@ -167,12 +167,12 @@ export function RoomFitPreview() {
   return (
     <section
       aria-labelledby="room-fit-preview-heading"
-      className="border-b border-border-sand/50 bg-[#252D32] py-16 text-[#F6F1E8] sm:py-20"
+      className="border-b border-border-sand/50 bg-[#12161C] py-16 text-[#ECEAE4] sm:py-20"
     >
       <Container>
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr] lg:items-center">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#C69E51]">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#B8793A]">
               Room-fit finder
             </p>
             <h2
@@ -184,12 +184,12 @@ export function RoomFitPreview() {
             <p className="mt-4 max-w-xl text-base leading-relaxed text-[#D9D1C5]">
               Enter room and delivery-route measurements to see catalog products
               whose configured dimensions fit within your inputs. Results are
-              estimates only — confirm the complete room and delivery route before
+              estimates only. Confirm the complete room and delivery route before
               ordering.
             </p>
             <Link
               href="/room-fit-finder"
-              className="mt-8 inline-flex rounded-md bg-[#456C6A] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#3a5b59]"
+              className="mt-8 inline-flex rounded-md bg-[#0F6B63] px-5 py-3 text-sm font-semibold text-white transition hover:bg-[#0c5751]"
             >
               Open room-fit finder
             </Link>
@@ -200,7 +200,7 @@ export function RoomFitPreview() {
             <p>3. Enter doorway width</p>
             <p>4. Note stairs or elevator</p>
             <p>5. Prefer storage or expandable?</p>
-            <p className="mt-4 text-[#C69E51]">→ Matching catalog products</p>
+            <p className="mt-4 text-[#B8793A]">→ Matching catalog products</p>
           </div>
         </div>
       </Container>

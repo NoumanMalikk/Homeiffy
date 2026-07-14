@@ -9,14 +9,14 @@ export const dailyMoments: DailyMoment[] = [
     slug: 'arrive',
     title: 'Arrive',
     shortCopy: 'Furniture for entries and transition zones.',
-    accentColor: '#65705B',
+    accentColor: '#3D5548',
     productSkus: ['HMF-ENT-001', 'HMF-ENT-002', 'HMF-ENT-003', 'HMF-ENT-004'],
   },
   {
     slug: 'gather',
     title: 'Gather',
     shortCopy: 'Furniture for meals and conversation.',
-    accentColor: '#456C6A',
+    accentColor: '#0F6B63',
     productSkus: [
       'HMF-DIN-001',
       'HMF-DIN-002',
@@ -31,14 +31,14 @@ export const dailyMoments: DailyMoment[] = [
     slug: 'focus',
     title: 'Focus',
     shortCopy: 'Furniture for reading, writing and working at home.',
-    accentColor: '#C69E51',
+    accentColor: '#B8793A',
     productSkus: ['HMF-OFF-001', 'HMF-STO-001', 'HMF-LIV-005', 'HMF-ENT-001'],
   },
   {
     slug: 'unwind',
     title: 'Unwind',
     shortCopy: 'Furniture for lounge and living areas.',
-    accentColor: '#B76D55',
+    accentColor: '#E85D4C',
     productSkus: [
       'HMF-LIV-001',
       'HMF-LIV-002',
@@ -55,7 +55,7 @@ export const dailyMoments: DailyMoment[] = [
     slug: 'restore',
     title: 'Restore',
     shortCopy: 'Furniture for bedrooms and quiet rooms.',
-    accentColor: '#766275',
+    accentColor: '#554E5C',
     productSkus: [
       'HMF-BED-001',
       'HMF-BED-002',
@@ -69,7 +69,7 @@ export const dailyMoments: DailyMoment[] = [
     slug: 'reset',
     title: 'Reset',
     shortCopy: 'Furniture that helps a room change function.',
-    accentColor: '#BCA98C',
+    accentColor: '#C4B7A0',
     productSkus: [
       'HMF-DIN-002',
       'HMF-LIV-007',

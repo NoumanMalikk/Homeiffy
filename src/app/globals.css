@@ -1,18 +1,18 @@
 @import "tailwindcss";
 
-/* ─── Homeiffy brand palette ─── */
+/* ─── Homeiffy: Carbon · Celadon · Lacquer ─── */
 :root {
-  --room-ink: #252d32;
-  --homeiffy-teal: #456c6a;
-  --deep-olive: #65705b;
-  --clay-ember: #b76d55;
-  --warm-mustard: #c69e51;
-  --soft-plum: #766275;
-  --natural-oak: #bca98c;
-  --canvas-cream: #f6f1e8;
+  --room-ink: #12161c;
+  --homeiffy-teal: #0f6b63;
+  --deep-olive: #3d5548;
+  --clay-ember: #e85d4c;
+  --warm-mustard: #b8793a;
+  --soft-plum: #554e5c;
+  --natural-oak: #c4b7a0;
+  --canvas-cream: #eceae4;
   --gallery-white: #ffffff;
-  --soft-graphite: #656a6c;
-  --border-sand: #d9d1c5;
+  --soft-graphite: #5c6369;
+  --border-sand: #cfcbc3;
 
   --background: var(--canvas-cream);
   --foreground: var(--room-ink);
@@ -22,15 +22,15 @@
   --ring: var(--homeiffy-teal);
   --accent: var(--homeiffy-teal);
   --accent-foreground: var(--gallery-white);
-  --destructive: #9b4d4d;
+  --destructive: #b33a3a;
 
   --radius-sm: 0.25rem;
   --radius-md: 0.5rem;
   --radius-lg: 0.75rem;
   --radius-xl: 1rem;
 
-  --shadow-soft: 0 1px 3px rgb(37 45 50 / 0.06), 0 4px 12px rgb(37 45 50 / 0.04);
-  --shadow-elevated: 0 4px 16px rgb(37 45 50 / 0.08), 0 12px 32px rgb(37 45 50 / 0.06);
+  --shadow-soft: 0 1px 3px rgb(18 22 28 / 0.07), 0 4px 14px rgb(15 107 99 / 0.05);
+  --shadow-elevated: 0 8px 24px rgb(18 22 28 / 0.1), 0 16px 40px rgb(15 107 99 / 0.06);
 
   --duration-fast: 150ms;
   --duration-normal: 250ms;
@@ -57,7 +57,6 @@
   --color-soft-graphite: var(--soft-graphite);
   --color-border-sand: var(--border-sand);
 
-  /* Compatibility aliases used by adapted components */
   --color-night-ink: var(--room-ink);
   --color-haven-blue: var(--homeiffy-teal);
   --color-quiet-plum: var(--soft-plum);
@@ -120,10 +119,10 @@ body {
   min-height: 100dvh;
   background-color: var(--canvas-cream);
   background-image:
-    radial-gradient(ellipse 120% 80% at 0% 0%, rgb(69 108 106 / 0.07) 0%, transparent 55%),
-    radial-gradient(ellipse 90% 60% at 100% 10%, rgb(183 109 85 / 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse 80% 50% at 50% 100%, rgb(101 112 91 / 0.05) 0%, transparent 45%),
-    linear-gradient(180deg, var(--canvas-cream) 0%, var(--gallery-white) 40%, var(--canvas-cream) 100%);
+    radial-gradient(ellipse 110% 70% at 0% -10%, rgb(15 107 99 / 0.11) 0%, transparent 52%),
+    radial-gradient(ellipse 80% 55% at 100% 0%, rgb(232 93 76 / 0.07) 0%, transparent 48%),
+    radial-gradient(ellipse 70% 45% at 70% 100%, rgb(61 85 72 / 0.08) 0%, transparent 50%),
+    linear-gradient(180deg, var(--canvas-cream) 0%, var(--gallery-white) 42%, var(--canvas-cream) 100%);
   color: var(--foreground);
   font-family: var(--font-body), system-ui, sans-serif;
   font-feature-settings: "kern" 1, "liga" 1;
@@ -132,7 +131,7 @@ body {
 }
 
 ::selection {
-  background: rgb(69 108 106 / 0.18);
+  background: rgb(15 107 99 / 0.2);
   color: var(--room-ink);
 }
 
@@ -203,8 +202,8 @@ body {
 
 .editorial-grid {
   background-image:
-    linear-gradient(to right, rgb(217 209 197 / 0.35) 1px, transparent 1px),
-    linear-gradient(to bottom, rgb(217 209 197 / 0.35) 1px, transparent 1px);
+    linear-gradient(to right, rgb(207 203 195 / 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgb(207 203 195 / 0.4) 1px, transparent 1px);
   background-size: 48px 48px;
 }
 
@@ -212,7 +211,7 @@ body {
   stroke: var(--warm-mustard);
   stroke-width: 1.5;
   fill: none;
-  opacity: 0.85;
+  opacity: 0.9;
 }
 
 .prose-homeiffy h2 {

@@ -81,7 +81,7 @@ export async function sendOrderConfirmation(
     to: order.customer.email,
     subject: `Homeiffy order confirmation ${order.reference}`,
     html: [
-      `<div style="font-family:Georgia,serif;color:#252A34;max-width:560px;margin:0 auto;">`,
+      `<div style="font-family:Georgia,serif;color:#12161C;max-width:560px;margin:0 auto;">`,
       `<p style="margin:0 0 24px;background:#000;padding:16px;text-align:center;">`,
       `<img src="${logoUrl}" alt="Homeiffy Furniture" width="280" style="max-width:100%;height:auto;" />`,
       `</p>`,

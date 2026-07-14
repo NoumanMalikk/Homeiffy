@@ -2,7 +2,7 @@ import type { RoomCompatibilityGroup } from '@/lib/types';
 
 /**
  * Compatibility groupings for the room builder.
- * Each product remains an individual SKU — no bundle discounts.
+ * Each product remains an individual SKU. No bundle discounts.
  */
 export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
   {

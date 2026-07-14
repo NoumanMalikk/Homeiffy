@@ -15,7 +15,7 @@ export default function AboutPage() {
   return (
     <InfoPageLayout
       title="About Homeiffy"
-      description="Furniture that earns its space — with clear dimensions and exact product records before checkout."
+      description="Furniture that earns its space, with clear dimensions and exact product records before checkout."
       breadcrumbs={[
         { label: 'Home', href: '/' },
         { label: 'About', href: '/about' },

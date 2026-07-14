@@ -7,57 +7,57 @@ const PMS = 'Pending manufacturing specification' as const;
 
 /**
  * Catalog color references for development display.
- * Hex labels are visual palette anchors only — finish and upholstery
+ * Hex labels are visual palette anchors only (finish and upholstery
  * composition remain subject to supplier confirmation.
  */
 export const BRAND_COLORWAYS = {
   canvasCream: {
     id: 'canvas-cream',
-    label: 'Canvas Cream',
+    label: 'Limestone',
     type: 'upholstery' as const,
-    hex: '#F6F1E8',
+    hex: '#ECEAE4',
   },
   clayEmber: {
     id: 'clay-ember',
-    label: 'Clay Ember',
+    label: 'Lacquer',
     type: 'upholstery' as const,
-    hex: '#B76D55',
+    hex: '#E85D4C',
   },
   deepOlive: {
     id: 'deep-olive',
-    label: 'Deep Olive',
+    label: 'Pine',
     type: 'upholstery' as const,
-    hex: '#65705B',
+    hex: '#3D5548',
   },
   softPlum: {
     id: 'soft-plum',
-    label: 'Soft Plum',
+    label: 'Evening Ash',
     type: 'upholstery' as const,
-    hex: '#766275',
+    hex: '#554E5C',
   },
   homeiffyTeal: {
     id: 'homeiffy-teal',
-    label: 'Homeiffy Teal',
+    label: 'Celadon',
     type: 'finish' as const,
-    hex: '#456C6A',
+    hex: '#0F6B63',
   },
   naturalOak: {
     id: 'natural-oak',
-    label: 'Natural Oak',
+    label: 'Flax Oak',
     type: 'finish' as const,
-    hex: '#BCA98C',
+    hex: '#C4B7A0',
   },
   warmMustard: {
     id: 'warm-mustard',
-    label: 'Warm Mustard',
+    label: 'Copper',
     type: 'finish' as const,
-    hex: '#C69E51',
+    hex: '#B8793A',
   },
   roomInk: {
     id: 'room-ink',
-    label: 'Room Ink',
+    label: 'Carbon',
     type: 'finish' as const,
-    hex: '#252D32',
+    hex: '#12161C',
   },
   softGraphite: {
     id: 'soft-graphite',
@@ -75,13 +75,13 @@ export const BRAND_COLORWAYS = {
     id: 'natural-oak-room-ink-frame',
     label: 'Natural Oak with Room Ink frame',
     type: 'finish' as const,
-    hex: '#BCA98C',
+    hex: '#C4B7A0',
   },
   canvasCreamDeepOliveAccents: {
     id: 'canvas-cream-deep-olive-accents',
     label: 'Canvas Cream with Deep Olive accents',
     type: 'upholstery' as const,
-    hex: '#F6F1E8',
+    hex: '#ECEAE4',
   },
 } satisfies Record<string, Colorway>;
 
@@ -89,14 +89,14 @@ function catalogGallery(slug: string, title: string): ProductImage[] {
   return [
     {
       src: `/products/${slug}/main.webp`,
-      alt: `${title} — front catalog view on white background`,
+      alt: `${title} - front catalog view on white background`,
       type: 'main',
       note:
         'Catalog front image on white background for development display. Physical product photography must still be verified against supplier SKU, dimensions, finish and upholstery before production launch.',
     },
     {
       src: `/products/${slug}/front.webp`,
-      alt: `${title} — alternate front catalog view`,
+      alt: `${title} - alternate front catalog view`,
       type: 'front',
       note:
         'Catalog photography pending physical product inspection and supplier media verification.',
@@ -648,7 +648,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: VR,
     extensionMechanism: null,
-    storageType: 'Lift-top or hinged storage — mechanism pending physical product inspection',
+    storageType: 'Lift-top or hinged storage (mechanism pending physical product inspection)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -741,8 +741,8 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism:
-      'Lift-top mechanism — travel, soft-close and load rating pending supplier documentation',
-    storageType: 'Interior compartment under lift-top surface — capacity pending verification',
+      'Lift-top mechanism (travel, soft-close and load rating pending supplier documentation)',
+    storageType: 'Interior compartment under lift-top surface (capacity pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -926,7 +926,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism: null,
-    storageType: 'Media cabinet storage — door and shelf layout pending verification',
+    storageType: 'Media cabinet storage (door and shelf layout pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -1109,7 +1109,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism: null,
-    storageType: 'Under-bed storage drawers or lift storage — configuration pending verification',
+    storageType: 'Under-bed storage drawers or lift storage (configuration pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -1472,7 +1472,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism: null,
-    storageType: 'Two-door wardrobe with hanging and shelf space — interior layout pending verification',
+    storageType: 'Two-door wardrobe with hanging and shelf space (interior layout pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: 2,
@@ -1653,7 +1653,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: VR,
     extensionMechanism:
-      'Drop-leaf or extendable leaf mechanism — closed and extended dimensions pending supplier documentation',
+      'Drop-leaf or extendable leaf mechanism (closed and extended dimensions pending supplier documentation)',
     storageType: null,
     drawerCount: null,
     shelfCount: null,
@@ -1923,7 +1923,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism: null,
-    storageType: 'Sideboard cabinet and drawer storage — interior layout pending verification',
+    storageType: 'Sideboard cabinet and drawer storage (interior layout pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -2197,7 +2197,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: VR,
     extensionMechanism: null,
-    storageType: 'Upholstered bench with internal storage — lid or drawer mechanism pending verification',
+    storageType: 'Upholstered bench with internal storage (lid or drawer mechanism pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -2290,7 +2290,7 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: VR,
     extensionMechanism: null,
-    storageType: 'Hall tree with bench seating, hooks and upper shelf — configuration pending verification',
+    storageType: 'Hall tree with bench seating, hooks and upper shelf (configuration pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,
@@ -2487,8 +2487,8 @@ const productsList: Product[] = [
     weightCapacity: VR,
     seatingCapacity: null,
     extensionMechanism:
-      'Foldaway or fold-down work surface — open and closed footprints pending supplier documentation',
-    storageType: 'Compact desk storage when present — configuration pending verification',
+      'Foldaway or fold-down work surface (open and closed footprints pending supplier documentation)',
+    storageType: 'Compact desk storage when present (configuration pending verification)',
     drawerCount: null,
     shelfCount: null,
     doorCount: null,

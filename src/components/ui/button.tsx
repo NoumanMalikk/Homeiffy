@@ -11,11 +11,11 @@ const buttonVariants = cva(
         primary:
           'bg-night-ink text-cloud-cream hover:bg-night-ink/90 active:bg-night-ink/95',
         secondary:
-          'bg-haven-blue text-soft-white hover:bg-haven-blue/90 active:bg-haven-blue/95',
+          'bg-haven-blue text-soft-white hover:bg-haven-blue/90 active:bg-haven-blue/95 shadow-soft',
         ghost:
           'text-night-ink hover:bg-border-sand/60 active:bg-border-sand/80',
         outline:
-          'border border-border-sand bg-transparent text-night-ink hover:bg-cloud-cream active:bg-border-sand/40',
+          'border border-night-ink/15 bg-transparent text-night-ink hover:border-haven-blue/50 hover:bg-haven-blue/5 active:bg-border-sand/40',
         link: 'text-haven-blue underline-offset-4 hover:underline p-0 h-auto min-h-0 min-w-0',
       },
       size: {
