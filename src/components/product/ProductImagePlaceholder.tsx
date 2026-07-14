@@ -8,11 +8,11 @@ export function ProductImagePlaceholder({ className }: { className?: string }) {
   return (
     <div
       className={cn(
-        'flex aspect-square w-full items-center justify-center bg-white p-4 text-center',
+        'flex aspect-square w-full items-center justify-center bg-gradient-to-b from-wd-hover to-wd-black p-4 text-center',
         className,
       )}
     >
-      <p className="text-xs leading-relaxed text-graphite">
+      <p className="text-xs leading-relaxed text-wd-muted">
         Exact product image required
       </p>
     </div>
@@ -43,7 +43,7 @@ export function ProductCardImage({
   return (
     <div
       className={cn(
-        'relative aspect-square w-full overflow-hidden bg-white',
+        'product-image-box relative aspect-square w-full overflow-hidden bg-gradient-to-b from-[#242424] to-[#121212]',
         className,
       )}
     >
@@ -52,7 +52,7 @@ export function ProductCardImage({
         alt={alt}
         fill
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
-        className="object-contain p-4 transition-transform duration-300 group-hover:scale-[1.02]"
+        className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03] sm:p-4"
         priority={false}
       />
       {!verified ? (

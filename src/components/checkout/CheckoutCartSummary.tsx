@@ -39,10 +39,10 @@ function CartSummaryLine({ item }: { item: CartStoreItem }) {
     : null;
 
   return (
-    <li className="flex gap-3 border-b border-border-sand/70 pb-4 last:border-b-0 last:pb-0">
+    <li className="flex gap-3 border-b border-wd-line/70 pb-4 last:border-b-0 last:pb-0">
       <Link
         href={`/products/${item.slug}`}
-        className="relative size-20 shrink-0 overflow-hidden rounded-lg border border-border-sand bg-white sm:size-24"
+        className="relative size-20 shrink-0 overflow-hidden  border border-wd-line bg-gradient-to-b from-[#242424] to-[#121212] sm:size-24"
       >
         {imageSrc ? (
           <Image
@@ -53,7 +53,7 @@ function CartSummaryLine({ item }: { item: CartStoreItem }) {
             className="object-contain p-2"
           />
         ) : (
-          <span className="flex size-full items-center justify-center px-2 text-center text-[10px] text-graphite">
+          <span className="flex size-full items-center justify-center px-2 text-center text-[10px] text-wd-muted">
             Product image
           </span>
         )}
@@ -66,21 +66,21 @@ function CartSummaryLine({ item }: { item: CartStoreItem }) {
         >
           {item.title}
         </Link>
-        <p className="mt-1 font-mono-data text-xs text-graphite">{item.sku}</p>
+        <p className="mt-1 font-mono-data text-xs text-wd-muted">{item.sku}</p>
         {finish && finish !== '-' ? (
-          <p className="mt-1 text-xs text-graphite">Finish: {finish}</p>
+          <p className="mt-1 text-xs text-wd-muted">Finish: {finish}</p>
         ) : null}
         {upholstery && upholstery !== '-' ? (
-          <p className="text-xs text-graphite">Upholstery: {upholstery}</p>
+          <p className="text-xs text-wd-muted">Upholstery: {upholstery}</p>
         ) : null}
         <div className="mt-2 flex items-end justify-between gap-3">
-          <p className="text-xs text-graphite">Qty {item.quantity}</p>
+          <p className="text-xs text-wd-muted">Qty {item.quantity}</p>
           <div className="text-right">
             <p className="font-display text-sm font-medium text-night-ink sm:text-base">
               {formatPrice(lineTotal, storeConfig.currency)}
             </p>
             {item.quantity > 1 ? (
-              <p className="text-[11px] text-graphite">
+              <p className="text-[11px] text-wd-muted">
                 {formatPrice(item.unitPrice, storeConfig.currency)} each
               </p>
             ) : null}
@@ -106,14 +106,14 @@ export function CheckoutCartSummary({
     return (
       <aside
         className={cn(
-          'h-fit rounded-2xl border border-border-sand bg-soft-white p-5 shadow-soft',
+          'h-fit rounded-2xl border border-wd-line bg-wd-elevated p-5 shadow-soft',
           className,
         )}
       >
         <h2 className="font-display text-lg font-medium text-night-ink">
           Your cart
         </h2>
-        <p className="mt-3 text-sm text-graphite">No products in your cart yet.</p>
+        <p className="mt-3 text-sm text-wd-muted">No products in your cart yet.</p>
         <Link
           href="/shop"
           className="mt-4 inline-flex text-sm font-medium text-haven-blue hover:underline"
@@ -127,7 +127,7 @@ export function CheckoutCartSummary({
   return (
     <aside
       className={cn(
-        'h-fit rounded-2xl border border-border-sand bg-soft-white p-5 shadow-soft sm:p-6',
+        'h-fit rounded-2xl border border-wd-line bg-wd-elevated p-5 shadow-soft sm:p-6',
         className,
       )}
       aria-label="Order summary"
@@ -136,7 +136,7 @@ export function CheckoutCartSummary({
         <h2 className="font-display text-xl font-medium text-night-ink">
           Order summary
         </h2>
-        <p className="text-sm text-graphite">
+        <p className="text-sm text-wd-muted">
           {itemCount} {itemCount === 1 ? 'item' : 'items'}
         </p>
       </div>
@@ -148,18 +148,18 @@ export function CheckoutCartSummary({
       </ul>
 
       {showSubtotal ? (
-        <div className="mt-5 space-y-2 border-t border-border-sand pt-4">
+        <div className="mt-5 space-y-2 border-t border-wd-line pt-4">
           <div className="flex items-center justify-between gap-3 text-sm">
-            <span className="text-graphite">Subtotal</span>
+            <span className="text-wd-muted">Subtotal</span>
             <span className="font-medium text-night-ink">
               {formatPrice(subtotal, storeConfig.currency)}
             </span>
           </div>
           <div className="flex items-center justify-between gap-3 text-sm">
-            <span className="text-graphite">Shipping</span>
+            <span className="text-wd-muted">Shipping</span>
             <span className="text-night-ink">Calculated next</span>
           </div>
-          <div className="flex items-center justify-between gap-3 border-t border-border-sand/70 pt-3">
+          <div className="flex items-center justify-between gap-3 border-t border-wd-line/70 pt-3">
             <span className="font-display text-base font-medium text-night-ink">
               Total
             </span>
@@ -167,7 +167,7 @@ export function CheckoutCartSummary({
               {formatPrice(subtotal, storeConfig.currency)}
             </span>
           </div>
-          <p className="pt-1 text-xs leading-relaxed text-graphite">
+          <p className="pt-1 text-xs leading-relaxed text-wd-muted">
             Shipping and tax are calculated from destination and product size
             before payment.
           </p>

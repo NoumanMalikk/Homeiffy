@@ -85,7 +85,7 @@ export function FeaturedCategories() {
                         alt={image.alt}
                         fill
                         sizes="(max-width: 1024px) 50vw, 20vw"
-                        className="object-contain p-6 transition duration-500 group-hover:scale-[1.04]"
+                    className="object-contain p-5 transition duration-500 group-hover:scale-[1.04] drop-shadow-[0_18px_40px_rgba(0,0,0,0.55)]"
                       />
                     ) : null}
                     <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />

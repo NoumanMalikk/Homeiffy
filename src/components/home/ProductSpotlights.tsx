@@ -105,13 +105,13 @@ export function ProductSpotlights() {
                     View Product
                   </Link>
                 </div>
-                <div className="relative aspect-square bg-wd-elevated">
+                <div className="relative aspect-square bg-gradient-to-b from-[#242424] to-[#121212]">
                   <Image
                     src={image.src}
                     alt={image.alt}
                     fill
                     sizes="(max-width: 1024px) 100vw, 50vw"
-                    className="object-contain p-8 sm:p-12"
+                    className="object-contain p-6 sm:p-10 drop-shadow-[0_24px_50px_rgba(0,0,0,0.55)]"
                   />
                 </div>
               </div>

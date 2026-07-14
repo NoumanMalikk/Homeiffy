@@ -46,7 +46,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
 
   return (
     <div className="space-y-4">
-      <div className="relative overflow-hidden rounded-lg border border-border-sand bg-white">
+      <div className="relative overflow-hidden  border border-wd-line bg-gradient-to-b from-[#242424] to-[#121212]">
         <div ref={emblaRef} className="overflow-hidden">
           <div className="flex">
             {images.map((image, index) => (
@@ -70,7 +70,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
               type="button"
               variant="ghost"
               size="icon"
-              className="absolute left-2 top-1/2 -translate-y-1/2 bg-soft-white/90"
+              className="absolute left-2 top-1/2 -translate-y-1/2 bg-wd-elevated/90"
               aria-label="Previous image"
               onClick={scrollPrev}
             >
@@ -80,7 +80,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
               type="button"
               variant="ghost"
               size="icon"
-              className="absolute right-2 top-1/2 -translate-y-1/2 bg-soft-white/90"
+              className="absolute right-2 top-1/2 -translate-y-1/2 bg-wd-elevated/90"
               aria-label="Next image"
               onClick={scrollNext}
             >
@@ -104,10 +104,10 @@ export function ProductGallery({ product }: ProductGalleryProps) {
               aria-selected={index === selectedIndex}
               aria-label={image.alt}
               className={cn(
-                'relative size-16 overflow-hidden rounded-md border bg-white',
+                'relative size-16 overflow-hidden border border-wd-line bg-[#1a1a1a]',
                 index === selectedIndex
-                  ? 'border-haven-blue ring-2 ring-haven-blue/30'
-                  : 'border-border-sand',
+                  ? 'border-wd-accent ring-2 ring-wd-accent/30'
+                  : 'border-wd-line',
               )}
               onClick={() => {
                 setSelectedIndex(index);
@@ -136,7 +136,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
           className="fixed inset-0 z-50 m-0 flex max-h-none max-w-none items-center justify-center bg-night-ink/80 p-4 backdrop:bg-night-ink/80"
           aria-label={`Zoom view: ${activeImage?.alt ?? product.title}`}
         >
-          <div className="relative max-h-[90vh] w-full max-w-4xl rounded-lg bg-soft-white p-4">
+          <div className="relative max-h-[90vh] w-full max-w-4xl  bg-wd-elevated p-4">
             <Button
               type="button"
               variant="ghost"
@@ -145,7 +145,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
             >
               Close
             </Button>
-            <div className="relative aspect-square w-full overflow-hidden rounded-md bg-white">
+            <div className="relative aspect-square w-full overflow-hidden  bg-[#1a1a1a]">
               {canDisplayImage(activeImage) && activeImage ? (
                 <Image
                   src={activeImage.src}
@@ -158,7 +158,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
                 <ProductImagePlaceholder />
               )}
             </div>
-            <p className="mt-3 text-sm text-graphite">{activeImage?.alt}</p>
+            <p className="mt-3 text-sm text-wd-muted">{activeImage?.alt}</p>
           </div>
         </dialog>
       ) : null}
@@ -179,7 +179,7 @@ function GallerySlide({
 }) {
   return (
     <div className="relative min-w-0 flex-[0_0_100%]">
-      <div className="relative aspect-square w-full bg-white">
+      <div className="relative aspect-square w-full bg-[#1a1a1a]">
         {canDisplayImage(image) ? (
           <Image
             src={image.src}
@@ -196,7 +196,7 @@ function GallerySlide({
           type="button"
           variant="ghost"
           size="icon"
-          className="absolute bottom-3 right-3 bg-soft-white/90"
+          className="absolute bottom-3 right-3 bg-wd-elevated/90"
           aria-label={`Zoom ${title}`}
           onClick={onOpenZoom}
         >

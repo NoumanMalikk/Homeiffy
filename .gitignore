@@ -41,6 +41,9 @@ yarn-error.log*
 # local order storage (demo / single-instance)
 .data/
 
+# product originals before studio processing (restore from here if needed)
+/public/products/_originals/
+
 
 # vercel
 .vercel
