@@ -74,7 +74,7 @@ export function Header() {
                 linkToHome
                 width={168}
                 priority
-                className="max-h-12 brightness-0 invert"
+                className="max-h-10 sm:max-h-11"
               />
             </div>
 

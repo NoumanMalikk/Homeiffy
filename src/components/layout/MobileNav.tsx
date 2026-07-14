@@ -29,9 +29,10 @@ export function MobileNav() {
       <div className="mb-6 border-b border-wd-line pb-4">
         <Logo
           variant="horizontal"
+          theme="light"
           width={160}
           linkToHome
-          className="max-h-12 brightness-0 invert"
+          className="max-h-10"
         />
       </div>
       <nav aria-label="Mobile navigation" className="space-y-6">

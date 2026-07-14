@@ -11,7 +11,7 @@ export default function NotFound() {
       <Container size="md">
         <div className="mx-auto max-w-xl text-center">
           <div className="mb-8 flex justify-center">
-            <Logo variant="horizontal" width={220} linkToHome className="max-h-16" />
+            <Logo variant="horizontal" theme="light" width={220} linkToHome className="max-h-14" />
           </div>
           <p className="font-mono-data text-sm uppercase tracking-[0.2em] text-haven-blue">
             404

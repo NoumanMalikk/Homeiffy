@@ -44,7 +44,13 @@ export function Footer() {
       <Container className="py-12 sm:py-16">
         <div className="grid gap-10 sm:grid-cols-2 lg:grid-cols-5">
           <div className="sm:col-span-2 lg:col-span-1">
-            <Logo variant="horizontal" theme="light" width={180} linkToHome className="max-h-14 brightness-0 invert" />
+            <Logo
+              variant="horizontal"
+              theme="light"
+              width={180}
+              linkToHome
+              className="max-h-11"
+            />
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-wd-muted">
               {storeConfig.tagline}
             </p>
