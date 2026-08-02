@@ -1,16 +1,21 @@
 import type { RoomCompatibilityGroup } from '@/lib/types';
 
+import { products } from '@/data/products';
+
 /**
  * Compatibility groupings for the room builder.
  * Each product remains an individual SKU. No bundle discounts.
+ *
+ * Membership is derived from `product.roomCompatibilityIds` rather than listed
+ * here, so a group can never drift out of sync with the catalog when a product
+ * is added or recategorised.
  */
-export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
+const groupDefinitions: Omit<RoomCompatibilityGroup, 'productIds'>[] = [
   {
     id: 'living-anchor',
     role: 'anchor',
     label: 'Living anchor',
     description: 'Sofa or loveseat that defines the seating wall.',
-    productIds: ['hmf-liv-001', 'hmf-liv-002'],
     compatibleGroupIds: ['living-seating', 'living-table', 'living-storage', 'living-accent'],
   },
   {
@@ -18,7 +23,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'seating',
     label: 'Secondary seating',
     description: 'Lounge chairs, modular seats and reading chairs.',
-    productIds: ['hmf-liv-003', 'hmf-liv-004', 'hmf-liv-005'],
     compatibleGroupIds: ['living-anchor', 'living-table', 'living-storage', 'living-accent'],
   },
   {
@@ -26,7 +30,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'table',
     label: 'Living table',
     description: 'Coffee and nesting tables.',
-    productIds: ['hmf-liv-007', 'hmf-liv-008'],
     compatibleGroupIds: ['living-anchor', 'living-seating', 'living-storage', 'living-accent'],
   },
   {
@@ -34,7 +37,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'storage',
     label: 'Living storage',
     description: 'Media consoles and storage ottomans.',
-    productIds: ['hmf-liv-006', 'hmf-liv-009'],
     compatibleGroupIds: ['living-anchor', 'living-seating', 'living-table', 'living-accent'],
   },
   {
@@ -42,7 +44,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'flexible-accent',
     label: 'Flexible accent',
     description: 'Modular or compact accent pieces.',
-    productIds: ['hmf-liv-003', 'hmf-liv-006', 'hmf-liv-008'],
     compatibleGroupIds: ['living-anchor', 'living-seating', 'living-table', 'living-storage'],
   },
   {
@@ -50,7 +51,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'anchor',
     label: 'Bedroom anchor',
     description: 'Platform or storage bed.',
-    productIds: ['hmf-bed-001', 'hmf-bed-002'],
     compatibleGroupIds: ['bedroom-seating', 'bedroom-storage', 'bedroom-accent'],
   },
   {
@@ -58,7 +58,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'seating',
     label: 'Bedroom seating',
     description: 'Bedroom benches.',
-    productIds: ['hmf-bed-005'],
     compatibleGroupIds: ['bedroom-anchor', 'bedroom-storage', 'bedroom-accent'],
   },
   {
@@ -66,7 +65,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'storage',
     label: 'Bedroom storage',
     description: 'Nightstands, dressers and wardrobes.',
-    productIds: ['hmf-bed-003', 'hmf-bed-004', 'hmf-bed-006'],
     compatibleGroupIds: ['bedroom-anchor', 'bedroom-seating', 'bedroom-accent'],
   },
   {
@@ -74,7 +72,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'flexible-accent',
     label: 'Bedroom accent',
     description: 'Nightstands and benches as flexible accents.',
-    productIds: ['hmf-bed-003', 'hmf-bed-005'],
     compatibleGroupIds: ['bedroom-anchor', 'bedroom-seating', 'bedroom-storage'],
   },
   {
@@ -82,7 +79,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'anchor',
     label: 'Dining table',
     description: 'Round or extendable dining table.',
-    productIds: ['hmf-din-001', 'hmf-din-002'],
     compatibleGroupIds: ['dining-seating', 'dining-storage', 'dining-accent'],
   },
   {
@@ -90,7 +86,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'seating',
     label: 'Dining seating',
     description: 'Chair sets and dining benches.',
-    productIds: ['hmf-din-003', 'hmf-din-004'],
     compatibleGroupIds: ['dining-anchor', 'dining-storage', 'dining-accent'],
   },
   {
@@ -98,7 +93,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'storage',
     label: 'Dining storage',
     description: 'Sideboards and buffets.',
-    productIds: ['hmf-din-005'],
     compatibleGroupIds: ['dining-anchor', 'dining-seating', 'dining-accent'],
   },
   {
@@ -106,7 +100,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'flexible-accent',
     label: 'Dining accent',
     description: 'Bench seating as a flexible dining accent.',
-    productIds: ['hmf-din-004'],
     compatibleGroupIds: ['dining-anchor', 'dining-seating', 'dining-storage'],
   },
   {
@@ -114,7 +107,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'anchor',
     label: 'Entry anchor',
     description: 'Hall tree or narrow console.',
-    productIds: ['hmf-ent-004', 'hmf-ent-001'],
     compatibleGroupIds: ['entry-seating', 'entry-storage', 'entry-accent'],
   },
   {
@@ -122,7 +114,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'seating',
     label: 'Entry seating',
     description: 'Storage entry benches.',
-    productIds: ['hmf-ent-003'],
     compatibleGroupIds: ['entry-anchor', 'entry-storage', 'entry-accent'],
   },
   {
@@ -130,7 +121,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'storage',
     label: 'Entry storage',
     description: 'Shoe cabinets and hall storage.',
-    productIds: ['hmf-ent-002', 'hmf-ent-003'],
     compatibleGroupIds: ['entry-anchor', 'entry-seating', 'entry-accent'],
   },
   {
@@ -138,7 +128,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'flexible-accent',
     label: 'Entry accent',
     description: 'Narrow consoles as flexible accents.',
-    productIds: ['hmf-ent-001'],
     compatibleGroupIds: ['entry-anchor', 'entry-seating', 'entry-storage'],
   },
   {
@@ -146,7 +135,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'anchor',
     label: 'Workspace anchor',
     description: 'Foldaway or compact desk.',
-    productIds: ['hmf-off-001'],
     compatibleGroupIds: ['office-storage', 'office-accent'],
   },
   {
@@ -154,7 +142,6 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'storage',
     label: 'Workspace storage',
     description: 'Bookcases for home offices.',
-    productIds: ['hmf-sto-001'],
     compatibleGroupIds: ['office-anchor', 'office-accent'],
   },
   {
@@ -162,10 +149,17 @@ export const roomCompatibilityGroups: RoomCompatibilityGroup[] = [
     role: 'flexible-accent',
     label: 'Workspace accent',
     description: 'Flexible pieces that support a work zone.',
-    productIds: ['hmf-sto-001', 'hmf-liv-008'],
     compatibleGroupIds: ['office-anchor', 'office-storage'],
   },
 ];
+
+export const roomCompatibilityGroups: RoomCompatibilityGroup[] =
+  groupDefinitions.map((group) => ({
+    ...group,
+    productIds: products
+      .filter((product) => product.roomCompatibilityIds.includes(group.id))
+      .map((product) => product.id),
+  }));
 
 export const roomCompatibilityGroupById = Object.fromEntries(
   roomCompatibilityGroups.map((group) => [group.id, group]),

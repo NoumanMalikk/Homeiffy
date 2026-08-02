@@ -59,8 +59,9 @@ export default function AssemblyInformationPage() {
         </li>
       </ul>
       <p>
-        Fields marked verification required or pending are not confirmed. Do not
-        rely on unstated assembly duration or difficulty.
+        Each product page states the tools you need, the hardware supplied and
+        what the instructions cover. We do not publish an estimated assembly
+        time, because it varies too much by person to be a useful promise.
       </p>
 
       <h2>Documentation expectations</h2>

@@ -42,7 +42,8 @@ yarn-error.log*
 .data/
 
 # product originals before studio processing (restore from here if needed)
-/public/products/_originals/
+# kept outside /public so they are not shipped in the deployment bundle
+/assets/product-originals/
 
 
 # vercel

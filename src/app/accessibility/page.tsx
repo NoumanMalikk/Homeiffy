@@ -6,7 +6,7 @@ import { createInfoPageMetadata } from '@/lib/seo';
 export const metadata: Metadata = createInfoPageMetadata({
   title: 'Accessibility Statement',
   description:
-    'Homeiffy accessibility statement - subject to business review before production launch.',
+    'Homeiffy aims to meet WCAG 2.1 Level AA. What we have built in, where we fall short, and how to report a barrier.',
   path: '/accessibility',
 });
 

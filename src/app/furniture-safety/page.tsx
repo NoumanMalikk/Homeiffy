@@ -33,40 +33,56 @@ const safetyFields = [
   { key: 'recallStatus', label: 'Recall status' },
 ] as const;
 
-const pendingCount = productSafetyRecords.filter(
-  (record) => record.verificationStatus === 'pending',
-).length;
+const anchoringRequiredSkus = productSafetyRecords
+  .filter((record) => /required/i.test(record.wallAnchoring ?? ''))
+  .map((record) => record.sku);
 
 export default function FurnitureSafetyPage() {
   return (
     <InfoPageLayout
       title="Furniture Safety"
-      description="How Homeiffy tracks safety documentation and verification status before live purchase."
+      description="How to use Homeiffy furniture safely: anchoring, load limits, mechanisms and what to check before you assemble."
       breadcrumbs={[
         { label: 'Home', href: '/' },
         { label: 'Furniture Safety', href: '/furniture-safety' },
       ]}
     >
-      <p>
-        Homeiffy maintains safety documentation fields for applicable products.
-        Fields marked verification required or pending are not confirmed limits
-        or warnings. Live purchase is blocked until required safety information
-        is verified.
-      </p>
-
-      <div className="rounded-lg border border-clay-rose/40 bg-clay-rose/10 px-4 py-3 text-sm not-prose">
-        <p className="font-medium text-night-ink">Verification status</p>
-        <p className="mt-1 text-graphite">
-          {pendingCount} of {productSafetyRecords.length} product safety records
-          are currently pending verification. Homeiffy does not claim tip
-          resistance, child safety, commercial grade use or fire resistance
-          without verified manufacturer documentation.
+      <div className="border-l-2 border-wd-accent bg-wd-elevated px-4 py-3 not-prose">
+        <p className="font-medium text-wd-text">
+          Tip-over hazard: anchor tall furniture to the wall
+        </p>
+        <p className="mt-1 text-sm text-wd-muted">
+          A falling dresser, bookcase or wardrobe can kill a child. Every tall
+          storage piece we sell ships with an anti-tip restraint kit, and it is
+          not optional. Fit it before you put anything in the drawers.
         </p>
       </div>
 
-      <h2>Documentation fields</h2>
+      <h2>Anchor these pieces before use</h2>
       <p>
-        The following safety topics are tracked per product when applicable:
+        {anchoringRequiredSkus.length} products in our catalog are tall relative
+        to their depth and must be anchored to a wall stud before they are
+        loaded. The restraint kit is supplied in the carton at no extra cost.
+        Each product page states the requirement in its safety section.
+      </p>
+      <ul>
+        <li>Dressers and tall chests</li>
+        <li>Wardrobes, including the open frame wardrobe</li>
+        <li>Bookcases and room divider shelving</li>
+        <li>Hall trees and glass front display cabinets</li>
+        <li>Any wall-mounted piece, which relies entirely on its fixing</li>
+      </ul>
+      <p>
+        The supplied fixings suit timber studs. If you have masonry, plaster and
+        lath, or metal studs, buy fixings rated for your wall construction. If
+        you are not sure what your wall is made of, use a stud finder or ask a
+        contractor before drilling.
+      </p>
+
+      <h2>Safety topics on every product page</h2>
+      <p>
+        Where a topic applies to a product, it appears in the safety section of
+        that product page:
       </p>
       <ul>
         {safetyFields.map((field) => (
@@ -76,47 +92,40 @@ export default function FurnitureSafetyPage() {
         ))}
       </ul>
 
-      <h2>Product safety records</h2>
+      <h2>Before you assemble</h2>
+      <ul>
+        <li>Inspect every component for transit damage. Do not use a part with a split or splintered edge.</li>
+        <li>Use only the hardware supplied. Substituted or over-tightened fixings are the most common cause of a wobbly piece.</li>
+        <li>Assemble on a soft surface such as the flattened carton to avoid scratching the finish.</li>
+        <li>Retighten all fixings after the first month, then every six months.</li>
+      </ul>
+
+      <h2>In everyday use</h2>
+      <ul>
+        <li>Open one drawer at a time, and never let a child climb on an open drawer.</li>
+        <li>Put heavier items in lower drawers and on lower shelves.</li>
+        <li>Do not stand or sit on anything not designed to carry that load.</li>
+        <li>Engage castor locks before loading, unloading or sitting on a mobile piece.</li>
+        <li>Keep fingers clear of folding and extension mechanisms, and confirm they are latched before applying load.</li>
+        <li>Keep upholstered furniture away from open flame and heat sources.</li>
+      </ul>
+
+      <h2>What we do not claim</h2>
       <p>
-        Review individual product pages for safety sections tied to each SKU.
-        Summary status for the initial catalog:
+        We publish a load rating only where the supplier documents one. Where a
+        product page does not show a weight capacity, we have not published a
+        figure, and you should not infer one. We make no claim that any product
+        is anti-tip certified, child safe, commercial grade, fire resistant, or
+        safe to sleep on where it is not a bed.
       </p>
 
-      <div className="overflow-x-auto not-prose">
-        <table className="w-full min-w-[640px] border-collapse text-sm">
-          <thead>
-            <tr className="border-b border-border-sand text-left">
-              <th className="py-2 pr-4 font-medium text-night-ink">SKU</th>
-              <th className="py-2 pr-4 font-medium text-night-ink">Status</th>
-              <th className="py-2 font-medium text-night-ink">Notes</th>
-            </tr>
-          </thead>
-          <tbody>
-            {productSafetyRecords.map((record) => (
-              <tr key={record.sku} className="border-b border-border-sand/70">
-                <td className="py-3 pr-4 font-mono-data text-night-ink">
-                  {record.sku}
-                </td>
-                <td className="py-3 pr-4 capitalize text-graphite">
-                  {record.verificationStatus}
-                </td>
-                <td className="py-3 text-graphite">{record.notes}</td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      </div>
-
-      <h2>What Homeiffy does not claim</h2>
-      <p>Without verified documentation, Homeiffy does not claim products are:</p>
-      <ul>
-        <li>Tip resistant or anti-tip certified</li>
-        <li>Child safe or suitable for climbing or standing</li>
-        <li>Commercial grade</li>
-        <li>Safe for sleeping on non-bed products</li>
-        <li>Fire resistant</li>
-        <li>Safe above a specific unpublished weight limit</li>
-      </ul>
+      <h2>Reporting a safety concern</h2>
+      <p>
+        If you believe a product has a safety defect, stop using it and contact
+        us immediately with your order reference and photographs. We will
+        arrange collection or replacement, and we report confirmed defects to
+        the Consumer Product Safety Commission as required.
+      </p>
 
       <p>
         For assembly hardware and instruction status, see{' '}

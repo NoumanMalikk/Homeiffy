@@ -31,9 +31,10 @@ export default function UpholsteryCarePage() {
 
       <h2>Fabric composition</h2>
       <p>
-        Fabric composition and weave structure are documented when supplier
-        records are verified. Until then, upholstery material fields may read
-        verification required or pending supplier documentation.
+        Our upholstered pieces use a woven polyester-blend performance fabric
+        over high-resilience foam on a kiln-dried hardwood frame. The exact
+        composition for each product is listed under Materials and finish on its
+        product page.
       </p>
 
       <h2>Leather and synthetic materials</h2>

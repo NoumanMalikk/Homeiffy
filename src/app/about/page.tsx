@@ -30,9 +30,9 @@ export default function AboutPage() {
         availability are based on current verified product records.
       </p>
       <p>
-        Fields marked verification required or pending in the catalog are not
-        confirmed for live purchase. Purchase eligibility is gated until images,
-        specifications and safety documentation are verified.
+        Where a supplier has not documented a figure, such as a rated load
+        capacity, we leave it off the page rather than estimate it. We would
+        rather publish less and have all of it be true.
       </p>
       <p>
         Customers can browse by room, footprint and function, compare

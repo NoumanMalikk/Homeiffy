@@ -10,7 +10,7 @@ Homeiffy LLC publishes exactly **26** catalog products. Do not add a 27th produc
 4. Download the exact original studio product image (white / near-white background, full product, front three-quarter preferred).
 5. Store images under `public/products/[product-slug]/` using the required filenames in `docs/image-sourcing.md`.
 6. Update `src/data/products.ts` with verified fields only. Never guess.
-7. Add or update `src/data/image-credits.ts` and `src/data/product-safety.ts`.
+7. Regenerate safety records: `python3 scripts/generate-safety-records.py src/data/product-safety.ts`.
 8. Keep `productionReady: false` and `purchaseEnabled: false` until image, specification and safety verification are complete.
 9. Only then set verification statuses to `verified` and enable purchase.
 

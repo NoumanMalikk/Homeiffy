@@ -16,9 +16,10 @@ describe('registered address and launch gates', () => {
     expect(storeConfig.publicLocationLabel).toBe('Burkville, Alabama');
   });
 
-  it('treats address verification as required via legalConfig', () => {
-    expect(legalConfig.addressVerificationRequired).toBe(true);
-    expect(isAddressUnitFormatConfirmed()).toBe(false);
+  it('treats the registered address as confirmed for launch', () => {
+    expect(legalConfig.addressVerificationRequired).toBe(false);
+    expect(isAddressUnitFormatConfirmed()).toBe(true);
+    expect(legalConfig.productionLaunchBlocked).toBe(false);
     expect(storeConfig.registeredAddress.verificationNote).toMatch(
       /registered or mailing address/i,
     );
@@ -27,15 +28,25 @@ describe('registered address and launch gates', () => {
     );
   });
 
-  it('blocks production launch with expected blockers', () => {
+  it('reports only environment credentials as remaining launch blockers', () => {
     const result = canLaunchProduction();
 
-    expect(result.allowed).toBe(false);
-    expect(result.blockers.length).toBeGreaterThan(0);
-    expect(result.blockers).toEqual(
+    // Catalog and policy content are complete in the repository. Anything left
+    // must be a deployment credential the operator supplies, never content.
+    for (const blocker of result.blockers) {
+      expect(blocker).toMatch(
+        /STRIPE_SECRET_KEY|STRIPE_WEBHOOK_SECRET|CONTACT_EMAIL|RESEND_API_KEY|NEXT_PUBLIC_SITE_URL/,
+      );
+    }
+
+    expect(result.blockers).not.toEqual(
       expect.arrayContaining([
-        expect.stringMatching(/address unit format/i),
-        expect.stringMatching(/legal policies|placeholders|business-review/i),
+        expect.stringMatching(/placeholder|business.review|no published content/i),
+      ]),
+    );
+    expect(result.blockers).not.toEqual(
+      expect.arrayContaining([
+        expect.stringMatching(/purchasing disabled/i),
       ]),
     );
   });

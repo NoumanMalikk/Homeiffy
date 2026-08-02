@@ -19,7 +19,7 @@ export interface StoredOrder extends Order {
   deliveryAccess: DeliveryAccessValues | null;
   agreements: CheckoutAgreementsValues;
   marketingConsent: boolean;
-  shippingMethod: 'staging-estimate' | 'quote-required';
+  shippingMethod: 'standard' | 'quote-required';
   shippingLabel: string;
   shippingNote: string;
   taxLabel: string;
@@ -50,7 +50,7 @@ export interface PendingCheckoutPayload {
   taxNote: string;
   total: number;
   currency: string;
-  shippingMethod: 'staging-estimate' | 'quote-required';
+  shippingMethod: 'standard' | 'quote-required';
   agreements: CheckoutAgreementsValues;
   marketingConsent: boolean;
   purchaseOrderNumber: string | null;

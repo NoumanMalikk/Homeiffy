@@ -35,8 +35,8 @@ export default function ComparePage() {
           </h1>
           <p className="mt-3 max-w-2xl text-sm leading-relaxed text-graphite">
             Side-by-side specification comparison for up to four catalog
-            products. Missing data is shown as verification required or - ;
-            values are never invented.
+            products. Where a figure is not published for a product, the row
+            is left blank rather than filled with a guess.
           </p>
         </header>
 

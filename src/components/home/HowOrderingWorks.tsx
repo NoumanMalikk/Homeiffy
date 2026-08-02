@@ -9,7 +9,7 @@ export function HowOrderingWorks() {
       <Container>
         <SectionHeading
           title="How ordering works"
-          description="A straightforward path from browsing to secure checkout, with verification gates for incomplete product records."
+          description="Measure your space, choose your finish, and check out securely. Shipping is calculated by item size and destination before you pay."
           align="center"
           className="mx-auto"
         />

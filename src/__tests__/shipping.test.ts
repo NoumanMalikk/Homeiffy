@@ -3,17 +3,17 @@ import { describe, expect, it } from 'vitest';
 import {
   assignShippingClass,
   assignShippingClassFromAttributes,
-  calculateStagingShipping,
+  calculateShipping,
 } from '@/lib/shipping';
 import { getProductBySku } from '@/lib/products';
 import { cartItemFromProduct } from '@/__tests__/helpers/cart-item';
 import type { Product } from '@/lib/types';
 
-describe('shipping class assignment and staging quotes', () => {
+describe('shipping class assignment and rate quotes', () => {
   const upholstered = getProductBySku('HMF-ENT-003')!;
   const oversized = getProductBySku('HMF-DIN-005')!;
   const smallParcel = getProductBySku('HMF-BED-003')!;
-  const standardParcel = getProductBySku('HMF-LIV-008')!;
+  const standardParcel = getProductBySku('HMF-LIV-007')!;
   const freightReview = getProductBySku('HMF-BED-001')!;
 
   it('returns catalog shipping class via assignShippingClass', () => {
@@ -64,9 +64,9 @@ describe('shipping class assignment and staging quotes', () => {
       cartItemFromProduct(oversized),
     ];
 
-    const quote = calculateStagingShipping(items, '36752');
+    const quote = calculateShipping(items, '36752');
 
-    expect(quote.isStagingRate).toBe(true);
+    expect(quote.isEstimate).toBe(true);
     expect(quote.label).toMatch(/Shipping estimate/i);
     expect(quote.note).toMatch(/confirmed before dispatch/i);
     expect(quote.destinationZip).toBe('36752');
@@ -84,8 +84,8 @@ describe('shipping class assignment and staging quotes', () => {
     });
     const singleBox = cartItemFromProduct(standardParcel, { boxCount: 1 });
 
-    const multiQuote = calculateStagingShipping([upholsteredMultiBox], '10001');
-    const baseQuote = calculateStagingShipping([singleBox], '10001');
+    const multiQuote = calculateShipping([upholsteredMultiBox], '10001');
+    const baseQuote = calculateShipping([singleBox], '10001');
 
     expect(multiQuote.amount).toBeGreaterThan(baseQuote.amount);
     expect(multiQuote.lineBreakdown[0]?.boxCount).toBe(2);
@@ -95,7 +95,7 @@ describe('shipping class assignment and staging quotes', () => {
   });
 
   it('returns zero staging amount for freight-review-required items', () => {
-    const quote = calculateStagingShipping(
+    const quote = calculateShipping(
       [cartItemFromProduct(freightReview)],
       '90210',
     );
@@ -103,7 +103,7 @@ describe('shipping class assignment and staging quotes', () => {
     expect(quote.lineBreakdown[0]?.shippingClass).toBe(
       'freight-review-required',
     );
-    expect(quote.lineBreakdown[0]?.stagingAmount).toBe(0);
+    expect(quote.lineBreakdown[0]?.amount).toBe(0);
     expect(quote.lineBreakdown[0]?.note).toMatch(/Freight review required/i);
   });
 });

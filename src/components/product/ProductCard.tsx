@@ -197,9 +197,6 @@ export function ProductCard({
               hex={displayUpholstery.hex}
             />
           ) : null}
-          {!displayFinish && !displayUpholstery ? (
-            <p className="text-xs text-wd-muted">Finishes pending verification</p>
-          ) : null}
         </div>
 
         <div className="mt-auto min-h-[2rem]">

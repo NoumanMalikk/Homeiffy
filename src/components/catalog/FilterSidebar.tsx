@@ -270,25 +270,6 @@ export function FilterSidebar({
         </div>
       </FilterGroup>
 
-      <FilterGroup title="Production status">
-        <Select
-          value={
-            filters.productionReady === undefined
-              ? ''
-              : String(filters.productionReady)
-          }
-          onChange={(event) =>
-            updateFilters({
-              productionReady: event.target.value || null,
-            })
-          }
-        >
-          <option value="">Any</option>
-          <option value="true">Production ready</option>
-          <option value="false">Specifications pending</option>
-        </Select>
-      </FilterGroup>
-
       <button
         type="button"
         className="text-sm text-wd-accent underline-offset-4 hover:underline"

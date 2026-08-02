@@ -63,6 +63,14 @@ export function Footer() {
                   {storeConfig.phoneDisplay}
                 </a>
               </p>
+              <p>
+                <a
+                  href={`mailto:${storeConfig.supportEmail}`}
+                  className="font-medium text-wd-text hover:text-wd-accent"
+                >
+                  {storeConfig.supportEmail}
+                </a>
+              </p>
               <p>{storeConfig.publicLocationLabel}</p>
               {storeConfig.showFullBusinessAddress ? (
                 <address className="not-italic">

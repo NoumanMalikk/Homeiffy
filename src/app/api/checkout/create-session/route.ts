@@ -57,7 +57,7 @@ export async function POST(request: NextRequest) {
       pendingId: result.pendingId,
       orderReference: result.orderReference,
       message:
-        'Stripe is not configured. Use staging checkout completion for interface testing.',
+        'Checkout is temporarily unavailable. Please try again shortly or contact us to place your order.',
     });
   } catch (error) {
     return NextResponse.json(

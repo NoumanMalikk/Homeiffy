@@ -85,19 +85,23 @@ export interface Product {
   availability: 'available' | 'pending-verification' | 'unavailable';
   category: string;
   subcategory: string;
+  /** Customer-facing selling copy shown on the product page. */
+  description: string;
+  /** Short scannable selling points shown beside the gallery. */
+  highlights: string[];
   dailyMoments: DailyMomentSlug[];
   rooms: string[];
   footprintCategory: string[];
   functions: string[];
   style: string;
-  materials: UnknownFieldValue | string;
-  woodSpecies: UnknownFieldValue;
-  woodConstruction: UnknownFieldValue;
-  frameMaterial: UnknownFieldValue;
-  surfaceFinish: UnknownFieldValue | string;
-  upholsteryMaterial: UnknownFieldValue;
+  materials: string | null;
+  woodSpecies: string | null;
+  woodConstruction: string | null;
+  frameMaterial: string | null;
+  surfaceFinish: string | null;
+  upholsteryMaterial: string | null;
   upholsteryColor: string | null;
-  foamSpecification: UnknownFieldValue;
+  foamSpecification: string | null;
   colorways: Colorway[];
   width: number | null;
   height: number | null;
@@ -108,27 +112,34 @@ export interface Product {
   armHeight: number | null;
   backHeight: number | null;
   clearance: number | null;
-  weight: UnknownFieldValue;
+  weight: string | null;
   packageDimensions: PackageDimensions;
-  packageWeight: UnknownFieldValue;
-  boxCount: number | UnknownFieldValue;
-  assemblyRequired: boolean | UnknownFieldValue;
-  assemblyInstructions: UnknownFieldValue;
-  hardwareIncluded: UnknownFieldValue;
-  toolsRequired: UnknownFieldValue;
-  weightCapacity: UnknownFieldValue;
-  seatingCapacity: number | UnknownFieldValue;
-  extensionMechanism: UnknownFieldValue | string;
-  storageType: UnknownFieldValue | string | null;
+  packageWeight: string | null;
+  boxCount: number | null;
+  assemblyRequired: boolean | null;
+  assemblyInstructions: string | null;
+  hardwareIncluded: string | null;
+  toolsRequired: string | null;
+  /**
+   * Supplier-confirmed load rating. Null until the business confirms it against
+   * supplier documentation, and hidden from the storefront while null.
+   * See `src/data/supplier-spec-sheet.ts`.
+   */
+  weightCapacity: string | null;
+  seatingCapacity: number | null;
+  extensionMechanism: string | null;
+  storageType: string | null;
   drawerCount: number | null;
   shelfCount: number | null;
   doorCount: number | null;
   orientation: string | null;
-  careInstructions: UnknownFieldValue;
-  countryOfOrigin: UnknownFieldValue;
-  manufacturer: UnknownFieldValue;
-  packageContents: UnknownFieldValue | string;
-  warnings: UnknownFieldValue;
+  careInstructions: string | null;
+  /** Supplier-confirmed. Null until documented; hidden from the storefront. */
+  countryOfOrigin: string | null;
+  /** Supplier-confirmed. Null until documented; hidden from the storefront. */
+  manufacturer: string | null;
+  packageContents: string | null;
+  warnings: string | null;
   shippingClass: ShippingClassId;
   price: number;
   currency: string;
@@ -207,25 +218,34 @@ export interface RoomCompatibilityGroup {
   compatibleGroupIds: string[];
 }
 
+/**
+ * Customer-facing safe-use guidance for a SKU.
+ *
+ * Fields that are load ratings or regulatory claims stay `null` until the
+ * business confirms them against supplier documentation. Null fields are
+ * hidden from the storefront rather than rendered as a placeholder.
+ */
 export interface ProductSafetyRecord {
   productId: string;
   sku: string;
-  weightCapacity: UnknownFieldValue;
-  tipOverRisk: UnknownFieldValue;
-  wallAnchoring: UnknownFieldValue;
-  drawerSafety: UnknownFieldValue;
-  shelfLoad: UnknownFieldValue;
-  casterLocks: UnknownFieldValue;
-  foldingMechanism: UnknownFieldValue;
-  extensionMechanism: UnknownFieldValue;
-  pinchPoints: UnknownFieldValue;
-  storageHinges: UnknownFieldValue;
-  glassComponents: UnknownFieldValue;
-  sharpCorners: UnknownFieldValue;
-  assemblyHardware: UnknownFieldValue;
-  flammabilityDocumentation: UnknownFieldValue;
-  manufacturerWarnings: UnknownFieldValue;
-  recallStatus: UnknownFieldValue;
+  /** Supplier-confirmed load rating. Null until documented. */
+  weightCapacity: string | null;
+  tipOverRisk: string | null;
+  wallAnchoring: string | null;
+  drawerSafety: string | null;
+  shelfLoad: string | null;
+  casterLocks: string | null;
+  foldingMechanism: string | null;
+  extensionMechanism: string | null;
+  pinchPoints: string | null;
+  storageHinges: string | null;
+  glassComponents: string | null;
+  sharpCorners: string | null;
+  assemblyHardware: string | null;
+  /** Supplier-confirmed flammability compliance. Null until documented. */
+  flammabilityDocumentation: string | null;
+  manufacturerWarnings: string | null;
+  recallStatus: string | null;
   verificationStatus: SafetyVerificationStatus;
   notes: string;
 }
@@ -250,13 +270,26 @@ export interface ImageCreditRecord {
   notes: string;
 }
 
+/** A block of policy copy. Bullets and tables render inside the section. */
+export interface PolicySection {
+  heading: string;
+  body?: string[];
+  bullets?: string[];
+  table?: {
+    columns: string[];
+    rows: string[][];
+  };
+}
+
 export interface PolicyDocument {
   id: string;
   slug: string;
   title: string;
-  content: string;
-  lastReviewed: null;
-  requiresBusinessReview: boolean;
+  /** Short plain-language summary shown above the full policy. */
+  summary: string;
+  effectiveDate: string;
+  lastUpdated: string;
+  sections: PolicySection[];
 }
 
 export interface LegalConfig {
@@ -303,6 +336,8 @@ export interface StoreConfig {
   designServiceEnabled: false;
   customFurnitureEnabled: false;
   contactEmail: string | null;
+  /** Always-present customer-facing support address used in policies and email. */
+  supportEmail: string;
   currency: string;
   defaultCountry: string;
   siteEnv: SiteEnv;
@@ -323,9 +358,9 @@ export interface CartItem {
     height: number | null;
     depth: number | null;
   };
-  boxCount: number | UnknownFieldValue;
+  boxCount: number | null;
   shippingClass: ShippingClassId;
-  assemblyRequired: boolean | UnknownFieldValue;
+  assemblyRequired: boolean | null;
   productionReady: boolean;
 }
 
@@ -363,7 +398,7 @@ export type PaymentStatus = 'pending' | 'paid' | 'failed' | 'refunded';
 export interface OrderLineItem {
   productId: string;
   sku: string;
-  supplierSku: string | UnknownFieldValue;
+  supplierSku: string | null;
   title: string;
   quantity: number;
   unitPrice: number;
@@ -376,11 +411,11 @@ export interface OrderLineItem {
     height: number | null;
     depth: number | null;
   };
-  boxCount: number | UnknownFieldValue;
+  boxCount: number | null;
   shippingClass: ShippingClassId;
-  packageWeight: UnknownFieldValue;
+  packageWeight: string | null;
   packageDimensions: PackageDimensions;
-  assemblyRequired: boolean | UnknownFieldValue;
+  assemblyRequired: boolean | null;
   safetyVerificationStatus: SafetyVerificationStatus;
 }
 

@@ -73,28 +73,30 @@ export function buildFaqJsonLd(items: FaqItem[]) {
 }
 
 export function buildProductJsonLd(product: Product) {
-  const mainImage = product.imageGallery[0];
+  // Only advertise photography we actually have; a placeholder entry has no src.
+  const images = product.imageGallery
+    .filter((image) => image.type !== 'placeholder' && image.src)
+    .map((image) => absoluteUrl(image.src));
+
   const purchaseable =
-    product.productionReady &&
-    product.imageVerificationStatus === 'verified' &&
-    product.specificationVerificationStatus === 'verified' &&
-    product.safetyVerificationStatus === 'verified';
-
-  const availability = purchaseable
-    ? 'https://schema.org/InStock'
-    : 'https://schema.org/preorder';
-
-  const offerDescription = purchaseable
-    ? 'Price subject to verification at checkout.'
-    : 'Available for preorder. Contact us for availability details.';
+    product.purchaseEnabled && product.availability === 'available';
 
   return {
     '@context': 'https://schema.org',
     '@type': 'Product',
     name: product.title,
     sku: product.sku,
+    mpn: product.sku,
     description: product.seoDescription,
-    image: mainImage ? absoluteUrl(mainImage.src) : undefined,
+    ...(images.length > 0 ? { image: images } : {}),
+    ...(product.materials ? { material: product.materials } : {}),
+    ...(product.width !== null && product.height !== null && product.depth !== null
+      ? {
+          width: { '@type': 'QuantitativeValue', value: product.width, unitCode: 'INH' },
+          height: { '@type': 'QuantitativeValue', value: product.height, unitCode: 'INH' },
+          depth: { '@type': 'QuantitativeValue', value: product.depth, unitCode: 'INH' },
+        }
+      : {}),
     brand: {
       '@type': 'Brand',
       name: storeConfig.brandName,
@@ -104,8 +106,14 @@ export function buildProductJsonLd(product: Product) {
       url: absoluteUrl(`/products/${product.slug}`),
       priceCurrency: product.currency,
       price: product.price,
-      availability,
-      description: offerDescription,
+      availability: purchaseable
+        ? 'https://schema.org/InStock'
+        : 'https://schema.org/OutOfStock',
+      itemCondition: 'https://schema.org/NewCondition',
+      seller: {
+        '@type': 'Organization',
+        name: storeConfig.legalName,
+      },
     },
   };
 }

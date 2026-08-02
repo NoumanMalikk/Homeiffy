@@ -13,7 +13,7 @@ The first gallery image must be `main-front-[variant].webp` (or the catalog `mai
 
 ## Verification record
 
-Every image needs a row in `src/data/image-credits.ts` with:
+Before publishing an image, confirm:
 
 - Product ID, SKU, supplier SKU, manufacturer model
 - Exact variant, finish, upholstery, orientation, dimensions, package contents

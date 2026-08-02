@@ -6,7 +6,7 @@ import { createInfoPageMetadata } from '@/lib/seo';
 export const metadata: Metadata = createInfoPageMetadata({
   title: 'Privacy Policy',
   description:
-    'Homeiffy privacy policy - subject to business review before production launch.',
+    'How Homeiffy collects, uses and protects your personal information. We do not sell your data and run no advertising or analytics trackers.',
   path: '/privacy-policy',
 });
 

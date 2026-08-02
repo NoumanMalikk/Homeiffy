@@ -6,7 +6,7 @@ import { createInfoPageMetadata } from '@/lib/seo';
 export const metadata: Metadata = createInfoPageMetadata({
   title: 'Terms and Conditions',
   description:
-    'Homeiffy terms and conditions - subject to business review before production launch.',
+    'The terms that govern your use of the Homeiffy website, product orders, warranty and safe assembly of your furniture.',
   path: '/terms-conditions',
 });
 

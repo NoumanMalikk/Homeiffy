@@ -7,7 +7,6 @@ import { useMemo, useState } from 'react';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Swatch } from '@/components/ui/swatch';
-import { storeConfig } from '@/data/store-config';
 import { shippingClassById } from '@/data/shipping-classes';
 import { categoryBySlug } from '@/data/categories';
 import { dailyMomentBySlug } from '@/data/daily-moments';
@@ -24,11 +23,7 @@ import {
 } from '@/stores';
 import { useRoomBuilderStore } from '@/stores/room-builder-store';
 import type { Product } from '@/lib/types';
-import {
-  formatDimensions,
-  formatPrice,
-  isVerificationRequired,
-} from '@/lib/utils';
+import { formatDimensions, formatPrice } from '@/lib/utils';
 
 interface ProductPurchasePanelProps {
   product: Product;
@@ -67,9 +62,7 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
     (colorway) => colorway.type === 'upholstery',
   );
 
-  const purchaseable = isProductPurchaseable(product);
-  const canAddToCart =
-    storeConfig.siteEnv === 'staging' || purchaseable;
+  const canAddToCart = isProductPurchaseable(product);
 
   const category = categoryBySlug[product.subcategory];
   const shippingClass = shippingClassById[product.shippingClass];
@@ -77,22 +70,15 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
   const configurationOptions = useMemo(() => {
     const options: string[] = [];
 
-    if (
-      product.seatingCapacity !== null &&
-      !isVerificationRequired(String(product.seatingCapacity))
-    ) {
-      options.push(`${product.seatingCapacity}-seat configuration`);
-    }
-
-    if (product.extensionMechanism && !isVerificationRequired(String(product.extensionMechanism))) {
-      options.push(String(product.extensionMechanism));
+    if (product.extensionMechanism) {
+      options.push(product.extensionMechanism);
     }
 
     return options;
   }, [product]);
 
   function handleAddToCart() {
-    if (!canAddToCart && storeConfig.siteEnv === 'production') {
+    if (!canAddToCart) {
       return;
     }
 
@@ -183,44 +169,52 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
         {formatPrice(product.price, product.currency)}
       </p>
 
+      <p className="leading-relaxed text-wd-muted">{product.description}</p>
+
+      {product.highlights.length > 0 ? (
+        <ul className="space-y-2">
+          {product.highlights.map((highlight) => (
+            <li key={highlight} className="flex gap-3 text-sm text-wd-muted">
+              <span
+                aria-hidden="true"
+                className="mt-2 size-1 shrink-0 bg-wd-accent"
+              />
+              <span>{highlight}</span>
+            </li>
+          ))}
+        </ul>
+      ) : null}
+
       <dl className="grid gap-3 border-y border-wd-line py-4 text-sm">
         <CustomerSpecRow
-          label="Overall dimensions"
+          label="Dimensions"
           value={formatDimensions(product.width, product.height, product.depth)}
         />
         <CustomerSpecRow
-          label="Drawer count"
-          value={
-            product.drawerCount === null
-              ? null
-              : String(product.drawerCount)
-          }
+          label="Drawers"
+          value={product.drawerCount === null ? null : String(product.drawerCount)}
         />
         <CustomerSpecRow
-          label="Shelf count"
-          value={
-            product.shelfCount === null
-              ? null
-              : String(product.shelfCount)
-          }
+          label="Shelves"
+          value={product.shelfCount === null ? null : String(product.shelfCount)}
         />
         <CustomerSpecRow
           label="Assembly"
           value={
-            isVerificationRequired(String(product.assemblyRequired))
+            product.assemblyRequired === null
               ? null
               : product.assemblyRequired
-                ? 'Required'
+                ? 'Required, hardware included'
                 : 'Not required'
           }
         />
         <CustomerSpecRow
-          label="Box count"
-          value={String(product.boxCount)}
+          label="Cartons"
+          value={product.boxCount === null ? null : String(product.boxCount)}
         />
         <CustomerSpecRow
-          label="Shipping class"
-          value={shippingClass?.name ?? product.shippingClass}
+          label="Shipping"
+          value={shippingClass?.name ?? null}
         />
       </dl>
 
@@ -290,18 +284,23 @@ export function ProductPurchasePanel({ product }: ProductPurchasePanelProps) {
           type="button"
           variant="primary"
           className="w-full"
-          disabled={!canAddToCart && storeConfig.siteEnv === 'production'}
+          disabled={!canAddToCart}
           onClick={handleAddToCart}
         >
           <ShoppingBag />
-          {canAddToCart ? 'Add to cart' : 'Live purchase unavailable'}
+          {canAddToCart ? 'Add to cart' : 'Currently unavailable'}
         </Button>
 
-        {!product.productionReady && storeConfig.siteEnv === 'production' ? (
+        {canAddToCart ? (
           <p className="text-xs text-wd-muted">
-            Live purchase is blocked until production verification is complete.
+            Ships in 1 to 3 business days. Free returns within 30 days.
           </p>
-        ) : null}
+        ) : (
+          <p className="text-xs text-wd-muted">
+            This piece is not available to order right now. Contact us and we
+            will tell you when it is back.
+          </p>
+        )}
 
         <div className="flex flex-wrap gap-2">
           <Button
@@ -367,7 +366,7 @@ function CustomerSpecRow({
   label: string;
   value: string | null;
 }) {
-  if (!value || value === 'Verification required') {
+  if (!value) {
     return null;
   }
 

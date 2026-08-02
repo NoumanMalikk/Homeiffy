@@ -291,29 +291,13 @@ export function searchProducts(query: string): Product[] {
   );
 }
 
+/**
+ * A product can be bought when the catalog marks it purchasable and in stock.
+ * Set `purchaseEnabled: false` or `availability: 'unavailable'` on a product to
+ * take it off sale without removing it from the catalog.
+ */
 export function isProductPurchaseable(product: Product): boolean {
-  if (!product.productionReady) {
-    return false;
-  }
-
-  if (product.imageVerificationStatus !== 'verified') {
-    return false;
-  }
-
-  if (product.specificationVerificationStatus !== 'verified') {
-    return false;
-  }
-
-  if (product.safetyVerificationStatus !== 'verified') {
-    return false;
-  }
-
-  if (storeConfig.siteEnv === 'production') {
-    return true;
-  }
-
-  // Staging mode allows interface testing but still respects productionReady gate
-  return product.productionReady;
+  return product.purchaseEnabled && product.availability === 'available';
 }
 
 export interface CartItemValidationResult {

@@ -181,7 +181,7 @@ describe('form validators', () => {
           postalCode: '36752',
           country: 'United States',
         },
-        shippingMethod: { method: 'staging-estimate' },
+        shippingMethod: { method: 'standard' },
         billing: { sameAsShipping: true },
         agreements: {
           termsAccepted: true,

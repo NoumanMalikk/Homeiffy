@@ -65,7 +65,8 @@ export default function MeasuringGuidePage() {
       <p>
         Measure the room and the full delivery route before ordering. Compare
         your measurements to product dimensions and package dimensions on each
-        product page. Fields marked verification required are not final.
+        product page. Check the carton size as well as the assembled size,
+        because the box is what has to get through the door.
       </p>
 
       <MeasuringUnitHelper />

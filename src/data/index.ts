@@ -46,10 +46,11 @@ export {
 export { faqItems, faqByCategory } from '@/data/faq';
 
 export {
-  imageCredits,
-  imageCreditsByProductId,
-  imageCreditsBySku,
-} from '@/data/image-credits';
+  supplierSpecSheet,
+  supplierSpecBySku,
+  getConfirmedSpec,
+  getPendingSupplierSkus,
+} from '@/data/supplier-spec-sheet';
 
 export {
   products,

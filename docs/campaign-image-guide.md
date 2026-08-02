@@ -42,7 +42,7 @@ Unless verified with documentation:
 
 Allowed only when:
 
-- Usage rights are documented in `image-credits.ts`
+- Usage rights for any commissioned or licensed image are held by the business
 - Every purchasable item maps to an active SKU with matching finish/upholstery
 - Caption or overlay distinguishes included vs staging props
 - Scene is not labeled a "Homeiffy showroom" or real customer home

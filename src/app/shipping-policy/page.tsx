@@ -6,7 +6,7 @@ import { createInfoPageMetadata } from '@/lib/seo';
 export const metadata: Metadata = createInfoPageMetadata({
   title: 'Shipping Policy',
   description:
-    'Homeiffy shipping policy - subject to business review before production launch.',
+    'How Homeiffy ships furniture across the contiguous United States, what it costs, how long it takes and how to inspect your delivery.',
   path: '/shipping-policy',
 });
 

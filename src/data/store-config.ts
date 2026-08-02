@@ -28,11 +28,17 @@ export const storeConfig: StoreConfig = {
   designServiceEnabled: false,
   customFurnitureEnabled: false,
   contactEmail: process.env.CONTACT_EMAIL ?? null,
+  /**
+   * Customer-facing support address shown in policies, the footer and email.
+   * Override with CONTACT_EMAIL so the published address always matches the
+   * inbox that is actually monitored.
+   */
+  supportEmail: process.env.CONTACT_EMAIL ?? 'support@homeiffy.com',
   currency: 'USD',
   defaultCountry: 'United States',
   siteEnv:
     (process.env.NEXT_PUBLIC_SITE_ENV as 'staging' | 'production' | undefined) ??
-    'staging',
+    'production',
 };
 
 export const brandLines = {

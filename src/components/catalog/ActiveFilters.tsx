@@ -96,15 +96,6 @@ export function ActiveFilters({ filters }: ActiveFiltersProps) {
       });
     }
 
-    if (filters.productionReady !== undefined) {
-      items.push({
-        key: 'productionReady',
-        label: filters.productionReady
-          ? 'Production ready'
-          : 'Specifications pending',
-      });
-    }
-
     for (const shippingClass of filters.shippingClasses ?? []) {
       const match = shippingClasses.find((item) => item.id === shippingClass);
       items.push({

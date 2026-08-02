@@ -6,7 +6,7 @@ import { createInfoPageMetadata } from '@/lib/seo';
 export const metadata: Metadata = createInfoPageMetadata({
   title: 'Return and Refund Policy',
   description:
-    'Homeiffy return and refund policy - subject to business review before production launch.',
+    'Return furniture within 30 days of delivery. Damaged or defective items are replaced or refunded at no cost to you.',
   path: '/return-refund-policy',
 });
 

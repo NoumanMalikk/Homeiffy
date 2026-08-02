@@ -59,8 +59,8 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
 
   if (fields.length === 0) {
     return (
-      <div className="rounded-lg border border-dashed border-border-sand bg-cloud-cream/40 p-6 text-sm text-graphite">
-        Dimension diagram unavailable until verified measurements are recorded.
+      <div className="border border-dashed border-wd-line bg-wd-elevated p-6 text-sm text-wd-muted">
+        Dimensions for this product are listed in the specification table below.
       </div>
     );
   }
@@ -72,7 +72,7 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
   const scale = 180 / Math.max(width, height, depth);
 
   return (
-    <figure className="rounded-lg border border-border-sand bg-soft-white p-6">
+    <figure className="border border-wd-line bg-wd-elevated p-6">
       <figcaption className="sr-only">
         Dimension diagram for {product.title}
       </figcaption>
@@ -80,11 +80,13 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
       <svg
         viewBox="0 0 320 240"
         role="img"
-        aria-labelledby="dimension-diagram-title"
+        aria-labelledby={`dimension-diagram-title-${product.id}`}
         className="mx-auto w-full max-w-md"
       >
-        <title id="dimension-diagram-title">
-          {product.title} dimension diagram
+        {/* A single template string: an array of children here makes React
+            fail hydration and re-render the whole product page on the client. */}
+        <title id={`dimension-diagram-title-${product.id}`}>
+          {`${product.title} dimension diagram`}
         </title>
 
         <rect
@@ -92,15 +94,15 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
           y="40"
           width={width * scale}
           height={height * scale}
-          fill="#ECEAE4"
-          stroke="#4A6170"
+          fill="#2b2b2b"
+          stroke="#e8a24b"
           strokeWidth="2"
         />
 
         <polygon
           points={`${70 + width * scale},${40 + height * scale} ${70 + width * scale + depth * scale * 0.35},${40 + height * scale - depth * scale * 0.2} ${70 + depth * scale * 0.35},${40 + height * scale - depth * scale * 0.2}`}
-          fill="#D8D0C4"
-          stroke="#4A6170"
+          fill="#1f1f1f"
+          stroke="#e8a24b"
           strokeWidth="1.5"
         />
 
@@ -140,10 +142,10 @@ export function DimensionDiagram({ product }: DimensionDiagramProps) {
         {fields.map((field) => (
           <div
             key={field.key}
-            className="flex items-baseline justify-between gap-3 border-b border-border-sand/60 pb-2 text-sm"
+            className="flex items-baseline justify-between gap-3 border-b border-wd-line pb-2 text-sm"
           >
-            <dt className="text-graphite">{field.label}</dt>
-            <dd className="font-mono-data text-night-ink">
+            <dt className="text-wd-muted">{field.label}</dt>
+            <dd className="font-mono-data text-wd-text">
               {formatDimensionValue(field.value) ?? '-'}
             </dd>
           </div>
@@ -173,12 +175,12 @@ function DimensionLine({
 
   return (
     <g aria-hidden="true">
-      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#12161C" strokeWidth="1.5" />
+      <line x1={x1} y1={y1} x2={x2} y2={y2} stroke="#9a9a9a" strokeWidth="1.5" />
       <text
         x={vertical ? midX - 10 : midX}
         y={vertical ? midY : midY - 6}
         textAnchor="middle"
-        className="fill-night-ink text-[10px]"
+        className="fill-wd-text text-[10px]"
       >
         {label}
       </text>

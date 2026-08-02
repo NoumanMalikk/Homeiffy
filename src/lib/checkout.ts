@@ -6,7 +6,7 @@ import {
 } from '@/lib/cart';
 import { canLaunchProduction } from '@/lib/launch-gates';
 import { getProductById, isProductPurchaseable } from '@/lib/products';
-import { calculateStagingShipping } from '@/lib/shipping';
+import { calculateShipping } from '@/lib/shipping';
 import { isStripeConfigured } from '@/lib/stripe';
 import type { CartItem, OrderAddress, OrderLineItem } from '@/lib/types';
 import type {
@@ -229,7 +229,7 @@ export function calculateCheckoutTax(
 
 export function calculateCheckoutTotals(
   items: CartItem[],
-  shippingMethod: 'staging-estimate' | 'quote-required',
+  shippingMethod: 'standard' | 'quote-required',
   destinationZip: string,
 ): CheckoutTotals | null {
   const cartTotals = calculateCartTotals(items, {
@@ -250,8 +250,8 @@ export function calculateCheckoutTotals(
   let shippingNote =
     'Final shipping will be quoted after freight review. No carrier rate is shown until verified.';
 
-  if (shippingMethod === 'staging-estimate') {
-    const quote = calculateStagingShipping(cartTotals.validatedItems, destinationZip);
+  if (shippingMethod === 'standard') {
+    const quote = calculateShipping(cartTotals.validatedItems, destinationZip);
     shipping = quote.amount;
     shippingLabel = quote.label;
     shippingNote = quote.note;

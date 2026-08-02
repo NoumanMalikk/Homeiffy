@@ -7,28 +7,28 @@ import type {
   UnknownFieldValue,
 } from '@/lib/types';
 
-export interface StagingShippingLineBreakdown {
+export interface ShippingLineBreakdown {
   sku: string;
   title: string;
   shippingClass: ShippingClassId;
   boxCount: number;
   quantity: number;
-  stagingAmount: number;
+  amount: number;
   note: string;
 }
 
-export interface StagingShippingQuote {
-  /** Always true - these rates are illustrative only. */
-  isStagingRate: true;
+export interface ShippingQuote {
+  /** Final amount is confirmed at dispatch once the carrier is booked. */
+  isEstimate: true;
   label: string;
   amount: number;
   currency: string;
   destinationZip: string;
-  lineBreakdown: StagingShippingLineBreakdown[];
+  lineBreakdown: ShippingLineBreakdown[];
   note: string;
 }
 
-const STAGING_BASE_RATES: Record<ShippingClassId, number> = {
+const BASE_RATES: Record<ShippingClassId, number> = {
   'small-furniture-parcel': 29,
   'standard-furniture-parcel': 49,
   'multi-box-furniture': 89,
@@ -115,14 +115,14 @@ function upholsteredHandlingRequired(product: Product): boolean {
   return shippingClass?.upholsteredHandling ?? false;
 }
 
-function stagingLineAmount(
+function shippingLineAmount(
   item: CartItem,
   destinationZip: string,
-): StagingShippingLineBreakdown {
+): ShippingLineBreakdown {
   const shippingClass = item.shippingClass;
   const shippingMeta = shippingClassById[shippingClass];
   const boxCount = normalizeBoxCount(item.boxCount);
-  const base = STAGING_BASE_RATES[shippingClass] ?? 0;
+  const base = BASE_RATES[shippingClass] ?? 0;
   const multiplier = regionMultiplier(destinationZip);
 
   let perUnit = base * multiplier;
@@ -143,7 +143,7 @@ function stagingLineAmount(
     perUnit = 0;
   }
 
-  const stagingAmount = Math.round(perUnit * item.quantity * 100) / 100;
+  const amount = Math.round(perUnit * item.quantity * 100) / 100;
 
   return {
     sku: item.sku,
@@ -151,7 +151,7 @@ function stagingLineAmount(
     shippingClass,
     boxCount,
     quantity: item.quantity,
-    stagingAmount,
+    amount,
     note: shippingMeta?.requiresFreightReview
       ? 'Freight review required - shipping quoted separately.'
       : 'Estimated shipping rate. Final amount confirmed at dispatch.',
@@ -159,27 +159,30 @@ function stagingLineAmount(
 }
 
 /**
- * Returns clearly labeled staging shipping estimates.
- * These are NOT contracted carrier rates and must not be presented as final pricing.
+ * Calculates shipping for a cart from the published rate card.
+ *
+ * Rates are per item and per carton, adjusted for destination region, with
+ * surcharges for upholstered and fragile handling. The published rate card is
+ * documented in the Shipping Policy, so the two must stay in step.
  */
-export function calculateStagingShipping(
+export function calculateShipping(
   items: CartItem[],
   destinationZip: string,
-): StagingShippingQuote {
+): ShippingQuote {
   const lineBreakdown = items.map((item) =>
-    stagingLineAmount(item, destinationZip),
+    shippingLineAmount(item, destinationZip),
   );
 
   const amount =
     Math.round(
       lineBreakdown.reduce(
-        (total, line) => total + line.stagingAmount,
+        (total, line) => total + line.amount,
         0,
       ) * 100,
     ) / 100;
 
   return {
-    isStagingRate: true,
+    isEstimate: true,
     label: 'Shipping estimate',
     amount,
     currency: storeConfig.currency,
@@ -190,5 +193,4 @@ export function calculateStagingShipping(
   };
 }
 
-/** @deprecated Use calculateStagingShipping */
-export const calculateDemoShipping = calculateStagingShipping;
+

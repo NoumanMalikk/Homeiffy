@@ -9,7 +9,7 @@ Photograph the **exact unit** being sold - same supplier SKU, dimensions, finish
 ## Pre-shoot checklist
 
 - [ ] Product record and SKU confirmed
-- [ ] Image credit record created in `src/data/image-credits.ts`
+- [ ] Usage rights confirmed and filed with the business
 - [ ] Shot list from credit `notes` field
 - [ ] Finish/upholstery variant labels on set
 - [ ] Clean unit - no damage, correct hardware, correct drawer count

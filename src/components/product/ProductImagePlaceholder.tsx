@@ -4,17 +4,40 @@ import Image from 'next/image';
 
 import { cn } from '@/lib/utils';
 
-export function ProductImagePlaceholder({ className }: { className?: string }) {
+/**
+ * Shown when a product has no studio photography on file yet.
+ * Reads as a deliberate brand tile rather than a broken image.
+ */
+export function ProductImagePlaceholder({
+  className,
+  label = 'Studio photography in progress',
+}: {
+  className?: string;
+  label?: string;
+}) {
   return (
     <div
       className={cn(
-        'flex aspect-square w-full items-center justify-center bg-gradient-to-b from-wd-hover to-wd-black p-4 text-center',
+        'flex aspect-square w-full flex-col items-center justify-center gap-3 bg-gradient-to-b from-wd-hover to-wd-black p-6 text-center',
         className,
       )}
     >
-      <p className="text-xs leading-relaxed text-wd-muted">
-        Exact product image required
-      </p>
+      <svg
+        viewBox="0 0 48 48"
+        aria-hidden="true"
+        className="size-10 text-wd-accent/50"
+        fill="none"
+        stroke="currentColor"
+        strokeWidth="1.5"
+        strokeLinecap="round"
+        strokeLinejoin="round"
+      >
+        <rect x="5" y="14" width="38" height="26" rx="2" />
+        <path d="M5 33l10-9 7 6 6-7 15 12" />
+        <circle cx="17" cy="22" r="2.5" />
+        <path d="M14 14V9h20v5" />
+      </svg>
+      <p className="text-xs leading-relaxed text-wd-muted">{label}</p>
     </div>
   );
 }
@@ -32,9 +55,7 @@ export function ProductCardImage({
   className?: string;
 }) {
   const hasSrc =
-    Boolean(src) &&
-    !src.includes('placeholder') &&
-    src.trim().length > 0;
+    Boolean(src) && !src.includes('placeholder') && src.trim().length > 0;
 
   if (!hasSrc) {
     return <ProductImagePlaceholder className={className} />;

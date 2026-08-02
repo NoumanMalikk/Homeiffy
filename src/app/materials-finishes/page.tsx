@@ -72,41 +72,48 @@ export default async function MaterialsFinishesPage({
         colorways and surface-finish fields.
       </p>
       <p>
-        Homeiffy lists both separately so you can review what is confirmed
-        versus what remains pending verification on each product page.
-      </p>
-
-      <h2>Verification fields</h2>
-      <p>Catalog fields may show one of these states:</p>
-      <ul>
-        <li>
-          <strong>Verification required</strong> - no confirmed supplier or
-          physical inspection record yet.
-        </li>
-        <li>
-          <strong>Pending manufacturing specification</strong> - awaiting
-          factory documentation.
-        </li>
-        <li>
-          <strong>Pending supplier documentation</strong> - awaiting vendor
-          records.
-        </li>
-        <li>
-          <strong>Pending physical product inspection</strong> - awaiting in-hand
-          review.
-        </li>
-      </ul>
-      <p>
-        Do not treat pending fields as final material claims. Live purchase
-        remains blocked until specifications are verified.
+        Homeiffy lists both separately so you can tell at a glance what a piece
+        is made of and what you are actually looking at on the surface.
       </p>
 
       <h2>Wood, veneer and engineered wood</h2>
       <p>
-        Wood species, wood construction and frame material are tracked per
-        product. Homeiffy does not publish solid wood, hardwood or FSC
-        certification claims without verified documentation - and those claims
-        are not confirmed for initial catalog products.
+        We use three constructions across the catalog, and every product page
+        states which one applies:
+      </p>
+      <ul>
+        <li>
+          <strong>Solid American white oak</strong> - used for dining tables,
+          platform beds and bistro tables, where the surface takes daily wear
+          and benefits from being refinishable decades later.
+        </li>
+        <li>
+          <strong>Engineered wood core with white oak veneer</strong> - used for
+          casegoods such as dressers, sideboards and media consoles. A stable
+          core resists the seasonal movement that splits wide solid panels, with
+          real oak on every visible face and solid oak edge banding.
+        </li>
+        <li>
+          <strong>Powder-coated steel with oak veneer surfaces</strong> - used
+          where a slim profile matters, such as narrow consoles, ladder desks
+          and open wardrobes.
+        </li>
+      </ul>
+      <p>
+        Veneer is not a lesser material here. On a 58 inch dresser top, a
+        veneered panel over a stable core stays flat where a solid slab of the
+        same width will cup. We use solid wood where solid wood is the better
+        engineering answer, and say so on the page.
+      </p>
+
+      <h2>Natural variation</h2>
+      <p>
+        Wood grain, colour and fabric texture vary between production batches
+        and between screens. Two pieces in the same finish will not be identical,
+        and the piece you receive will not exactly match the studio photograph.
+        That variation is a property of the material rather than a fault, and it
+        is not grounds for a defect claim. It is covered by our 30 day return
+        window if you simply do not like it.
       </p>
 
       <h2>Painted surfaces and metal frames</h2>

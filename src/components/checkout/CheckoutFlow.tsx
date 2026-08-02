@@ -157,7 +157,7 @@ export function CheckoutFlow() {
         notes: null,
       },
       shippingMethod: {
-        method: needsQuote ? 'quote-required' : 'staging-estimate',
+        method: needsQuote ? 'quote-required' : 'standard',
       },
       billing: {
         sameAsShipping: true,
@@ -187,7 +187,7 @@ export function CheckoutFlow() {
 
   const watchedValues = watch();
   const billingSameAsShipping = watchedValues.billing?.sameAsShipping ?? true;
-  const shippingMethod = watchedValues.shippingMethod?.method ?? 'staging-estimate';
+  const shippingMethod = watchedValues.shippingMethod?.method ?? 'standard';
   const postalCode = watchedValues.shippingAddress?.postalCode ?? '';
 
   const totals = useMemo(() => {
@@ -771,7 +771,7 @@ export function CheckoutFlow() {
                         <label className="flex cursor-pointer items-start gap-3 rounded-md border border-border-sand p-4">
                           <input
                             type="radio"
-                            value="staging-estimate"
+                            value="standard"
                             {...register('shippingMethod.method')}
                             className="mt-1"
                           />

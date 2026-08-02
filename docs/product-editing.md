@@ -7,7 +7,7 @@ Catalog data is maintained in TypeScript files - there is no admin UI. All chang
 | File | Purpose |
 |------|---------|
 | `src/data/products.ts` | Product catalog (26 products) |
-| `src/data/image-credits.ts` | Image rights and exact-match requirements |
+| `src/data/supplier-spec-sheet.ts` | Supplier-confirmed specs (load rating, origin, manufacturer) |
 | `src/data/product-safety.ts` | Per-product safety fields |
 | `src/data/shipping-classes.ts` | Shipping class definitions |
 | `src/data/room-compatibility.ts` | Room builder compatibility groups |
@@ -25,7 +25,7 @@ if (productsList.length !== 26) {
 }
 ```
 
-To add a product after launch, increment this guard intentionally and add matching records in `image-credits.ts` and `product-safety.ts`.
+To add a product, edit `scripts/generate-catalog.py`, regenerate the catalog and safety records, and add the SKU to `supplier-spec-sheet.ts`. Update the count in `src/__tests__/product-count.test.ts`.
 
 ### Use `defineProduct()`
 
@@ -66,7 +66,7 @@ Format: `HMF-{CATEGORY}-{NNN}`
 Examples: `HMF-ENT-001`, `HMF-DIN-007`, `HMF-SET-026`
 
 - `supplierSku`: supplier/manufacturer reference when verified; otherwise sentinel
-- SKU must match across `products.ts`, `image-credits.ts`, `product-safety.ts`, and cart validation
+- SKU must match across `products.ts`, `product-safety.ts`, `supplier-spec-sheet.ts`, and cart validation
 
 ## Dimensions
 
@@ -135,7 +135,7 @@ When in doubt, choose the class requiring more handling (e.g. upholstered over s
 
 1. Place files under `public/products/[slug]/`
 2. Update `imageGallery` array - replace placeholder from `defineProduct()`
-3. Update corresponding record in `src/data/image-credits.ts`
+3. Run `python3 scripts/make-detail-images.py` to regenerate the detail view
 4. Set `imageVerificationStatus: 'verified'` only after QA
 
 Image types: `main`, `front`, `side`, `back`, `detail`, `open-storage`, `closed-storage`, `extended`, `closed`, `dimensions`, `lifestyle`, `placeholder`

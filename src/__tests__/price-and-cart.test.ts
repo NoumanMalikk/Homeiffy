@@ -82,19 +82,18 @@ describe('cart totals and configuration validation', () => {
     ).toBe(true);
   });
 
-  it('allows staging purchases while surfacing production warnings', () => {
+  it('accepts a live purchase without warnings for a sellable product', () => {
     const item = cartItemFromProduct(entryBench);
     const totals = calculateCartTotals([item]);
 
-    expect(isLivePurchaseAllowed(entryBench, 'staging')).toBe(true);
-    expect(
-      totals.warnings.some((warning) => /staging checkout only/i.test(warning)),
-    ).toBe(true);
+    expect(isLivePurchaseAllowed(entryBench, 'production')).toBe(true);
+    expect(totals.errors).toEqual([]);
+    expect(totals.warnings).toEqual([]);
   });
 
   it('describes dining chair set package contents in the cart context', () => {
-    expect(diningChairs.packageContents).toMatch(/set of 2/i);
-    expect(diningChairs.packageContents).toMatch(/dining chairs/i);
+    expect(diningChairs.packageContents).toMatch(/two dining chairs/i);
+    expect(diningChairs.title).toMatch(/set of 2/i);
     expect(diningChairs.shippingClass).toBe('upholstered-furniture');
 
     const totals = calculateCartTotals([cartItemFromProduct(diningChairs)]);

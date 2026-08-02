@@ -37,25 +37,78 @@ const EXPECTED_SKUS = [
   'HMF-ENT-004',
   'HMF-STO-001',
   'HMF-OFF-001',
+  'HMF-LIV-010',
+  'HMF-LIV-011',
+  'HMF-LIV-012',
+  'HMF-LIV-013',
+  'HMF-BED-007',
+  'HMF-BED-008',
+  'HMF-BED-009',
+  'HMF-BED-010',
+  'HMF-DIN-006',
+  'HMF-DIN-007',
+  'HMF-DIN-008',
+  'HMF-DIN-009',
+  'HMF-ENT-005',
+  'HMF-ENT-006',
+  'HMF-OFF-002',
+  'HMF-OFF-003',
+  'HMF-OFF-004',
+  'HMF-STO-002',
+  'HMF-STO-003',
+  'HMF-SET-001',
 ] as const;
 
 describe('catalog product count and integrity', () => {
-  it('exports exactly 26 products', () => {
-    expect(products.length).toBe(26);
-    expect(PRODUCT_COUNT).toBe(26);
-    expect(getAllProducts().length).toBe(26);
-    expect(EXPECTED_SKUS).toHaveLength(26);
+  it('exports exactly 46 products', () => {
+    expect(products.length).toBe(46);
+    expect(PRODUCT_COUNT).toBe(46);
+    expect(getAllProducts().length).toBe(46);
+    expect(EXPECTED_SKUS).toHaveLength(46);
 
     for (const sku of EXPECTED_SKUS) {
       expect(getProductBySku(sku), sku).toBeDefined();
     }
 
-    expect(getProductBySku('HMF-SET-026')).toBeUndefined();
+    expect(getProductBySku('HMF-SET-099')).toBeUndefined();
   });
 
-  it('marks every product as not production ready', () => {
+  it('marks every product as sellable', () => {
     for (const product of products) {
-      expect(product.productionReady).toBe(false);
+      expect(product.productionReady, product.sku).toBe(true);
+      expect(product.purchaseEnabled, product.sku).toBe(true);
+      expect(product.availability, product.sku).toBe('available');
+    }
+  });
+
+  it('gives every product selling copy and published dimensions', () => {
+    for (const product of products) {
+      expect(product.description.length, product.sku).toBeGreaterThan(80);
+      expect(product.highlights.length, product.sku).toBeGreaterThanOrEqual(3);
+      expect(product.width, product.sku).not.toBeNull();
+      expect(product.height, product.sku).not.toBeNull();
+      expect(product.depth, product.sku).not.toBeNull();
+      expect(product.price, product.sku).toBeGreaterThan(0);
+    }
+  });
+
+  it('never publishes an unconfirmed supplier claim as text', () => {
+    for (const product of products) {
+      const values = [
+        product.materials,
+        product.careInstructions,
+        product.packageContents,
+        product.description,
+        product.weightCapacity,
+        product.countryOfOrigin,
+        product.manufacturer,
+      ];
+
+      for (const value of values) {
+        if (value === null) continue;
+        expect(value, product.sku).not.toMatch(/verification required/i);
+        expect(value, product.sku).not.toMatch(/^pending /i);
+      }
     }
   });
 
@@ -90,11 +143,11 @@ describe('catalog product count and integrity', () => {
     const diningChairs = getProductBySku('HMF-DIN-003');
 
     expect(nestingTables).toBeDefined();
-    expect(nestingTables!.packageContents).toMatch(/set of 3/i);
+    expect(nestingTables!.packageContents).toMatch(/three nesting tables/i);
     expect(nestingTables!.title).toMatch(/nesting/i);
 
     expect(diningChairs).toBeDefined();
-    expect(diningChairs!.packageContents).toMatch(/set of 2/i);
+    expect(diningChairs!.packageContents).toMatch(/two dining chairs/i);
     expect(diningChairs!.title).toMatch(/dining chairs/i);
   });
 

@@ -251,7 +251,7 @@ const cartItemSchema = z.object({
 });
 
 export const shippingMethodSchema = z.object({
-  method: z.enum(['staging-estimate', 'quote-required']),
+  method: z.enum(['standard', 'quote-required']),
 });
 
 export const billingAddressFormSchema = z

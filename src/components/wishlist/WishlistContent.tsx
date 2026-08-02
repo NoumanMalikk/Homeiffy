@@ -12,7 +12,6 @@ import Link from 'next/link';
 import { useMemo, useState } from 'react';
 
 import { ProductCardImage } from '@/components/product/ProductImagePlaceholder';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { Dialog } from '@/components/ui/dialog';
 import { Select } from '@/components/ui/select';
@@ -273,9 +272,6 @@ function WishlistRow({ item }: { item: WishlistItem }) {
             <p className="font-display text-lg font-medium text-night-ink">
               {formatPrice(product.price, product.currency)}
             </p>
-            {!product.productionReady ? (
-              <Badge variant="outline">Specifications pending</Badge>
-            ) : null}
           </div>
 
           <div className="flex flex-wrap gap-2">

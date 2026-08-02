@@ -5,7 +5,6 @@ import { Heart, Minus, Plus, ShoppingBag, Trash2 } from 'lucide-react';
 import Link from 'next/link';
 
 import { ProductCardImage } from '@/components/product/ProductImagePlaceholder';
-import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
 import { shippingClassById } from '@/data/shipping-classes';
 import { storeConfig } from '@/data/store-config';
@@ -135,11 +134,6 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
             </div>
           </dl>
 
-          <div className="flex flex-wrap items-center gap-2">
-            {!item.productionReady ? (
-              <Badge variant="outline">Specifications pending</Badge>
-            ) : null}
-          </div>
         </div>
 
         <div className="flex flex-col items-end gap-4">

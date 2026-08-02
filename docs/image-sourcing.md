@@ -29,7 +29,7 @@ If no legally usable exact image exists:
 4. Keep `productionReady: false`
 5. Block live purchase
 6. Log the product in the pending list below
-7. Update `src/data/image-credits.ts` with `productionStatus: 'blocked'`
+7. Do not publish the image until usage rights are confirmed in writing
 
 Placeholder copy: *"Exact product image required"*
 
@@ -72,7 +72,7 @@ Prefer WebP; provide dimensions in HTML for layout stability.
 
 ## Image credits file
 
-`src/data/image-credits.ts` - one record per product.
+Keep licence documents and photographer releases in the business records.
 
 Each record tracks:
 

@@ -45,8 +45,16 @@ describe('dimension formatting and footprint', () => {
     expect(footprint.note).not.toMatch(/unverified dimensions/i);
   });
 
-  it('notes unverified dimensions in footprint calculations', () => {
+  it('publishes complete dimensions for the whole catalog', () => {
     const footprint = calculateFootprint([nestingTables, entryBench]);
+
+    expect(footprint.note).not.toMatch(/unverified dimensions/i);
+    expect(footprint.productCount).toBe(2);
+  });
+
+  it('notes unverified dimensions when a dimension is missing', () => {
+    const incomplete = { ...entryBench, depth: null };
+    const footprint = calculateFootprint([nestingTables, incomplete]);
 
     expect(footprint.note).toMatch(/unverified dimensions/i);
     expect(footprint.productCount).toBe(2);
