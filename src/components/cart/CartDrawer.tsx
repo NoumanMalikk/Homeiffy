@@ -55,13 +55,10 @@ export function CartDrawer() {
                 product?.imageGallery.find(
                   (image) =>
                     (image.type === 'main' || image.type === 'front') &&
-                    Boolean(image.src) &&
-                    image.type !== 'placeholder',
+                    Boolean(image.src),
                 )?.src ||
-                product?.imageGallery.find(
-                  (image) =>
-                    Boolean(image.src) && image.type !== 'placeholder',
-                )?.src ||
+                product?.imageGallery.find((image) => Boolean(image.src))
+                  ?.src ||
                 item.image ||
                 '';
               const finish = product

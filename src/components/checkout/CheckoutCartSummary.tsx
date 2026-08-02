@@ -20,13 +20,8 @@ function resolveLineImage(item: CartStoreItem): string {
   const galleryImage =
     product?.imageGallery.find(
       (image) =>
-        (image.type === 'main' || image.type === 'front') &&
-        Boolean(image.src) &&
-        image.type !== 'placeholder',
-    ) ??
-    product?.imageGallery.find(
-      (image) => Boolean(image.src) && image.type !== 'placeholder',
-    );
+        (image.type === 'main' || image.type === 'front') && Boolean(image.src),
+    ) ?? product?.imageGallery.find((image) => Boolean(image.src));
 
   if (galleryImage?.src) {
     return galleryImage.src;

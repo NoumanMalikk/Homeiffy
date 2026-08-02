@@ -29,14 +29,8 @@ interface CartState {
 function resolveProductImage(product: Product): string {
   const main =
     product.imageGallery.find(
-      (image) =>
-        image.type === 'main' &&
-        Boolean(image.src) &&
-        image.type !== 'placeholder',
-    ) ??
-    product.imageGallery.find(
-      (image) => Boolean(image.src) && image.type !== 'placeholder',
-    );
+      (image) => image.type === 'main' && Boolean(image.src),
+    ) ?? product.imageGallery.find((image) => Boolean(image.src));
 
   return main?.src ?? '';
 }

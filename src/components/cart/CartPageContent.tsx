@@ -34,13 +34,9 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
   const imageSrc =
     product?.imageGallery.find(
       (img) =>
-        (img.type === 'main' || img.type === 'front') &&
-        Boolean(img.src) &&
-        img.type !== 'placeholder',
+        (img.type === 'main' || img.type === 'front') && Boolean(img.src),
     )?.src ||
-    product?.imageGallery.find(
-      (img) => Boolean(img.src) && img.type !== 'placeholder',
-    )?.src ||
+    product?.imageGallery.find((img) => Boolean(img.src))?.src ||
     item.image ||
     '';
 
