@@ -1,14 +1,12 @@
 'use client';
 
 import Image from 'next/image';
-import { useState } from 'react';
 
 import { getBlurDataUrl } from '@/data/image-blur';
 import { cn } from '@/lib/utils';
 
 /**
- * Shown when a product has no studio photography on file yet.
- * Reads as a deliberate brand tile rather than a broken image.
+ * Shown only when a product has no studio photography path on file.
  */
 export function ProductImagePlaceholder({
   className,
@@ -59,11 +57,10 @@ export function ProductCardImage({
   priority?: boolean;
   className?: string;
 }) {
-  const [failed, setFailed] = useState(false);
   const hasSrc =
     Boolean(src) && !src.includes('placeholder') && src.trim().length > 0;
 
-  if (!hasSrc || failed) {
+  if (!hasSrc) {
     return <ProductImagePlaceholder className={className} />;
   }
 
@@ -84,10 +81,9 @@ export function ProductCardImage({
         className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03] sm:p-4"
         priority={priority}
         loading={priority ? 'eager' : 'lazy'}
-        onError={() => setFailed(true)}
-        // Without a placeholder the browser paints raw alt text into an empty
-        // box until the optimized image arrives, which across a full grid
-        // reads as though every image is broken.
+        // Catalog WebPs are already optimized. Serving them statically avoids
+        // blank cards when the image optimizer/CDN fails on a subset of files.
+        unoptimized
         {...(blurDataURL ? { placeholder: 'blur' as const, blurDataURL } : {})}
       />
       {!verified ? (

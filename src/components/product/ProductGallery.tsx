@@ -133,6 +133,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
                   sizes="64px"
                   className="object-contain p-1"
                   {...blurProps(image.src)}
+                  unoptimized
                 />
               ) : (
                 <ProductImagePlaceholder className="aspect-square text-[10px]" />
@@ -166,6 +167,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
                   sizes="(max-width: 1024px) 100vw, 896px"
                   className="object-contain p-6"
                   {...blurProps(activeImage.src)}
+                  unoptimized
                 />
               ) : (
                 <ProductImagePlaceholder />
@@ -201,6 +203,7 @@ function GallerySlide({
             priority={isActive}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-contain p-6"
+            unoptimized
             {...blurProps(image.src)}
           />
         ) : (
