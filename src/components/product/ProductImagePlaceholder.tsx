@@ -1,6 +1,7 @@
 'use client';
 
 import Image from 'next/image';
+import { useState } from 'react';
 
 import { getBlurDataUrl } from '@/data/image-blur';
 import { cn } from '@/lib/utils';
@@ -58,10 +59,11 @@ export function ProductCardImage({
   priority?: boolean;
   className?: string;
 }) {
+  const [failed, setFailed] = useState(false);
   const hasSrc =
     Boolean(src) && !src.includes('placeholder') && src.trim().length > 0;
 
-  if (!hasSrc) {
+  if (!hasSrc || failed) {
     return <ProductImagePlaceholder className={className} />;
   }
 
@@ -82,6 +84,7 @@ export function ProductCardImage({
         className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03] sm:p-4"
         priority={priority}
         loading={priority ? 'eager' : 'lazy'}
+        onError={() => setFailed(true)}
         // Without a placeholder the browser paints raw alt text into an empty
         // box until the optimized image arrives, which across a full grid
         // reads as though every image is broken.

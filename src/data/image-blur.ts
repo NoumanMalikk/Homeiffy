@@ -25,10 +25,18 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoMAAwAAoBCJYwCdADdGJIzQAD+/An8HsP6lma0Pq66tWjgVxcZyoaLCnKKQLKJCkheYt+EgAA=',
   '/products/compact-wardrobe-36-inch/detail.webp':
     'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAABQAgCdASoMAAwAAoBCJZACdGaA//4E7BW8XIAA/vG+eP4C/f/xlNzzAYBxD7zMsPPaR7VOEjMGpz1nt3R6MAAA',
+  '/products/counter-height-stools-set-of-2/main.webp':
+    'data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAwAAoBCJZwCdAEVjYa0xAAA/vG/LZWPpdGtuUaOLNCC2buMyoKVJDGM3G+YlKTRAOlmxJfYU9j/bL4EroYQdjVrKJwA',
+  '/products/counter-height-stools-set-of-2/detail.webp':
+    'data:image/webp;base64,UklGRmAAAABXRUJQVlA4IFQAAAAQAgCdASoMAAwAAoBCJYwCdAELZYt507XAAP6YX8co7AF6skq7zqAFjR7/7cRBRUGMUE2YoCVlMAj3kJDV5TnO9HpHk7I7F3dySkG7aVFbPDYAAAA=',
   '/products/curved-back-lounge-chair/main.webp':
     'data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAwAAoBCJZwAAt0DkUOYWigA/vfhc2i/S7UUMb10ecfnMhJvLtkqRVvVEQdtd+de+hEQiyzZ81QBjNN0GD3MgAA=',
   '/products/curved-back-lounge-chair/detail.webp':
     'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMAAwAAoBCJZQCdADdZELZYIAA/vU7QB73Ov+r1TD3pX83/pjH1aMOkvtRirUDSJrYpajqHYAAAA==',
+  '/products/drop-leaf-bistro-table-32-inch/main.webp':
+    'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAACwAQCdASoMAAwAAoBCJQBOgCHgYYkAAP734JYH1IPqf1V+HQYUdkBzCYwO0tBx72+xgibwf4K3DhE9BRbm7dGt9DUAAA==',
+  '/products/drop-leaf-bistro-table-32-inch/detail.webp':
+    'data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAwAAoBCJZACdAEO1CorigAA/tJtfpi57BhZRU+ugjft2+l/WZzj5fMgPv6OF3sY/K/wb6on660z9FH/4twONyE6zAAA',
   '/products/evening-room-composition-4-piece/main.webp':
     'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAAAQAgCdASoMAAwAAoBCJZQCxC8AGBX3oOYAAP77axC+7BiBeZchUuhv26nZceexnU5c4RgEqkiurgAA',
   '/products/evening-room-composition-4-piece/detail.webp':
@@ -41,10 +49,18 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADQAQCdASoMAAwAAoBCJYwCdADdHAa7QAD++yC6ci+tdepBIb4tPQfbekyPDK+Qa090wbxs9Cm6kTYAAAA=',
   '/products/five-shelf-bookcase-68-inch/detail.webp':
     'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAABQAgCdASoMAAwAAoBCJZACdGaA//4E6+HOmgAA/ub9WziAK+EnNRvkmtCtroflwMYrGTkJ37HPV1RfZvanne6JKMxn28xeJDQAAA==',
+  '/products/floating-nightstand-with-drawer-20-inch/main.webp':
+    'data:image/webp;base64,UklGRj4AAABXRUJQVlA4IDIAAADQAQCdASoMAAwAAoBCJZQC7AEOjc5IAAD++ukIO9bbRG9HIVWi9QPerZYUVEZRWAAAAA==',
+  '/products/floating-nightstand-with-drawer-20-inch/detail.webp':
+    'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAACwAQCdASoMAAwAAoBCJQBOgCHRbVggAP766McJCcOHOk8fePSwOIvwGek8CNUSQrY3F6EfgtaoUdAA',
   '/products/foldaway-compact-desk-38-inch/main.webp':
     'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoMAAwAAoBCJZQCw7Dc+jCnQAD++fvD1s+B122e06OeQ93FPRkpVtXQ3tDFM1+ZTa19FsKszAjIAAAA',
   '/products/foldaway-compact-desk-38-inch/detail.webp':
     'data:image/webp;base64,UklGRloAAABXRUJQVlA4IE4AAAAQAgCdASoMAAwAAoBCJZgCdAEfvtk9Z9mAAP7eOOTCp8ziKWOdzhPsWAHxvMFch2umx3B6rg4mdtGyq720W0l3xizs9Fpldz/zGFz9AAA=',
+  '/products/glass-front-display-cabinet-34-inch/main.webp':
+    'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADwAQCdASoMAAwAAoBCJYwCdADdE8UuLAAA/vsgz27Of/wsPxCXSmuTAoW/BW1KRwvQpxke1WAAAA==',
+  '/products/glass-front-display-cabinet-34-inch/detail.webp':
+    'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMAAwAAoBCJQBOgBujgMmiAP71/2kNR5a+z94g59kx2UeEs1q+aQUjkS+/ZovFUbp577O9cr0cUCwvgAA=',
   '/products/hall-tree-with-bench/main.webp':
     'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAgCdASoMAAwAAoBCJYwCdADdI2HElpoAAP72/kH35STX7Sf/aJ8nOQNAqJRJE/2hk9fsh/HNhAdlLj2/CQAA',
   '/products/hall-tree-with-bench/detail.webp':
@@ -53,6 +69,10 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRlYAAABXRUJQVlA4IEoAAAAwAgCdASoMAAwAAoBCJZwC7AEUVCZxtwv4gAD+9f8+y2sk28ntEFxJ8ibXpIQ1Py4lJJ3BPI8RIB69o1BmhNK5fkyDUqMjKagAAA==',
   '/products/high-back-reading-chair/detail.webp':
     'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAAAQAgCdASoMAAwAAoBCJZQCdAELWJRk8hoAAP7wqF2bGfDHIhsrchXvjmfLV3RKcns8Byd9NGD2aES+XeyqjgAA',
+  '/products/ladder-desk-with-shelves-30-inch/main.webp':
+    'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADwAQCdASoMAAwAAoBCJZwC7ADc+GLPwEAA/vqNPDJXttK2//MFUaTWnjNFypCkw3uvWpeYAAA=',
+  '/products/ladder-desk-with-shelves-30-inch/detail.webp':
+    'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMAAwAAoBCJZQCdADc+DIoWQAA/vipE8lidNjRjFsL3QS2ssHvVzwd3HpNrnzr4Akpd2jGMegAAA==',
   '/products/lift-top-coffee-table-40-inch/main.webp':
     'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoMAAwAAoBCJZQCdAEO/tqycAAA/vqSLz0fUKY2jU6PXwUgGEeYCGY9N5wPJVzXViYFyHAA',
   '/products/lift-top-coffee-table-40-inch/detail.webp':
@@ -73,6 +93,14 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAAAQAgCdASoMAAwAAoBCJYwCdAEPAD4GRKIAAP76DHlA3bAuL50sgukjBWK9CQ0eTql27AElDXW8Yd9d+QMAAA==',
   '/products/nesting-side-tables-set-of-3/detail.webp':
     'data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAwAAoBCJZACdAEO0Jc0ZsAA/kEbVBdjInnuhKP2SfTC4WiNqF5/zo+UwP+SJyh9FZdfnC9jv2Ga5G3vYJBgAAA=',
+  '/products/open-room-divider-shelf-62-inch/main.webp':
+    'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAwAAoBCJZQCdAERHwnMoBAA/vTD8me7ylP7U2bGU//YHrpMN3Zxqu4kKYw8EqXXhe7DnAR71HVEgAA=',
+  '/products/open-room-divider-shelf-62-inch/detail.webp':
+    'data:image/webp;base64,UklGRlwAAABXRUJQVlA4IFAAAADwAQCdASoMAAwAAoBCJQBOgBujKYPYSIAA/tK6CR+PA9y17xBaUny27b3lfoY+Z0ssey09cAOpsMhZEzRIVfH+f0zryl0UkZQwIX/365AAAA==',
+  '/products/open-wardrobe-with-hanging-rail-48-inch/main.webp':
+    'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAwAAoBCJZQCdAELX8zRIgAA/vqge8DaSYF560Dxc6LtB8n+9hu8IxI4HrQcox2b9QIBAAA=',
+  '/products/open-wardrobe-with-hanging-rail-48-inch/detail.webp':
+    'data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADQAQCdASoMAAwAAoBCJQBOgBuif/rOyAD+99tlm1qbD9ILeMiRUNaqJ/jz8NGOudoAtYAwjWeSLl19sNsUCjRpR5Qx9nhBIAA=',
   '/products/queen-platform-bed/main.webp':
     'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADwAQCdASoMAAwAAoBCJZQCsAELUEjGIAAA/viVw4INnU/v2VWskUx1QJVDL9gJqAj7chTDCP7IMApNE6AAAA==',
   '/products/queen-platform-bed/detail.webp':
@@ -85,6 +113,10 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAACwAQCdASoMAAwAAoBCJZQAAlcrrsgAAP72/wCrA1DyefQFcblv+sLHribYNDv2r9tpzDxVN/LznbrvW93l+2qYAAA=',
   '/products/quietback-upholstered-desk-chair/detail.webp':
     'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADQAQCdASoMAAwAAoBCJQAAYCrUgaRNwAD8z4rkHre55UShVhgPUwBO0qlnvQke9ubUIB0pRVhoLyMfGL/69VEMGAA=',
+  '/products/rectangular-dining-table-72-inch/main.webp':
+    'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAAAQAgCdASoMAAwAAoBCJZwCdH8AGBaF6AwAAP773nyeyk3vQQm2Xqlt5DEg+hejk40PEKUAAAA=',
+  '/products/rectangular-dining-table-72-inch/detail.webp':
+    'data:image/webp;base64,UklGRkQAAABXRUJQVlA4IDgAAADQAQCdASoMAAwAAoBCJZQCdAEOsl0IAAD++2ekEf3ZCzisSZmpMDdyif4RLP32Wxe8J8TZsAAAAA==',
   '/products/round-pedestal-coffee-table-36-inch/main.webp':
     'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAAAQAgCdASoMAAwAAoBCJZwC7AEPDxKUwbAAAP76ir9A9yphTm64pvyrNPKjk0ENKyQrIhDvMmQirQoDQAA=',
   '/products/round-pedestal-coffee-table-36-inch/detail.webp':
@@ -109,6 +141,10 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRkIAAABXRUJQVlA4IDYAAADQAQCdASoMAAwAAoBCJZQCdAEPEKIRIAD++cTeQ++PKJQRVE2K6C8kJqeN/1YnDssLEAMxgAA=',
   '/products/sliding-door-media-console-72-inch/detail.webp':
     'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAwAAoBCJYwCdAEOtuLoQAD++SymNXrSrjJ16n5fWvkiRL+OZTLdquErMwmWQ1XrWRejHgAAAA==',
+  '/products/slim-shoe-rack-bench-36-inch/main.webp':
+    'data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAAAQAgCdASoMAAwAAoBCJZQCdAEPD4fhpzJAAP729N3LKt8cPoiAFZ9idR/d1rBcbjbHgO0rzy98G5POKgsupMUkx8Rnbdx1g3p5MAAA',
+  '/products/slim-shoe-rack-bench-36-inch/detail.webp':
+    'data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAwAAoBCJQBOgCHZhcLUBsAA/uoB/gdYYPDmTdI0KxpjHJGKLl7ZoaQ50w36St088b8NnKyUokpbin100w7IvSEgAAAA',
   '/products/storage-entry-bench-46-inch/main.webp':
     'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAgCdASoMAAwAAoBCJZQCdH8AGCap0Df/tQAA/vqRZht0f7Nwvr3/L/We4ogzv7T7O7u9uDQFYhqFYvWBaWibhZAAAA==',
   '/products/storage-entry-bench-46-inch/detail.webp':
@@ -121,6 +157,10 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRkoAAABXRUJQVlA4ID4AAADQAQCdASoMAAwAAoBCJZwAAlc7u6HQAAD++UpurtcBAfIadvgdS853hwl72rQ3H/X76D5duTkHtNFNyMCAAA==',
   '/products/swivel-accent-chair/detail.webp':
     'data:image/webp;base64,UklGRlgAAABXRUJQVlA4IEwAAADwAQCdASoMAAwAAoBCJZQCdAD0C/DL9wAA/vS3uHEJObpbIxuPkaF+ZnHsTwQz8P6rrVeB7ApBEA/io97S+kfAFXDL0OQE7sG5zgAA',
+  '/products/three-drawer-tall-chest-32-inch/main.webp':
+    'data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADwAQCdASoMAAwAAoBCJQBOgCFsCv7CH4AA/vb/F7vYpnhpHveeiFi13blcjsevLmym+ukGQ6FiNSD+IuGJAAAA',
+  '/products/three-drawer-tall-chest-32-inch/detail.webp':
+    'data:image/webp;base64,UklGRkgAAABXRUJQVlA4IDwAAADwAQCdASoMAAwAAoBCJYgCdAEUVA8+rgAA/k/dYaRhLcGmk9dMwQiwfmHZL727EyEzwWGzaiLwvW+oAAA=',
   '/products/tilt-out-shoe-cabinet-30-inch/main.webp':
     'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAwAAoBCJQBOgCB/eKb48gAA/vipjpbtagguLj73vMDxIZsk++03IddEQ+pXRwLgfU1yM7Oe23njwAA=',
   '/products/tilt-out-shoe-cabinet-30-inch/detail.webp':
@@ -145,6 +185,14 @@ export const imageBlurDataUrls: Record<string, string> = {
     'data:image/webp;base64,UklGRlAAAABXRUJQVlA4IEQAAABQAgCdASoMAAwAAoBCJZwCxC8AF8f8WpN+xwAA/vS4kUK3uRzTyDTN+TRY5euSXzrkuzvMstLn/jtyAlLQIPCYxIAAAA==',
   '/products/upholstered-headboard-bed-king/detail.webp':
     'data:image/webp;base64,UklGRlQAAABXRUJQVlA4IEgAAADwAQCdASoMAAwAAoBCJQBOgBui4ReZMgAA99/8xwmXWcuNVzEnQE3vSeHdHzNJfINkzgO+gSzqyAd2SV0vERhetmW7kVEAAAA=',
+  '/products/wall-mounted-coat-rack-with-shelf-36-inch/main.webp':
+    'data:image/webp;base64,UklGRlIAAABXRUJQVlA4IEYAAADwAQCdASoMAAwAAoBCJYwCdAD0PPDyjrgA/voG103S9t5SnX6K1Ez1y4I+GrKEyd8nSaCBdAiiW79q0HIBLHV8HNv/iwAA',
+  '/products/wall-mounted-coat-rack-with-shelf-36-inch/detail.webp':
+    'data:image/webp;base64,UklGRk4AAABXRUJQVlA4IEIAAADwAQCdASoMAAwAAoBCJYwCdAD0MlfB1PAA/viVAqi8T9SkfaXVSF1JgD8MP7ITZPnZwQG+pWWtaxPuFgc75G40AAA=',
+  '/products/writing-desk-with-drawer-48-inch/main.webp':
+    'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAwAAoBCJZwCdAEOzXxZQAD++p1SWQW0ekPYgqd14zh5v3mytwZO5EVNNgCtexoJaZAA',
+  '/products/writing-desk-with-drawer-48-inch/detail.webp':
+    'data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADQAQCdASoMAAwAAoBCJZQCdAEOvFzKAAD+9uP6x+l+HeDNiO90MNUb5EYQrye7eQrdXvCfK7V7YYAA',
 };
 
 /** Blur placeholder for an image path, if one was generated. */

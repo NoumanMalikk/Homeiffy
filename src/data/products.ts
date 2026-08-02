@@ -3004,9 +3004,14 @@ const productsList: Product[] = [
     packageContents: 'One chest body, three drawers, anti-tip restraint kit, wall anchor, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Three Drawer Tall Chest, 32 Inches Wide',
-        type: 'placeholder',
+        src: '/products/three-drawer-tall-chest-32-inch/main.webp',
+        alt: 'Three Drawer Tall Chest, 32 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/three-drawer-tall-chest-32-inch/detail.webp',
+        alt: 'Three Drawer Tall Chest, 32 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'multi-box-furniture',
@@ -3085,9 +3090,14 @@ const productsList: Product[] = [
     packageContents: 'Steel frame, two hanging rails, three shelves, anti-tip restraint kit, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Open Wardrobe with Hanging Rail, 48 Inches Wide',
-        type: 'placeholder',
+        src: '/products/open-wardrobe-with-hanging-rail-48-inch/main.webp',
+        alt: 'Open Wardrobe with Hanging Rail, 48 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/open-wardrobe-with-hanging-rail-48-inch/detail.webp',
+        alt: 'Open Wardrobe with Hanging Rail, 48 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'oversized-furniture',
@@ -3171,9 +3181,14 @@ const productsList: Product[] = [
     packageContents: 'One floating nightstand, one drawer, French cleat bracket, fixings, drilling template',
     imageGallery: [
       {
-        src: '',
-        alt: 'Floating Nightstand with Drawer, 20 Inches Wide',
-        type: 'placeholder',
+        src: '/products/floating-nightstand-with-drawer-20-inch/main.webp',
+        alt: 'Floating Nightstand with Drawer, 20 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/floating-nightstand-with-drawer-20-inch/detail.webp',
+        alt: 'Floating Nightstand with Drawer, 20 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'small-furniture-parcel',
@@ -3256,9 +3271,14 @@ const productsList: Product[] = [
     packageContents: 'Two counter stools, floor protector pads, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Counter Height Stools, Set of 2',
-        type: 'placeholder',
+        src: '/products/counter-height-stools-set-of-2/main.webp',
+        alt: 'Counter Height Stools, Set of 2, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/counter-height-stools-set-of-2/detail.webp',
+        alt: 'Counter Height Stools, Set of 2, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'small-furniture-parcel',
@@ -3341,9 +3361,14 @@ const productsList: Product[] = [
     packageContents: 'One table top, four legs, support rails, floor protector pads, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Rectangular Dining Table, 72 Inches Wide',
-        type: 'placeholder',
+        src: '/products/rectangular-dining-table-72-inch/main.webp',
+        alt: 'Rectangular Dining Table, 72 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/rectangular-dining-table-72-inch/detail.webp',
+        alt: 'Rectangular Dining Table, 72 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'oversized-furniture',
@@ -3426,9 +3451,14 @@ const productsList: Product[] = [
     packageContents: 'One cabinet body, two glass doors, four shelves, anti-tip restraint kit, fixings',
     imageGallery: [
       {
-        src: '',
-        alt: 'Glass Front Display Cabinet, 34 Inches Wide',
-        type: 'placeholder',
+        src: '/products/glass-front-display-cabinet-34-inch/main.webp',
+        alt: 'Glass Front Display Cabinet, 34 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/glass-front-display-cabinet-34-inch/detail.webp',
+        alt: 'Glass Front Display Cabinet, 34 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'glass-component',
@@ -3516,9 +3546,14 @@ const productsList: Product[] = [
     packageContents: 'One table top with two drop leaves, four legs, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Drop Leaf Bistro Table, 32 Inches Wide',
-        type: 'placeholder',
+        src: '/products/drop-leaf-bistro-table-32-inch/main.webp',
+        alt: 'Drop Leaf Bistro Table, 32 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/drop-leaf-bistro-table-32-inch/detail.webp',
+        alt: 'Drop Leaf Bistro Table, 32 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'standard-furniture-parcel',
@@ -3597,9 +3632,14 @@ const productsList: Product[] = [
     packageContents: 'One bench with oak seat, two shoe racks, floor protector pads, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Slim Shoe Rack Bench, 36 Inches Wide',
-        type: 'placeholder',
+        src: '/products/slim-shoe-rack-bench-36-inch/main.webp',
+        alt: 'Slim Shoe Rack Bench, 36 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/slim-shoe-rack-bench-36-inch/detail.webp',
+        alt: 'Slim Shoe Rack Bench, 36 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'small-furniture-parcel',
@@ -3683,9 +3723,14 @@ const productsList: Product[] = [
     packageContents: 'One coat rack with shelf, five fitted hooks, wall fixings, drilling template',
     imageGallery: [
       {
-        src: '',
-        alt: 'Wall Mounted Coat Rack with Shelf, 36 Inches Wide',
-        type: 'placeholder',
+        src: '/products/wall-mounted-coat-rack-with-shelf-36-inch/main.webp',
+        alt: 'Wall Mounted Coat Rack with Shelf, 36 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/wall-mounted-coat-rack-with-shelf-36-inch/detail.webp',
+        alt: 'Wall Mounted Coat Rack with Shelf, 36 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'small-furniture-parcel',
@@ -3868,9 +3913,14 @@ const productsList: Product[] = [
     packageContents: 'One desk top, one drawer, four legs, cable grommet, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Writing Desk with Drawer, 48 Inches Wide',
-        type: 'placeholder',
+        src: '/products/writing-desk-with-drawer-48-inch/main.webp',
+        alt: 'Writing Desk with Drawer, 48 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/writing-desk-with-drawer-48-inch/detail.webp',
+        alt: 'Writing Desk with Drawer, 48 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'standard-furniture-parcel',
@@ -3954,9 +4004,14 @@ const productsList: Product[] = [
     packageContents: 'One ladder frame, desk surface, three shelves, anti-tip restraint kit, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Ladder Desk with Shelves, 30 Inches Wide',
-        type: 'placeholder',
+        src: '/products/ladder-desk-with-shelves-30-inch/main.webp',
+        alt: 'Ladder Desk with Shelves, 30 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/ladder-desk-with-shelves-30-inch/detail.webp',
+        alt: 'Ladder Desk with Shelves, 30 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'standard-furniture-parcel',
@@ -4139,9 +4194,14 @@ const productsList: Product[] = [
     packageContents: 'Two side panels, eight shelves, floor stabiliser feet, anti-tip restraint kit, fixings',
     imageGallery: [
       {
-        src: '',
-        alt: 'Open Room Divider Shelf, 62 Inches Tall',
-        type: 'placeholder',
+        src: '/products/open-room-divider-shelf-62-inch/main.webp',
+        alt: 'Open Room Divider Shelf, 62 Inches Tall, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/open-room-divider-shelf-62-inch/detail.webp',
+        alt: 'Open Room Divider Shelf, 62 Inches Tall, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'oversized-furniture',
