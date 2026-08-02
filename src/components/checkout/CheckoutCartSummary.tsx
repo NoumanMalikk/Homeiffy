@@ -14,17 +14,25 @@ import {
 } from '@/stores';
 
 function resolveLineImage(item: CartStoreItem): string {
-  if (item.image) {
-    return item.image;
-  }
-
+  // Always prefer the live catalog gallery so checkout does not keep a stale
+  // empty/placeholder path from when the item was first added to the cart.
   const product = getProductById(item.productId);
   const galleryImage =
     product?.imageGallery.find(
-      (image) => image.type === 'main' || image.type === 'front',
-    ) ?? product?.imageGallery[0];
+      (image) =>
+        (image.type === 'main' || image.type === 'front') &&
+        Boolean(image.src) &&
+        image.type !== 'placeholder',
+    ) ??
+    product?.imageGallery.find(
+      (image) => Boolean(image.src) && image.type !== 'placeholder',
+    );
 
-  return galleryImage?.src ?? '';
+  if (galleryImage?.src) {
+    return galleryImage.src;
+  }
+
+  return item.image || '';
 }
 
 function CartSummaryLine({ item }: { item: CartStoreItem }) {
@@ -51,6 +59,7 @@ function CartSummaryLine({ item }: { item: CartStoreItem }) {
             fill
             sizes="96px"
             className="object-contain p-2"
+            unoptimized
           />
         ) : (
           <span className="flex size-full items-center justify-center px-2 text-center text-[10px] text-wd-muted">

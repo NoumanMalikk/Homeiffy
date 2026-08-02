@@ -1,7 +1,7 @@
 import { create } from 'zustand';
 import { createJSONStorage, persist } from 'zustand/middleware';
 
-import { getDefaultColorway } from '@/lib/products';
+import { getDefaultColorway, getProductById } from '@/lib/products';
 import type { CartItem, Product } from '@/lib/types';
 
 /** Cart line item with a display thumbnail. Prices are UI-only; server revalidates at checkout. */
@@ -28,8 +28,15 @@ interface CartState {
 
 function resolveProductImage(product: Product): string {
   const main =
-    product.imageGallery.find((image) => image.type === 'main') ??
-    product.imageGallery[0];
+    product.imageGallery.find(
+      (image) =>
+        image.type === 'main' &&
+        Boolean(image.src) &&
+        image.type !== 'placeholder',
+    ) ??
+    product.imageGallery.find(
+      (image) => Boolean(image.src) && image.type !== 'placeholder',
+    );
 
   return main?.src ?? '';
 }
@@ -153,6 +160,22 @@ export const useCartStore = create<CartState>()(
     {
       name: 'homeiffy-cart',
       storage: createJSONStorage(() => localStorage),
+      // Refresh thumbnails from the live catalog so older carts do not keep
+      // empty/placeholder image paths after photography is added.
+      onRehydrateStorage: () => (state) => {
+        if (!state?.items?.length) {
+          return;
+        }
+
+        state.items = state.items.map((item) => {
+          const product = getProductById(item.productId);
+          if (!product) {
+            return item;
+          }
+          const nextImage = resolveProductImage(product);
+          return nextImage ? { ...item, image: nextImage } : item;
+        });
+      },
     },
   ),
 );

@@ -32,9 +32,16 @@ function CartLineItem({ item }: { item: CartStoreItem }) {
   const shippingClass = shippingClassById[item.shippingClass];
   const lineTotal = item.unitPrice * item.quantity;
   const imageSrc =
+    product?.imageGallery.find(
+      (img) =>
+        (img.type === 'main' || img.type === 'front') &&
+        Boolean(img.src) &&
+        img.type !== 'placeholder',
+    )?.src ||
+    product?.imageGallery.find(
+      (img) => Boolean(img.src) && img.type !== 'placeholder',
+    )?.src ||
     item.image ||
-    product?.imageGallery.find((img) => img.type === 'main' || img.type === 'front')
-      ?.src ||
     '';
 
   function handleMoveToWishlist() {

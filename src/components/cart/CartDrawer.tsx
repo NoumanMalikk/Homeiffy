@@ -52,10 +52,17 @@ export function CartDrawer() {
               const lineKey = getCartLineKey(item);
               const product = getProductById(item.productId);
               const imageSrc =
-                item.image ||
                 product?.imageGallery.find(
-                  (image) => image.type === 'main' || image.type === 'front',
+                  (image) =>
+                    (image.type === 'main' || image.type === 'front') &&
+                    Boolean(image.src) &&
+                    image.type !== 'placeholder',
                 )?.src ||
+                product?.imageGallery.find(
+                  (image) =>
+                    Boolean(image.src) && image.type !== 'placeholder',
+                )?.src ||
+                item.image ||
                 '';
               const finish = product
                 ? getColorwayLabel(product, item.selectedFinishId, 'finish')
@@ -79,6 +86,7 @@ export function CartDrawer() {
                         fill
                         sizes="80px"
                         className="object-contain p-1.5"
+                        unoptimized
                       />
                     ) : null}
                   </Link>
