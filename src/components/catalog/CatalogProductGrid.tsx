@@ -34,7 +34,7 @@ export function CatalogProductGrid({ products }: { products: Product[] }) {
 
   return (
     <ProductGrid className={gridClass}>
-      {products.map((product) => (
+      {products.map((product, index) => (
         <ProductGridItem
           key={product.id}
           product={product}
@@ -42,6 +42,9 @@ export function CatalogProductGrid({ products }: { products: Product[] }) {
         >
           <ProductCard
             product={product}
+            // The first row is above the fold on every breakpoint, so load it
+            // eagerly rather than waiting for the lazy-load observer.
+            priority={index < 4}
             className={cn(catalogView === 'list' && 'sm:flex-row')}
           />
         </ProductGridItem>

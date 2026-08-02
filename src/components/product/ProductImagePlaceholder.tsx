@@ -2,6 +2,7 @@
 
 import Image from 'next/image';
 
+import { getBlurDataUrl } from '@/data/image-blur';
 import { cn } from '@/lib/utils';
 
 /**
@@ -46,12 +47,15 @@ export function ProductCardImage({
   src,
   alt,
   verified = true,
+  priority = false,
   className,
 }: {
   src: string;
   alt: string;
   /** When false and no usable src, show placeholder. Prefer showing catalog images. */
   verified?: boolean;
+  /** Set on above-the-fold cards so they load eagerly instead of lazily. */
+  priority?: boolean;
   className?: string;
 }) {
   const hasSrc =
@@ -60,6 +64,8 @@ export function ProductCardImage({
   if (!hasSrc) {
     return <ProductImagePlaceholder className={className} />;
   }
+
+  const blurDataURL = getBlurDataUrl(src);
 
   return (
     <div
@@ -74,7 +80,12 @@ export function ProductCardImage({
         fill
         sizes="(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 25vw"
         className="object-contain p-3 transition-transform duration-300 group-hover:scale-[1.03] sm:p-4"
-        priority={false}
+        priority={priority}
+        loading={priority ? 'eager' : 'lazy'}
+        // Without a placeholder the browser paints raw alt text into an empty
+        // box until the optimized image arrives, which across a full grid
+        // reads as though every image is broken.
+        {...(blurDataURL ? { placeholder: 'blur' as const, blurDataURL } : {})}
       />
       {!verified ? (
         <span className="sr-only">Catalog image pending final verification</span>

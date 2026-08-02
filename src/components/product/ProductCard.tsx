@@ -65,12 +65,15 @@ export interface ProductCardProps {
   selectedFinishId?: string | null;
   selectedUpholsteryId?: string | null;
   className?: string;
+  /** Eager-load this card's image. Set on the first visible row. */
+  priority?: boolean;
 }
 
 export function ProductCard({
   product,
   selectedFinishId = null,
   selectedUpholsteryId = null,
+  priority = false,
   className,
 }: ProductCardProps) {
   const toggleWishlist = useWishlistStore((s) => s.toggle);
@@ -147,6 +150,7 @@ export function ProductCard({
           src={mainImage?.src ?? ''}
           alt={mainImage?.alt ?? product.title}
           verified={product.imageVerificationStatus === 'verified'}
+          priority={priority}
         />
         <Badge
           variant="outline"

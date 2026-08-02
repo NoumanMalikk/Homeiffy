@@ -6,12 +6,23 @@ import Image from 'next/image';
 import { useCallback, useEffect, useState } from 'react';
 
 import { ProductImagePlaceholder } from '@/components/product/ProductImagePlaceholder';
+import { getBlurDataUrl } from '@/data/image-blur';
 import { Button } from '@/components/ui/button';
 import type { Product, ProductImage } from '@/lib/types';
 import { cn } from '@/lib/utils';
 
 interface ProductGalleryProps {
   product: Product;
+}
+
+/**
+ * Blur placeholder props for an image, when one has been generated.
+ * Without this the browser paints alt text into the empty box while the
+ * optimized variant is still being generated.
+ */
+function blurProps(src: string) {
+  const blurDataURL = getBlurDataUrl(src);
+  return blurDataURL ? { placeholder: 'blur' as const, blurDataURL } : {};
 }
 
 function canDisplayImage(image: ProductImage | undefined): boolean {
@@ -121,6 +132,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
                   fill
                   sizes="64px"
                   className="object-contain p-1"
+                  {...blurProps(image.src)}
                 />
               ) : (
                 <ProductImagePlaceholder className="aspect-square text-[10px]" />
@@ -153,6 +165,7 @@ export function ProductGallery({ product }: ProductGalleryProps) {
                   fill
                   sizes="(max-width: 1024px) 100vw, 896px"
                   className="object-contain p-6"
+                  {...blurProps(activeImage.src)}
                 />
               ) : (
                 <ProductImagePlaceholder />
@@ -188,6 +201,7 @@ function GallerySlide({
             priority={isActive}
             sizes="(max-width: 1024px) 100vw, 50vw"
             className="object-contain p-6"
+            {...blurProps(image.src)}
           />
         ) : (
           <ProductImagePlaceholder />

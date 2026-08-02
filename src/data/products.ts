@@ -2553,9 +2553,14 @@ const productsList: Product[] = [
     packageContents: 'One sofa section, one chaise section, six legs, two connector clips, cushions',
     imageGallery: [
       {
-        src: '',
-        alt: 'Sectional Sofa with Reversible Chaise, 98 Inches Wide',
-        type: 'placeholder',
+        src: '/products/sectional-sofa-reversible-chaise-98-inch/main.webp',
+        alt: 'Sectional Sofa with Reversible Chaise, 98 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/sectional-sofa-reversible-chaise-98-inch/detail.webp',
+        alt: 'Sectional Sofa with Reversible Chaise, 98 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'upholstered-furniture',
@@ -2639,9 +2644,14 @@ const productsList: Product[] = [
     packageContents: 'One round table top, one pedestal base, fixings, hex key',
     imageGallery: [
       {
-        src: '',
-        alt: 'Round Pedestal Coffee Table, 36 Inch Diameter',
-        type: 'placeholder',
+        src: '/products/round-pedestal-coffee-table-36-inch/main.webp',
+        alt: 'Round Pedestal Coffee Table, 36 Inch Diameter, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/round-pedestal-coffee-table-36-inch/detail.webp',
+        alt: 'Round Pedestal Coffee Table, 36 Inch Diameter, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'standard-furniture-parcel',
@@ -2724,9 +2734,14 @@ const productsList: Product[] = [
     packageContents: 'One chair body, one swivel base, one seat cushion',
     imageGallery: [
       {
-        src: '',
-        alt: 'Swivel Accent Chair, 31 Inches Wide',
-        type: 'placeholder',
+        src: '/products/swivel-accent-chair/main.webp',
+        alt: 'Swivel Accent Chair, 31 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/swivel-accent-chair/detail.webp',
+        alt: 'Swivel Accent Chair, 31 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'upholstered-furniture',
@@ -2809,9 +2824,14 @@ const productsList: Product[] = [
     packageContents: 'One console body, two sliding doors, three shelves, cable grommets, wall anchor strap, fixings',
     imageGallery: [
       {
-        src: '',
-        alt: 'Sliding Door Media Console, 72 Inches Wide',
-        type: 'placeholder',
+        src: '/products/sliding-door-media-console-72-inch/main.webp',
+        alt: 'Sliding Door Media Console, 72 Inches Wide, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/sliding-door-media-console-72-inch/detail.webp',
+        alt: 'Sliding Door Media Console, 72 Inches Wide, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'oversized-furniture',
@@ -2894,9 +2914,14 @@ const productsList: Product[] = [
     packageContents: 'Upholstered headboard, footboard, two side rails, centre support with legs, 16 slats, fixings',
     imageGallery: [
       {
-        src: '',
-        alt: 'Upholstered Headboard Bed, King',
-        type: 'placeholder',
+        src: '/products/upholstered-headboard-bed-king/main.webp',
+        alt: 'Upholstered Headboard Bed, King, full studio view',
+        type: 'main',
+      },
+      {
+        src: '/products/upholstered-headboard-bed-king/detail.webp',
+        alt: 'Upholstered Headboard Bed, King, close detail of material and construction',
+        type: 'detail',
       },
     ],
     shippingClass: 'freight-review-required',
